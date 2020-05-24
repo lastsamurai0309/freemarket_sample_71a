@@ -11,17 +11,13 @@
 |first_name|string|null: false|
 |last_name_fri|string|null: false|
 |first_name_fri|string|null: false|
-|shopping-address_id|string|foreign_key: true|
-|message_id|foreign_key: true|
-|rate_id|foreign_key: true|
-|card_id|foreign_key: true|
 ### Association
-- has many:items
-- has many:messages
-- has many:rates
-- has many:cards
-- has many:shopping-address
-- has many:Purchase historys
+- has_many:items
+- has_many:messages
+- has_many:rates
+- has_many:cards
+- has_many:shopping_address
+- has_many:Purchase_historys
 
 ## cardsテーブル
 |Column|Type|Options|
@@ -63,8 +59,8 @@
 |price|integer|null: false|
 |user_id|null: false, foreign_key: true|
 ### Association
-- has many: images
-- has many: comments
+- has_many:: images
+- has_many:: comments
 - belongs to: users
 - belongs to: categorys
 - belongs to: brand
@@ -79,49 +75,49 @@
 |image|string|null: false|
 |item_id|null: false, foreign_key: true|
 ### Association
-- belongs to: items
+- belongs_to: items
 
 ## categoriesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |categories|string|
 ### Association
-- belongs to: items
+- belongs_to: items
 
 ## brandsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |brand|string|
 ### Association
-- belongs to: items
+- belongs_to: items
 
 ## sizeテーブル
 |Column|Type|Options|
 |------|----|-------|
 |size|string|
 ### Association
-- belongs to: items
+- belongs_to: items
 
 ## areasテーブル
 |Column|Type|Options|
 |------|----|-------|
 |area|string|
 ### Association
-- belongs to: items
+- belongs_to: items
 
 ## sipping_daysテーブル
 |Column|Type|Options|
 |------|----|-------|
 |sipping_day|string|
 ### Association
-- belongs to: items
+- belongs_to: items
 
 ## feesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |fee|string|
 ### Association
-- belongs to: items
+- belongs_to: items
 
 ## Purchase historysテーブル
 |Column|Type|Options|
@@ -148,4 +144,4 @@
 |------|----|-------|
 |rate|string|
 ### Association
-- belongs to: users
+- belongs_to: users
