@@ -75,7 +75,7 @@
 |image|string|null: false|
 |item_id|null: false, foreign_key: true|
 ### Association
-- belongs_to: items
+- belongs_to: item
 
 ## categoriesテーブル
 |Column|Type|Options|
