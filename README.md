@@ -49,18 +49,18 @@
 |------|----|-------|
 |item_name|string|null: false|
 |item_content|text|null: false|
-|categories_id|null: false, foreign_key: true|
-|size_id|foreign_key: true|
-|brand_id|foreign_key: true|
-|condition_id|null: false, foreign_key: true|
-|fee_id|null: false, foreign_key: true|
-|area_id|null: false, foreign_key: true|
-|shipping_day_id|null: false, foreign_key: true|
-|price|integer|null: false|
-|user_id|string|null: false, foreign_key: true|
+|categories|references|null: false, foreign_key: true|
+|size|references|foreign_key: true|
+|brand|references|foreign_key: true|
+|condition|references|null: false, foreign_key: true|
+|fee|references|null: false, foreign_key: true|
+|area|references|null: false, foreign_key: true|
+|shipping_day|references|null: false, foreign_key: true|
+|price|references|null: false|
+|user|references|null: false, foreign_key: true|
 ### Association
-- has_many:: images
-- has_many:: comments
+- has_many: images
+- has_many: comments
 - belongs_to: user
 - belongs_to: category
 - belongs_to: brand
