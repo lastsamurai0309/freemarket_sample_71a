@@ -22,8 +22,8 @@
 ## cardsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|credit_num|integer|null: false, foreign_key: true|
-|limit_month|integer|null: false, foreign_key: true|
+|credit_num|integer|null: false|
+|limit_month|integer|null: false|
 |limit_year|string|null: false|
 |security|string|null: false|
 |user_id|foreign_key: true|
