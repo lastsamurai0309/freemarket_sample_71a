@@ -47,8 +47,8 @@
 ## itemsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|item_name|string|null: false|
-|item_content|text|null: false|
+|name|string|null: false|
+|content|text|null: false|
 |categories|references|null: false, foreign_key: true|
 |size|references|foreign_key: true|
 |brand|references|foreign_key: true|
