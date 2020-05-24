@@ -5,19 +5,19 @@
 |Column|Type|Options|
 |------|----|-------|
 |nickname|string|null: false
-|email|string|null: false, unique: true||
-|password|string|null: false, unique: true||
+|email|string|null: false, unique: true|
+|password|string|null: false, unique: true|
 |last_name|string|null: false|
 |first_name|string|null: false|
 |last_name_fri|string|null: false|
 |first_name_fri|string|null: false|
 ### Association
-- has_many:items
-- has_many:messages
-- has_many:rates
-- has_many:cards
-- has_many:shopping_address
-- has_many:Purchase_historys
+- has_many:items, dependent: :destroy
+- has_many:messages, dependent: :destroy
+- has_many:rates, dependent: :destroy
+- has_many:cards, dependent: :destroy
+- has_many:shopping_address, dependent: :destroy
+- has_many:Purchase_historys, dependent: :destroy
 
 ## cardsテーブル
 |Column|Type|Options|
@@ -87,7 +87,7 @@
 ## brandsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|brand|string|
+|brand_name|string|
 ### Association
 - belongs_to: items
 
