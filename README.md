@@ -26,7 +26,7 @@
 |limit_month|integer|null: false|
 |limit_year|string|null: false|
 |security|string|null: false|
-|user_id|string|foreign_key: true|
+|user|references|foreign_key: true|
 ### Association
 - belongs_to :user
 
