@@ -30,7 +30,7 @@
 ### Association
 - belongs_to :users
 
-## shopping-addressテーブル
+## shopping_addressテーブル
 |Column|Type|Options|
 |------|----|-------|
 |address_name|string|null: false|
@@ -119,7 +119,7 @@
 ### Association
 - belongs_to: items
 
-## Purchase historysテーブル
+## Purchase_historysテーブル
 |Column|Type|Options|
 |------|----|-------|
 |message|text|null: false|
