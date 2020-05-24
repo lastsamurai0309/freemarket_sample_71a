@@ -126,8 +126,8 @@
 |user_id|foreign_key: true|
 |item_id|foreign_key: true|
 ### Association
-- belongs_to :users
-- belongs_to :items
+- belongs_to :user
+- belongs_to :item
 
 ## messagesテーブル
 |Column|Type|Options|
