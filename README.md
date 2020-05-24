@@ -26,9 +26,9 @@
 |limit_month|integer|null: false|
 |limit_year|string|null: false|
 |security|string|null: false|
-|user_id|foreign_key: true|
+|user_id|string|foreign_key: true|
 ### Association
-- belongs_to :users
+- belongs_to :user
 
 ## shopping_addressテーブル
 |Column|Type|Options|
@@ -49,7 +49,7 @@
 |------|----|-------|
 |item_name|string|null: false|
 |item_content|text|null: false|
-|categorys_id|fnull: false, oreign_key: true|
+|categories_id|null: false, foreign_key: true|
 |size_id|foreign_key: true|
 |brand_id|foreign_key: true|
 |condition_id|null: false, foreign_key: true|
@@ -57,17 +57,17 @@
 |area_id|null: false, foreign_key: true|
 |shipping_day_id|null: false, foreign_key: true|
 |price|integer|null: false|
-|user_id|null: false, foreign_key: true|
+|user_id|string|null: false, foreign_key: true|
 ### Association
 - has_many:: images
 - has_many:: comments
-- belongs to: users
-- belongs to: categorys
-- belongs to: brand
-- belongs to: size
-- belongs to: condition
-- belongs to: fee
-- belongs to: sipping_day
+- belongs_to: users
+- belongs_to: categorys
+- belongs_to: brand
+- belongs_to: size
+- belongs_to: condition
+- belongs_to: fee
+- belongs_to: sipping_day
 
 ## photosテーブル
 |Column|Type|Options|
@@ -80,7 +80,7 @@
 ## categoriesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|categories|string|
+|category_name|string|
 ### Association
 - belongs_to: items
 
