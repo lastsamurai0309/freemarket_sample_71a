@@ -110,7 +110,7 @@
 |------|----|-------|
 |sipping_day|string|
 ### Association
-- belongs_to: items
+- belongs_to: item
 
 ## feesテーブル
 |Column|Type|Options|
