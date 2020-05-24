@@ -117,7 +117,7 @@
 |------|----|-------|
 |fee|string|
 ### Association
-- belongs_to: items
+- belongs_to: item
 
 ## Purchase_historysテーブル
 |Column|Type|Options|
