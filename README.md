@@ -89,7 +89,7 @@
 ## brandsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|brand_name|string|
+|name|string|
 ### Association
 - belongs_to: items
 - has_ancestry
