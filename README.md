@@ -41,6 +41,7 @@
 |address|string|null: false|
 |billding|string|
 |phone_number|string|null: false|
+|user|references|foreign_key: true|
 ### Association
 - belongs_to :user
 
