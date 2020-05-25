@@ -81,9 +81,10 @@
 ## categoriesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|category_name|string|
+|name|string|
 ### Association
 - belongs_to: items
+- has_ancestry
 
 ## brandsテーブル
 |Column|Type|Options|
@@ -91,6 +92,7 @@
 |brand_name|string|
 ### Association
 - belongs_to: items
+- has_ancestry
 
 ## sizeテーブル
 |Column|Type|Options|
@@ -98,6 +100,7 @@
 |size|string|
 ### Association
 - belongs_to: items
+- has_ancestry
 
 ## areasテーブル
 |Column|Type|Options|
@@ -105,6 +108,7 @@
 |area|string|
 ### Association
 - belongs_to: items
+- has_ancestry
 
 ## sipping_daysテーブル
 |Column|Type|Options|
@@ -112,6 +116,7 @@
 |sipping_day|string|
 ### Association
 - belongs_to: item
+- has_ancestry
 
 ## feesテーブル
 |Column|Type|Options|
@@ -124,8 +129,8 @@
 |Column|Type|Options|
 |------|----|-------|
 |message|text|null: false|
-|user_id|foreign_key: true|
-|item_id|foreign_key: true|
+|user|references|foreign_key: true|
+|item|references|foreign_key: true|
 ### Association
 - belongs_to :user
 - belongs_to :item
@@ -134,8 +139,8 @@
 |Column|Type|Options|
 |------|----|-------|
 |message|text|null: false|
-|user_id|integer|null: false, foreign_key: true|
-|item_id|integer|null: false, foreign_key: true|
+|user|references|null: false, foreign_key: true|
+|item|references|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
 - belongs_to :item
