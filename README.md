@@ -13,11 +13,11 @@
 |first_name_fri|string|null: false|
 ### Association
 - has_many:items, dependent: :destroy
-- has_many:messages, dependent: :destroy
+- has_many:messages, dependent:destroy
 - has_many:rates, dependent: :destroy
 - has_many:cards, dependent: :destroy
-- has_many:shopping_address, dependent: :destroy
-- has_many:Purchase_historys, dependent: :destroy
+- has_many:shopping_address, dependent:destroy
+- has_many:Purchase_historys, dependent:destroy
 
 ## cardsテーブル
 |Column|Type|Options|
@@ -83,7 +83,7 @@
 |------|----|-------|
 |name|string|
 ### Association
-- belongs_to: items
+- belongs_to: item
 - has_ancestry
 
 ## brandsテーブル
@@ -91,7 +91,7 @@
 |------|----|-------|
 |name|string|
 ### Association
-- belongs_to: items
+- belongs_to: item
 - has_ancestry
 
 ## sizeテーブル
@@ -99,7 +99,7 @@
 |------|----|-------|
 |size|string|
 ### Association
-- belongs_to: items
+- belongs_to: item
 - has_ancestry
 
 ## areasテーブル
@@ -107,7 +107,7 @@
 |------|----|-------|
 |area|string|
 ### Association
-- belongs_to: items
+- belongs_to: item
 - has_ancestry
 
 ## sipping_daysテーブル
