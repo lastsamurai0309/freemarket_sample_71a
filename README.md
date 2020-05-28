@@ -82,6 +82,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |name|string|
+|item|references|null: false, foreign_key: true|
 ### Association
 - belongs_to: item
 - has_ancestry
@@ -90,6 +91,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |name|string|
+|item|references|null: false, foreign_key: true|
 ### Association
 - belongs_to: item
 - has_ancestry
@@ -98,6 +100,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |size|string|
+|item|references|null: false, foreign_key: true|
 ### Association
 - belongs_to: item
 - has_ancestry
@@ -106,6 +109,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |area|string|
+|item|references|null: false, foreign_key: true|
 ### Association
 - belongs_to: item
 - has_ancestry
@@ -114,6 +118,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |sipping_day|string|
+|item|references|null: false, foreign_key: true|
 ### Association
 - belongs_to: item
 - has_ancestry
@@ -122,6 +127,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |fee|string|
+|item|references|null: false, foreign_key: true|
 ### Association
 - belongs_to: item
 
@@ -149,5 +155,6 @@
 |Column|Type|Options|
 |------|----|-------|
 |rate|string|
+|item|references|null: false, foreign_key: true|
 ### Association
 - belongs_to: user
