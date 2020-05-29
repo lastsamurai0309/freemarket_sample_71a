@@ -57,7 +57,7 @@
 |fee|references|null: false, foreign_key: true|
 |area|references|null: false, foreign_key: true|
 |shipping_day|references|null: false, foreign_key: true|
-|price|references|null: false|
+|price|integer|null: false|
 |user|references|null: false, foreign_key: true|
 ### Association
 - has_many: images
