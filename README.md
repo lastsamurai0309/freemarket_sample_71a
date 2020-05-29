@@ -93,8 +93,9 @@
 |------|----|-------|
 |name|string|
 |item|references|null: false, foreign_key: true|
+|ancestry|string|null: false|
 ### Association
-- belongs_to: item
+- has_many :items
 - has_ancestry
 
 ## sizeテーブル
@@ -102,6 +103,7 @@
 |------|----|-------|
 |size|string|
 |item|references|null: false, foreign_key: true|
+|ancestry|string|null: false|
 ### Association
 - belongs_to: item
 - has_ancestry
@@ -111,6 +113,7 @@
 |------|----|-------|
 |area|string|
 |item|references|null: false, foreign_key: true|
+|ancestry|string|null: false|
 ### Association
 - belongs_to: item
 - has_ancestry
@@ -120,6 +123,7 @@
 |------|----|-------|
 |sipping_day|string|
 |item|references|null: false, foreign_key: true|
+|ancestry|string|null: false|
 ### Association
 - belongs_to: item
 - has_ancestry
