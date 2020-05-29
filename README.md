@@ -123,10 +123,8 @@
 |------|----|-------|
 |sipping_day|string|
 |item|references|null: false, foreign_key: true|
-|ancestry|string|null: false|
 ### Association
 - belongs_to: item
-- has_ancestry
 
 ## feesテーブル
 |Column|Type|Options|
