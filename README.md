@@ -83,8 +83,9 @@
 |------|----|-------|
 |name|string|
 |item|references|null: false, foreign_key: true|
+|ancestry|string|null: false|
 ### Association
-- belongs_to: item
+- has_many :items
 - has_ancestry
 
 ## brandsテーブル
