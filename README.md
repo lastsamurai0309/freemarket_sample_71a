@@ -113,10 +113,8 @@
 |------|----|-------|
 |area|string|
 |item|references|null: false, foreign_key: true|
-|ancestry|string|null: false|
 ### Association
 - belongs_to: item
-- has_ancestry
 
 ## sipping_daysテーブル
 |Column|Type|Options|
