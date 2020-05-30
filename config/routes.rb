@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  get 'homes/index'
+  # get 'homes/index'
 
   root "homes#index"
 
-  root 'users#index'
+  # root 'users#index'
 end
 
