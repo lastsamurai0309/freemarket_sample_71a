@@ -63,3 +63,4 @@ gem 'sprockets', '3.7.2'
 
 gem 'ancestry'
 gem 'haml-rails'
+gem 'font-awesome-sass'
