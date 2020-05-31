@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
-  # get 'homes/index'
+  get 'card/new'
 
-  root "homes#index"
+  get 'card/show'
 
-  # root 'users#index'
+  root to: 'users#index'
+  get 'users/index'
+  devise_for :users, controllers: {
+    sessions: 'users/sessions'
+  }
 end
 
