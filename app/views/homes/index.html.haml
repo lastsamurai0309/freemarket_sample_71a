@@ -3,7 +3,7 @@
     .index__camera
       %span.index__camera__text
         = "出品する"
-      -# = image_tag("icon_camera.png", alt: "サンプル画像", id: "pic1", class: "camera-btn")
+      = image_tag("icon_camera.png", alt: "サンプル画像", id: "pic1", class: "camera-btn")
       
   = render "header"
   
@@ -17,8 +17,8 @@
           %br
           フリマアプリです
         .index__main__visual__content__btn
-          -# = link_to image_tag("Download_on_the_App_Store_Badge_US-UK_blk_092917.png", class: "APPstore-btn", alt: "サンプル画像"), root_path
-          -# = link_to image_tag("google-play-badge.png", class: "Googleplay-btn", alt: "サンプル画像"), root_path
+          = link_to image_tag("Download_on_the_App_Store_Badge_US-UK_blk_092917.png", class: "APPstore-btn", alt: "サンプル画像"), root_path
+          = link_to image_tag("google-play-badge.png", class: "Googleplay-btn", alt: "サンプル画像"), root_path
     .index__main__topIntroduction
       .index__main__topIntroduction__subtitle
         .index__main__topIntroduction__subtitle__bottom
@@ -27,7 +27,7 @@
         .index__main__topIntroduction__lists__pict
           .index__main__topIntroduction__lists__pict__number
             1
-          -# = image_tag("pict-reason-01.jpg", alt: "Rails icon", id: "pic1", class: "topIntroduction-leftimage")
+          = image_tag("pict-reason-01.jpg", alt: "Rails icon", id: "pic1", class: "topIntroduction-leftimage")
           .index__main__topIntroduction__lists__texts
             .index__main__topIntroduction__lists__texts__colortext
               ３分 
@@ -38,7 +38,7 @@
         .index__main__topIntroduction__lists__pict
           .index__main__topIntroduction__lists__pict__number
             2
-          -# = image_tag("pict-reason-02.jpg", alt: "Rails icon", id: "pic1", class: "topIntroduction-centerimage")
+          = image_tag("pict-reason-02.jpg", alt: "Rails icon", id: "pic1", class: "topIntroduction-centerimage")
           .index__main__topIntroduction__lists__texts
             .index__main__topIntroduction__lists__texts__colortext
               シンプル 
@@ -49,7 +49,7 @@
         .index__main__topIntroduction__lists__pict
           .index__main__topIntroduction__lists__pict__number
             3
-          -# = image_tag("pict-reason-03.jpg", alt: "Rails icon", id: "pic1", class: "topIntroduction-rightimage")
+          = image_tag("pict-reason-03.jpg", alt: "Rails icon", id: "pic1", class: "topIntroduction-rightimage")
           .index__main__topIntroduction__lists__texts
             .index__main__topIntroduction__lists__texts__text
               手数料
@@ -68,8 +68,8 @@
           %br
           ほしかったあの商品に出会えるかもしれません。
         .index__main__topMiddleDl__inner__btn
-          -# = link_to image_tag("Download_on_the_App_Store_Badge_US-UK_blk_092917.png", class: "APPstore-btn", alt: "サンプル画像"), root_path
-          -# = link_to image_tag("google-play-badge.png", class: "Googleplay-btn", alt: "サンプル画像"), root_path
+          = link_to image_tag("Download_on_the_App_Store_Badge_US-UK_blk_092917.png", class: "APPstore-btn", alt: "サンプル画像"), root_path
+          = link_to image_tag("google-play-badge.png", class: "Googleplay-btn", alt: "サンプル画像"), root_path
     .index__main__topIntroduction
       .index__main__topIntroduction__subtitle
         .index__main__topIntroduction__subtitle__bottom
@@ -77,21 +77,21 @@
       .index__main__topIntroduction__items
         .index__main__topIntroduction__items__item
           %figure.item__image
-            -# = image_tag "icon-01.png", alt: "Rails icon", id: "pic1", class: "item-image"
+            = image_tag "icon-01.png", alt: "Rails icon", id: "pic1", class: "item-image"
           .index__main__topIntroduction__items__item__subtitle
             簡単に売り買いできる
           .index__main__topIntroduction__items__item__detail
             スマホひとつで、いつでもどこでも簡単に出品・購入が可能！
         .index__main__topIntroduction__items__item
           %figure.item__image
-            -# = image_tag "icon-03.png", alt: "Rails icon", id: "pic1", class: "item-image"
+            = image_tag "icon-03.png", alt: "Rails icon", id: "pic1", class: "item-image"
           .index__main__topIntroduction__items__item__subtitle
             簡単に売り買いできる
           .index__main__itopIntroduction__items__item__detail
             スマホひとつで、いつでもどこでも簡単に出品・購入が可能！
         .index__main__topIntroduction__items__item
           %figure.item__image
-            -# = image_tag "icon-04.png", alt: "Rails icon", id: "pic1", class: "item-image"
+            = image_tag "icon-04.png", alt: "Rails icon", id: "pic1", class: "item-image"
           .index__main__topIntroduction__items__item__subtitle
             簡単に売り買いできる
           .index__main__topIntroduction__items__item__detail
@@ -160,7 +160,7 @@
           .index__main__pickupContainer__lists__list__link
             = link_to "/", class:"product-link" do
               .product-image-box
-                -# = image_tag src="product3.png", class: "product-image"
+                = image_tag src="product3.png", class: "product-image"
             .product-link__description
               .product-name
                 product3
@@ -209,6 +209,6 @@
       .index__appBanner__inner__text
         今すぐ無料ダウンロード！
       .index__appBanner__inner__icon
-        -# = link_to image_tag("Download_on_the_App_Store_Badge_US-UK_blk_092917.png", class: "APPstore-btn", alt: "サンプル画像"), root_path
-        -# = link_to image_tag("google-play-badge.png", class: "Googleplay-btn", alt: "サンプル画像"), root_path
+        = link_to image_tag("Download_on_the_App_Store_Badge_US-UK_blk_092917.png", class: "APPstore-btn", alt: "サンプル画像"), root_path
+        = link_to image_tag("google-play-badge.png", class: "Googleplay-btn", alt: "サンプル画像"), root_path
   = render "footer"
