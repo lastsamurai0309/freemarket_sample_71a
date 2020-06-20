@@ -11,6 +11,10 @@
 |first_name|string|null: false|
 |last_name_fri|string|null: false|
 |first_name_fri|string|null: false|
+|birth_year|integer|null: false|
+|birth_mounth|integer|null: false|
+|birth_day|integer|null: false|
+
 ### Association
 - has_many:items, dependent: :destroy
 - has_many:messages, dependent:destroy
