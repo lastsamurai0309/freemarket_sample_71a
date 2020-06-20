@@ -1,0 +1,190 @@
+.body{
+  padding: 0;
+  margin: 0;
+}
+
+.signup{
+  min-height: 100%;
+  background-color: #f5f5f5;
+  a{
+    text-decoration: none;
+    color: skyblue;
+  }
+  &__header{
+    text-align: center;
+    padding: 40px;
+    .header-icon{
+      width: 120px;
+      margin: 0 auto;
+      a{
+        display: block;
+        img{
+          width: 100%;
+          vertical-align: bottom;
+        }
+      }
+    }
+  }
+  &__section {
+    width: 100%;
+    .inner {
+      margin: 0 auto;
+      width: 700px;
+      background-color: #fff;
+      h2{
+        font-size: 22px;
+        padding: 32px 16px;
+        text-align: center;
+        font-weight: bold;
+      }
+      .deviseform {
+        border-top: 1px solid #f5f5f5;
+        padding: 64px;
+        .new_user {
+          max-width: 320px;
+          margin: 0 auto;
+          .deviseform__field-top {
+            margin: 0;
+          
+            label{
+              font-weight: 600;
+            }
+            .require{
+              margin: 0 0 0 8px;
+              padding: 2px 4px;
+              border-radius: 2px;
+              color: #fff;
+              font-size: 12px;
+              vertical-align: top;
+              background-color: #3CCACE;
+            }
+            .input-area{
+              height: 27px;
+              padding: 10px 16px 8px;
+              border-radius: 4px;
+              border: 1px solid #ccc;
+              background: #fff;
+              line-height: 1.5;
+              font-size: 16px;
+              width: 90%;
+              margin-top: 5px;
+            }     
+          }
+          .deviseform__field {
+            margin: 40px 0 0;
+          
+            .field {
+              font-size: 14px;
+              margin-top: 24px;
+              .check-field{
+                margin-top: 10px;
+                p{
+                  color: #777;
+                }
+                .check-box{
+                  margin-top: 15px;
+                  label{
+                    cursor: pointer;
+                    #check{
+                      transform: scale(1.5);
+                      margin-right: 5px;
+                      cursor: pointer;
+                    }
+                    .pass{
+                      font-weight: normal;
+                    }
+                  }
+                }
+              }
+            }
+            
+            .text{
+              margin-top: 8px;
+            }
+            label{
+              font-weight: 600;
+            }
+            .require{
+              margin: 0 0 0 8px;
+              padding: 2px 4px;
+              border-radius: 2px;
+              color: #fff;
+              font-size: 12px;
+              vertical-align: top;
+              background-color: #3CCACE;
+            }
+            .input-area{
+              height: 27px;
+              padding: 10px 16px 8px;
+              border-radius: 4px;
+              border: 1px solid #ccc;
+              background: #fff;
+              line-height: 1.5;
+              font-size: 16px;
+              width: 90%;
+              margin-top: 5px;
+            }     
+          }         
+          
+          .devise__actions {
+            margin: 10px 0;
+            text-align: center;
+            .devisebtn {
+              line-height: 48px;
+              width: 100%;
+              background: #3CCACE;
+              border: 1px solid #3CCACE;
+              color: #fff;
+              margin: 40px 0 0;
+            }
+          }
+          .text{
+            margin: 20px 0;
+            text-align: right;
+            font-size: 14px;
+          }
+          .privacy{
+            font-size: 11px;
+            background-color: #f5f5f5;
+            padding: 8px 16px;
+          }
+        }
+      }
+    }
+  }
+  &__footer {
+    .inner {
+      width: 456px;
+      height: 140px;
+      margin: 0 auto;
+      padding: 40px 0;
+      text-align: center;
+      ul {
+        position: relative;
+        left: 6%;
+        li {
+          float: left;
+          font-size: 12px;
+          padding: 0 10px;
+          a {
+            color: #333;
+            text-decoration: none;
+            display: inline-block;
+          }
+        }
+      }
+      .footer-icon{
+        max-width: 160px;
+        width: 100%;
+        margin: 0 auto;
+        .hurima-icon{
+          width: 100%;
+          vertical-align: bottom;
+        }
+      }
+      p{
+        font-size: 10px;
+      }
+    }
+  }
+}
