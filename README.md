@@ -32,7 +32,7 @@
 ### Association
 - belongs_to :user
 
-## shopping_addressテーブル
+## addressテーブル
 |Column|Type|Options|
 |------|----|-------|
 |address_name|string|null: false|
