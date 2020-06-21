@@ -1,5 +1,8 @@
 
-
+@mixin cotent_box {
+  padding: 40px;
+  width: 700px;
+}
 .header{
   height: 128px;
   width:100%;
@@ -44,8 +47,7 @@
           }
         }
         .item-name{
-          padding: 40px;
-          width: 700px;
+          @include cotent_box();
           height: 416px;
           border-bottom:  1px solid #F5F5F5;
 
@@ -72,8 +74,7 @@
           }
         }
         .item-category{
-          padding: 40px;
-          width: 700px;
+          @include cotent_box();
           height: 444px;
           border-bottom:  1px solid #F5F5F5;
 
@@ -101,8 +102,7 @@
 
         }
         .item-shipping{
-          padding: 40px;
-          width: 700px;
+          @include cotent_box();
           height: 444px;
           border-bottom:  1px solid #F5F5F5;
           &__body{
@@ -129,8 +129,7 @@
         }
 
         .item-price{
-          padding: 40px;
-          width: 700px;
+          @include cotent_box();
           height: 270px;
           border-bottom:  1px solid #F5F5F5;
           &__body{
@@ -160,8 +159,7 @@
         }
         
         .selling-rules{
-          padding: 40px;
-          width: 700px;
+          @include cotent_box();
           height: 150px;
           font-size: 12px;
         }
@@ -177,11 +175,6 @@
   width: 100%;
   background-color: #F5F5F5;
 
-}
-
-.required_tag{
-  background-color: red;
-  color: white;
 }
 
 .heading{
@@ -205,7 +198,7 @@
     width: 440px;
     margin: 0px auto 32px;
     &__btn-exhibition{
-      background-color: #ea352d;
+      background-color: #3CCACE;
       color: #fff;
       font-size: 17px;
       min-height: 48px;
@@ -243,8 +236,8 @@
 }
 
 .upload__area{
-  // height: 50px;
-  // width: 400px;
+  height: 150px;
+  width: 620px;
   background-color: silver;
   display: flex;
   flex-wrap: wrap;
@@ -261,7 +254,6 @@
     flex-wrap: wrap;
     -webkit-box-pack: center;
     justify-content: center;
-    position: relative;
     border-width: 1px;
     border-style: dashed;
     border-color: rgb(204, 204, 204);
@@ -286,6 +278,8 @@
   font-size: 12px;
   padding: 0 4px;
   margin-left: 8px;
+  background-color: #3CCACE;
+  color: white;
 }
 
 .discription{
@@ -375,4 +369,21 @@ ul{
 .footer__logo{
   height: 30px;
   width: 390px;
+}
+
+.camera-logo{
+  fill: rgb(34, 34, 34);
+  height: 24px;
+  width: 24px;
+}
+
+.drop-text{
+  font-size: 12px;
+  line-height: 1.4em;
+  text-align: center;
+  width: 100%;
+}
+
+.font_test{
+  color: #0095ee;
 }

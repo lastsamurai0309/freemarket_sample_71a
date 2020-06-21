@@ -15,10 +15,13 @@
               .upload__area
                 .upload__area__inside
                   .cameralogo
-                  %br{class: "drop"} 
-                  ドラッグアンドドロップ
-                  %br{class: "drop"}
-                  またはクリックしてファイルをアップロード
+                    =link_to "/" do
+                      = image_tag src="icon_camera.png", class: "camera-logo"
+                  .drop-text
+                    %br{class: "drop"} 
+                    ドラッグアンドドロップ
+                    %br{class: "drop"}
+                    またはクリックしてファイルをアップロード
               
         .item-name
           .item-name__body
@@ -28,7 +31,7 @@
             %span{class: "required_tag"}
               必須
             .item-name__body__titlearea
-              %input{type: "text", class: "item_form", placeholder: "　40文字まで"}
+              %input{type: "text", class: "item_form", placeholder: " 40文字まで"}
             .item-name__body__discription
               %label{for: "", class: "heading"}
                 商品の説明
@@ -123,6 +126,21 @@
             .item-selling__body__btn-back
               もどる
         .selling-rules
-          禁止されている行為および出品物を必ずご確認ください。偽ブランド品や盗品物などの販売は犯罪であり、法律により処罰される可能性があります。 また、出品をもちまして加盟店規約に同意したことになります。
+          禁止されている
+          %span{class: "font_test"} 
+            行為
+          および
+          %span{class: "font_test"} 
+            出品物
+          を必ずご確認ください。
+          %span{class: "font_test"} 
+            偽ブランド品
+          や
+          %span{class: "font_test"} 
+            盗品物
+          などの販売は犯罪であり、法律により処罰される可能性があります。 また、出品をもちまして
+          %span{class: "font_test"} 
+            加盟店規約
+          に同意したことになります。
           .selling-rules__body
             .selling-rules__body__discription
