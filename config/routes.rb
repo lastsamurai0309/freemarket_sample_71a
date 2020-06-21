@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root "sell_item#index"
+  root "homes#index"
 
 end
 
