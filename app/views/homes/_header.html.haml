@@ -13,14 +13,14 @@
       %ul.listsLeft
         %li.item-category
           = link_to "#", class: "index__header__inner__nav__listsLeft__left-btn" do
-            = "カテゴリー"
+            = "カテゴリー　　"
         %li.item-bland 
           = link_to "#", class: "index__header__inner__nav__listsLeft__left-btn" do
             = "ブランド" 
       %ul.listsRight
         %li.item-login
-          = link_to "#", class: "index__header__inner__nav__listsRight__left-btn" do
-            = "ログイン"
+          = link_to user_session_path, class: "index__header__inner__nav__listsRight__left-btn" do
+            ログイン
         %li.item-signup
-          = link_to "#", class: "index__header__inner__nav__listsRight__left-btn" do
-            = "新規会員登録"
+          = link_to new_user_registration_path , class: "index__header__inner__nav__listsRight__left-btn" do
+            新規会員登録
