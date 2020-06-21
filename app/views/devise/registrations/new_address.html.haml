@@ -1,0 +1,70 @@
+.signup
+  .signup__header
+    .header-icon
+      = link_to root_path do
+        = image_tag "logo.png"
+  .signup__section
+    .inner
+      %h2 住所情報登録
+      .deviseform
+        .new_user
+          = form_for @address do |f|
+            = render "devise/shared/error_messages", resource: @address
+            .deviseform__field-top
+              = f.label :送付先氏名
+              %span.require 必須
+              %br/
+              = f.text_field :address_name, autocomplete: "address_name",class: "input-area", placeholder: "例）山田　太郎"
+            .deviseform__field
+              = f.label :送付先氏名　フリガナ
+              %span.require 必須
+              %br/
+              = f.text_field :address_furi, autocomplete: "address_furi",class: "input-area", placeholder: "例）ヤマダ　タロウ"
+            .deviseform__field
+              = f.label :郵便番号
+              %span.require 必須
+              %br/
+              = f.text_field :post_num, autocomplete: "post_num",class: "input-area", placeholder: "例）１２３４５６７"
+            .deviseform__field
+              = f.label :都道府県
+              %span.require 必須
+              %br/
+              = f.text_field :prefecture, autocomplete: "prefecture",class: "input-area", placeholder: "例）東京都"
+            .deviseform__field
+              = f.label :市区町村
+              %span.require 必須
+              %br/
+              = f.text_field :city, autocomplete: "city",class: "input-area", placeholder: "例）渋谷区"
+            .deviseform__field
+              = f.label :住所
+              %span.require 必須
+              %br/
+              = f.text_field :address, autocomplete: "address",class: "input-area", placeholder: "例）渋谷XXXXーXXXX"
+            .deviseform__field
+              = f.label :マンション名
+              %br/
+              = f.text_field :billding, autocomplete: "billding",class: "input-area", placeholder: "例）メゾンフリマ"
+            .deviseform__field
+              = f.label :電話番号
+              %span.require 必須
+              %br/
+              = f.text_field :phone_number, autocomplete: "phone_number",class: "input-area", placeholder: "例）０３１２３４５６７８"
+            .devise__actions
+              = f.submit "登録", class: "devisebtn"
+  .signup__footer
+    .inner
+      %ul
+        %li
+          = link_to "#" do
+            プライバシーポリシー
+        %li
+          = link_to "#" do
+            FURIMA利用規約
+        %li
+          = link_to "#" do
+            特定商取引に関する表記
+      .footer-icon
+        = link_to "#" do
+          = image_tag "logo.png", class: "hurima-icon"
+        %p
+          © Furima, Inc.
