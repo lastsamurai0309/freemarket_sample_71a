@@ -1,24 +1,5 @@
 .signup
-  .signup__header
-    .header-icon
-      = link_to root_path do
-        = image_tag "logo.png"
+  = render "devise/header"
   %h2 登録が完了しました
   = link_to "トップへ戻る", root_path
-  .signup__footer
-    .inner
-      %ul
-        %li
-          = link_to "#" do
-            プライバシーポリシー
-        %li
-          = link_to "#" do
-            FURIMA利用規約
-        %li
-          = link_to "#" do
-            特定商取引に関する表記
-      .footer-icon
-        = link_to "#" do
-          = image_tag "logo.png", class: "hurima-icon"
-        %p
-          © Furima, Inc.
+  = render "devise/footer"
