@@ -1,0 +1,52 @@
+.whole
+  
+  = render "purchase.header"
+
+  .whole__contents
+    .whole__contents__message
+      %h1 購入内容の確認
+    .whole__contents__items
+      .whole__contents__items__detail
+        .whole__contents__items__detail--image
+          = image_tag "icon-01.png", size: "100x100"
+        .whole__contents__items__detail--description
+          %p.whole__contents__items__detail--description__name
+            ひらめき大辞典
+          %p.whole__contents__items__detail--description__price
+            %span.item-price
+              ¥920
+            %span.item-shippi-fee 税込 (送料込み) 
+    .whole__contents__buy-price
+      %h2 支払い金額
+      .whole__contents__buy-price__pay-box
+        %span.pay-price
+        ¥920
+    .whole__contents__credit
+      %h3 支払い方法   
+      .whole__contents__credit__card-box
+        %p クレジットカード
+        %p.credit_num
+          ************1234
+        %p.expiration-date
+          有効期限 06 / 20
+    .whole__contents__address
+      %h4 配送先
+      .whole__contents__address__add-box
+        %p.post_num
+          〒000-0000
+        %p.prefecture
+          東京都
+          %span.city
+            渋谷区
+          %span.address
+            神南１丁目１８−２ 
+          %span.billding
+            フレーム神南坂 4階
+        %p.address_name
+          山田太郎     
+    .whole__contents__form
+      .submit-btn
+        購入する    
+
+  = render "purchase.footer"
+
