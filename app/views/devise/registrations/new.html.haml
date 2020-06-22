@@ -1,0 +1,97 @@
+.signup
+  .signup__header
+    .header-icon
+      = link_to root_path do
+        = image_tag "logo.png"
+  .signup__main
+    .section
+      %h2 会員情報入力
+      = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+        = render "devise/shared/error_messages", resource: resource
+        .content
+          .field
+            = f.label :ニックネーム
+            %span.require 必須
+            %br/
+            = f.text_field :nickname, autofocus: true, class: "input-area", placeholder: "例）フリマ太郎"
+          .field
+            = f.label :メールアドレス
+            %span.require 必須
+            %br/
+            = f.email_field :email, autocomplete: "email",class: "input-area", placeholder: "PC・携帯どちらでも可"
+          .field
+            = f.label :パスワード
+            %span.require 必須
+            %br/
+            = f.password_field :password, autocomplete: "new-password",class: "input-area", placeholder: "6文字以上の半角英数字"
+            .check-field
+              %p ※ 英字と数字の両方を含めて設定してください
+              .check-box
+                %label
+                  =check_box_tag :check
+                  =label_tag :check, type="パスワードを表示する", class: "pass"
+          .field
+            = f.label :確認用パスワード
+            %span.require 必須
+            %br/
+            .field-input
+              = f.password_field :password_confirmation, autocomplete: "off", class: "input-area"
+
+          .field
+            %h3
+              本人確認
+            %p.ident
+              安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
+          .field
+            = f.label :お名前（全角）
+            %span.require 必須
+            %br/
+            .name
+              = f.text_field :first_name, class: "input-half left", placeholder: "例）山田"
+              %br/
+              = f.text_field :last_name, class: "input-half", placeholder: "例）太郎"
+          .field
+            = f.label :お名前（カナ） 
+            %span.require 必須
+            %br/
+            .name
+              = f.text_field :first_name_fri, class: "input-half left", placeholder: "例）ヤマダ"
+              %br/
+              = f.text_field :last_name_fri, class: "input-half", placeholder: "例）タロウ"
+          .field
+            = f.label :生年月日
+            %span.require 必須
+            .birth-select
+              .birth--year
+              = f.select :birth_year, [*(1900..2018)], prompt:"--"
+              %span.birth
+                年
+              .birth--month
+              = f.select :birth_month, [*(1..12)], prompt:"--"
+              %span.birth
+                月
+              .birth--day
+              = f.select :birth_day, [*(1..31)], prompt:"--"
+              %span.birth
+                日
+          %p.ident
+            ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
+          .actions
+            = f.submit "次へ進む", class: "signup-submit"
+  .signup__footer
+    .inner
+      %ul
+        %li
+          = link_to "#" do
+            プライバシーポリシー
+        %li
+          = link_to "#" do
+            FURIMA利用規約
+        %li
+          = link_to "#" do
+            特定商取引に関する表記
+      .footer-icon
+        = link_to "#" do
+          = image_tag "logo.png", class: "hurima-icon"
+        %p
+          © Furima, Inc.

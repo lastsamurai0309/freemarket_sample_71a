@@ -55,6 +55,9 @@ group :development do
   gem 'rubocop', require: false
 end
 
+gem 'carrierwave'
+gem 'fog-aws'
+
 group :production do
   gem 'unicorn', '5.4.1'
 end
@@ -67,5 +70,5 @@ gem 'mini_racer'
 gem 'pry-rails'
 gem 'compass-rails', '3.1.0'
 gem 'sprockets', '3.7.2'
-
+gem 'devise'
 gem 'ancestry'
