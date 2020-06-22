@@ -12,6 +12,5 @@ Rails.application.routes.draw do
   root to: 'homes#index'
   # resources :purchase, only: [:index]
   # root 'users#index'
-  # root 'sell_item#index'
 end
 
