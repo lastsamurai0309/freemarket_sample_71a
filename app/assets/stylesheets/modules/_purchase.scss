@@ -11,7 +11,7 @@
   font-size: $size;
   font-weight: bold;
 }
-.whole {
+.purchase {
   height: 130vh;
   width: 100vw;
   background-color: #F5F5F5;
@@ -117,7 +117,7 @@
     }
   }
 }
-.whole-footer {
+.purchase-footer {
   @include content(600px, 300px);
   margin: 0 auto;
   &__logo {
@@ -132,6 +132,3 @@
     text-align: center;
   }
 }
-
-
-
