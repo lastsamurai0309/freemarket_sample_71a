@@ -18,9 +18,17 @@
           = link_to "#", class: "index__header__inner__nav__listsLeft__left-btn" do
             = "ブランド" 
       %ul.listsRight
-        %li.item-login
-          = link_to user_session_path, class: "index__header__inner__nav__listsRight__left-btn" do
-            ログイン
-        %li.item-signup
-          = link_to new_user_registration_path , class: "index__header__inner__nav__listsRight__left-btn" do
-            新規会員登録
+        - if user_signed_in?
+          %li.item-login
+            = link_to destroy_user_session_path, class: “index__header__inner__nav__listsRight__left-btn” do
+              ログアウト
+          %li.item-signup
+            = link_to new_user_registration_path , class: “index__header__inner__nav__listsRight__left-btn” do
+              #{current_user.nickname}のページ
+        - else
+          %li.item-login
+            = link_to user_session_path, class: “index__header__inner__nav__listsRight__left-btn” do
+              ログイン
+          %li.item-signup
+            = link_to new_user_registration_path , class: “index__header__inner__nav__listsRight__left-btn” do
+              新規会員登録
