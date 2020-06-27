@@ -110,9 +110,8 @@
       width: 600px; 
       height: 100%;
       background-color: #fff;
-      &__nav {
-        
-        ul {
+      &__nav {        
+        ul {       
           a {
             border-style: solid;
             border-color: #f5f5f5;
@@ -141,9 +140,7 @@
           font-weight: 600;
           background-color: #f5f5f5;
         }
-
       }
-
     } 
     &__user {
       width: 1500px;
@@ -223,7 +220,6 @@
           }
         }      
       }
-      
       section.mypage-contener {
         width: 800px;
         height: 310px;
@@ -435,27 +431,17 @@
               font-size: 16px;
               font-weight: bold;
               color: #333333; 
-              text-align: center;  
-                     
+              text-align: center;              
             }
-           
           }
           li.content {
             border-bottom: 1px solid #eee;
           }      
-
         }
         
       }         
     }
   }
-
-  
-
-
-
-
-  
   &__appBanner {
     background-image: url(/assets/bg-appBanner-pict.jpg);
     padding: 100px 40px;
