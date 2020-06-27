@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  # get 'mypage/index'
+
   devise_for :users, controllers: {
     registrations: 'users/registrations'
   }
@@ -9,7 +11,8 @@ Rails.application.routes.draw do
   end
   # get 'homes/index'
   # root "purchase#index"
-  root to: 'homes#index'
+  root "mypage#index"
+  # root to: 'homes#index'
   # resources :purchase, only: [:index]
   # root 'users#index'
 end
