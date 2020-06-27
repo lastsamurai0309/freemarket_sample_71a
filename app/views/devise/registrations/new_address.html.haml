@@ -1,8 +1,5 @@
 .signup
-  .signup__header
-    .header-icon
-      = link_to root_path do
-        = image_tag "logo.png"
+  = render "devise/header"
   .signup__section
     .inner
       %h2 住所情報登録
@@ -51,20 +48,4 @@
               = f.text_field :phone_number, autocomplete: "phone_number",class: "input-area", placeholder: "例）０３１２３４５６７８"
             .devise__actions
               = f.submit "登録", class: "devisebtn"
-  .signup__footer
-    .inner
-      %ul
-        %li
-          = link_to "#" do
-            プライバシーポリシー
-        %li
-          = link_to "#" do
-            FURIMA利用規約
-        %li
-          = link_to "#" do
-            特定商取引に関する表記
-      .footer-icon
-        = link_to "#" do
-          = image_tag "logo.png", class: "hurima-icon"
-        %p
-          © Furima, Inc.
+  = render "devise/footer"

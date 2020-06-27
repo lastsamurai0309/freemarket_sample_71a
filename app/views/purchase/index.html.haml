@@ -1,37 +1,37 @@
-.whole
+.purchase
   
   = render "purchase.header"
 
-  .whole__contents
-    .whole__contents__message
+  .purchase__contents
+    .purchase__contents__message
       %h1 購入内容の確認
-    .whole__contents__items
-      .whole__contents__items__detail
-        .whole__contents__items__detail--image
+    .purchase__contents__items
+      .purchase__contents__items__detail
+        .purchase__contents__items__detail--image
           = image_tag "icon-01.png", size: "100x100"
-        .whole__contents__items__detail--description
-          %p.whole__contents__items__detail--description__name
+        .purchase__contents__items__detail--description
+          %p.purchase__contents__items__detail--description__name
             ひらめき大辞典
-          %p.whole__contents__items__detail--description__price
+          %p.purchase__contents__items__detail--description__price
             %span.item-price
               ¥920
             %span.item-shippi-fee 税込 (送料込み) 
-    .whole__contents__buy-price
+    .purchase__contents__buy-price
       %h2 支払い金額
-      .whole__contents__buy-price__pay-box
+      .purchase__contents__buy-price__pay-box
         %span.pay-price
         ¥920
-    .whole__contents__credit
+    .purchase__contents__credit
       %h3 支払い方法   
-      .whole__contents__credit__card-box
+      .purchase__contents__credit__card-box
         %p クレジットカード
         %p.credit_num
           ************1234
         %p.expiration-date
           有効期限 06 / 20
-    .whole__contents__address
+    .purchase__contents__address
       %h4 配送先
-      .whole__contents__address__add-box
+      .purchase__contents__address__add-box
         %p.post_num
           〒000-0000
         %p.prefecture
@@ -44,7 +44,7 @@
             フレーム神南坂 4階
         %p.address_name
           山田太郎     
-    .whole__contents__form
+    .purchase__contents__form
       .submit-btn
         購入する    
 

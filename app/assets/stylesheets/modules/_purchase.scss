@@ -11,7 +11,7 @@
   font-size: $size;
   font-weight: bold;
 }
-.whole {
+.purchase {
   height: 130vh;
   width: 100vw;
   background-color: #F5F5F5;
@@ -109,7 +109,7 @@
       .submit-btn {
         @include content(100%, 50px);
         @include font(); 
-        background-color: #f4a460;
+        background-color: #3CCACE;
         color: #ffffff; 
         text-align: center;
         line-height: 50px;
@@ -117,7 +117,7 @@
     }
   }
 }
-.whole-footer {
+.purchase-footer {
   @include content(600px, 300px);
   margin: 0 auto;
   &__logo {
@@ -132,6 +132,3 @@
     text-align: center;
   }
 }
-
-
-
