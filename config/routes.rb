@@ -9,4 +9,3 @@ Rails.application.routes.draw do
   end
   root to: 'homes#index'
 end
-
