@@ -12,7 +12,7 @@
 |last_name_fri|string|null: false|
 |first_name_fri|string|null: false|
 |birth_year|integer|null: false|
-|birth_mounth|integer|null: false|
+|birth_month|integer|null: false|
 |birth_day|integer|null: false|
 
 ### Association
@@ -42,7 +42,7 @@
 |city|string|null: false|
 |address|string|null: false|
 |billding|string|
-|phone_number|string|null: false|
+|phone_number|string|
 |user|references|foreign_key: true|
 ### Association
 - belongs_to :user
