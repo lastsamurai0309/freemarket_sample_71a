@@ -3,16 +3,16 @@
     .index__camera
       %span.index__camera__text
         = "出品する"
-      = image_tag "/assets/icon_camera.png", alt: "サンプル画像", id: "pic1", class: "camera-btn"     
+      = image_tag("icon_camera.png", alt: "サンプル画像", id: "pic1", class: "camera-btn")
   
   = render "mypage.header"
-  
+
   .index__breadCrumbs
     FURIMA > マイページ
   .index__main-contents
     = render "mypage.nav"
     .index__main-contents__user
-      .index__main-contents__user--info
+      .indexe__main-contents__user--info
         = image_tag "mypageBackground.jpeg", size: "800x200"
         .index__main-contents__user--info__icon
           %figure
@@ -87,6 +87,7 @@
           %ul.contennts-pastTransactions
             %li.content
               %a(href="#" id="#" class="contennts")
+
   .index__appBanner
     .index__appBanner__inner
       .index__appBanner__inner__title
@@ -98,3 +99,6 @@
         = link_to image_tag("google-play-badge.png", class: "Googleplay-btn", alt: "サンプル画像"), root_path
   
   = render "mypage.footer"
+  
+ 
+  
