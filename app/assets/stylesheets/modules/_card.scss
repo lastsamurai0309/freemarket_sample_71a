@@ -148,7 +148,6 @@
       color: #333;
       
       &__head{
-        // width: 700px;
         height: 50px;
         font-size: 24px;
         background-color:white;
@@ -159,31 +158,57 @@
       }
   
       &__main{
-        // width: 700px;
-        height: 308px;
+        height: 250px;
         background-color: white;
         padding: 64px;
+        // text-align:center;
         .listname{
           width: 572px;
           // background-color: white;
           font-size: 16px;
-          text-align: center;
+          // text-align: center;
           font-weight: bold;
+          margin-left: 132px;
           
         }
-        .btn{
-          // background-color: white;
+        .addition{
           padding: 24px 0px;
+          height: 50px;
+          border-bottom: 1px solid #f5f5f5;
+          display: block;
+          text-align:center;
+          &__btn{
+            &__card{
+              line-height:1;
+              display:inline-block;
+              border-radius:5px;
+              height: 50px;
+              line-height: 50px;
+              width: 320px;
+              background-color: #3bc9ce;
+              text-decoration: none;
+              color: white;
+              text-align: center;
+              margin: 0;
+              margin-bottom: 8px;
+              border: 1px;
+            }
+          }
         }
     
         .foot{
           margin-top: 40px;
-
+          text-decoration: none;
+          display: flex;
           &__information{
-            // background-color: white;
-            font-size: 14px;
-            color: #0099E8;
-            color: #CBE1FC;
+            justify-content: flex-end;
+            &__icon{
+              margin: 0 0 0 auto;
+              text-align: right;
+              text-decoration: none;
+              font-size: 14px;
+              color: #0099E8;
+            }
           }
         }
       }

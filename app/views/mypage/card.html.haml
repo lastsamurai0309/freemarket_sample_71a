@@ -20,13 +20,17 @@
       .index__main-contents__card__main
         .listname
           クレジットカード一覧
-        .btn
-          = link_to('クレジットカードを追加する', '#')
-            = icon('fabs', 'credit-card')
+        .addition
+          .addition__btn
+          = link_to "#", class: "addition__btn__card" do
+            = icon('fas', 'credit-card')
+            クレジットカードを追加する
         .foot
           .foot__information
-            = link_to('支払い方法について', '#')
-              = icon('fabs', 'angle-right')
+          = link_to "#", class: "foot__information__icon" do
+            支払い方法について
+            = icon('fas', 'angle-right')
+
 
     -# 以下変更なし（ヘッダー部）
   .index__appBanner
@@ -40,4 +44,3 @@
         = link_to image_tag("google-play-badge.png", class: "Googleplay-btn", alt: "サンプル画像"), root_path
 
   = render "mypage.footer"
-  
