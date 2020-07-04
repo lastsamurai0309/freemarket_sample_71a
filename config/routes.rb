@@ -10,9 +10,9 @@ Rails.application.routes.draw do
   end
   # get 'homes/index'
   
-  root to: 'homes#index'  
+  # root to: 'homes#index'  
 
-  get 'mypage/index'
+  # get 'mypage/index'
   # resources :mypage
   root to: "mypage#index"
   get "mypage/card", to: 'mypage#card'
