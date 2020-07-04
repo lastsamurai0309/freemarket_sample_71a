@@ -39,11 +39,12 @@
               = f.text_field :address, autocomplete: "address",class: "input-area", placeholder: "例）渋谷XXXXーXXXX"
             .deviseform__field
               = f.label :マンション名
+              %span.require 任意
               %br/
               = f.text_field :billding, autocomplete: "billding",class: "input-area", placeholder: "例）メゾンフリマ"
             .deviseform__field
               = f.label :電話番号
-              %span.require 必須
+              %span.require 任意
               %br/
               = f.text_field :phone_number, autocomplete: "phone_number",class: "input-area", placeholder: "例）０３１２３４５６７８"
             .devise__actions
