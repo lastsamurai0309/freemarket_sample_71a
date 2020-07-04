@@ -2,7 +2,7 @@
   = render "mypage.header"
 
   .index__breadCrumbs
-    FURIMA > マイページ > ログアウト
+    FURIMA > マイページ > 支払い方法
   .index__main-contents
     = render "mypage.nav"
 
@@ -11,7 +11,8 @@
         支払い方法
       .index__main-contents__card__main
         .listname
-          クレジットカード一覧
+          .listname__text
+            クレジットカード一覧
         .addition
           .addition__btn
           = link_to "#", class: "addition__btn__card" do

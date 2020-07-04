@@ -134,12 +134,11 @@
         }
       }
     } 
-    // kokokara
+
     &__card{  
-      width: 700px;
+      width: 1500px;
       height: 100%;
-      margin-left: 20px; 
-      // cursor: auto;
+      margin-left: 40px; 
       color: #333;
       
       &__head{
@@ -153,22 +152,22 @@
       }
   
       &__main{
-        height: 250px;
+        height: 300px;
         background-color: white;
         padding: 64px;
-        // text-align:center;
         .listname{
-          width: 572px;
-          // background-color: white;
-          font-size: 16px;
-          // text-align: center;
-          font-weight: bold;
-          margin-left: 132px;
-          
+          width: 100%;
+          display: flex;
+          &__text{
+            width: 100%;
+            font-size: 16px;
+            text-align: center;
+            font-weight: bold;
+          }
         }
         .addition{
           padding: 24px 0px;
-          height: 50px;
+          height: 107px;
           border-bottom: 1px solid #f5f5f5;
           display: block;
           text-align:center;
@@ -207,34 +206,8 @@
           }
         }
       }
-    // &__btn {
-    //   width: 1500px;
-    //   height: 100%;
-    //   margin-left: 40px;
-    //   &--contener {
-    //     width: 100%;
-    //     height: 180px;
-    //     background-color: #fff;
-    //     padding: 64px;     
-    //   }
-    //     li {
-    //       width: 320px;
-    //       height: 50px;      
-    //       background-color: #3CCACE;
-    //       margin: 0 auto;  
-    //       text-align: center;
-    //       line-height: 50px;
-    //       list-style: none;  
-    //       cursor: pointer;           
-    //     }
-    //     a {
-    //       text-decoration: none;
-    //       color: #fff;
-    //     }
-            
-    // }
+    }
   }
-  // kokomade
   &__appBanner {
     background-image: url(/assets/bg-appBanner-pict.jpg);
     padding: 100px 40px;
