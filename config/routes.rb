@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   # get 'homes/index'
   # root "purchase#index"
   root to: "mypage#index"
-  get "mypage", to: 'mypage/card#index'
+  get "mypage/card", to: 'mypage#card'
   # root to: 'homes#index'
   # resources :purchase, only: [:index]
 

@@ -12,18 +12,21 @@
     FURIMA > マイページ
   .index__main-contents
     = render "mypage.nav"
+    
     -#以下変更（支払画面）
     .index__main-contents__card
-      .head
+      .index__main-contents__card__head
         支払い方法
-      .main
-        .main__listname
+      .index__main-contents__card__main
+        .listname
           クレジットカード一覧
-        .main__btn
-          クレジットカードを追加する
-        .main__foot
-          .main__foot__information
-            支払い方法について
+        .btn
+          = link_to('クレジットカードを追加する', '#')
+            = icon('fabs', 'credit-card')
+        .foot
+          .foot__information
+            = link_to('支払い方法について', '#')
+              = icon('fabs', 'angle-right')
 
     -# 以下変更なし（ヘッダー部）
   .index__appBanner
@@ -35,5 +38,6 @@
       .index__appBanner__inner__icon
         = link_to image_tag("Download_on_the_App_Store_Badge_US-UK_blk_092917.png", class: "APPstore-btn", alt: "サンプル画像"), root_path
         = link_to image_tag("google-play-badge.png", class: "Googleplay-btn", alt: "サンプル画像"), root_path
-  
+
   = render "mypage.footer"
+  
