@@ -1,0 +1,131 @@
+%nav.breadCrumbs
+  %ul
+    %li
+      = link_to "FURIMA", "#"
+    %li
+      %i.fas.fa-angle-right
+    %li
+      = link_to "レディース", "#"
+    %li
+      %i.fas.fa-angle-right
+    %li
+      = link_to "トップス", "#"
+    %li
+      %i.fas.fa-angle-right
+    %li
+      = link_to "Tシャツ/カットソー(半袖/袖なし)", "#"
+    %li
+      %i.fas.fa-angle-right
+    %li
+      %p product1
+
+.main
+  .main__showMain
+    .main__showMain__topContents
+      .main__showMain__topContents__topContent
+        .main__showMain__topContents__topContent__itemBox
+          %h2.main__showMain__topContents__topContent__itemBox__name
+            product1
+          .main__showMain__topContents__topContent__itemBox__body
+            %ul
+              %li
+                = image_tag "product1.png"
+                %ul
+                  %li
+                    = image_tag "product1.png", width:"75px", height:"75px"
+                  %li
+                    = image_tag "product1-2.png", width:"75px", height:"75px"
+                  %li
+                    = image_tag "product1-3.png", width:"75px", height:"75px"
+          .main__showMain__topContents__topContent__itemBox__price
+            %span
+              ¥10000
+            .main__showMain__topContents__topContent__itemBox__price__price-detail
+              %span
+                (税込)
+              %span
+                送料込み
+          .main__showMain__topContents__topContent__itemBox__detail
+            親譲りの無鉄砲で小供の時から損ばかりしている。 小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。 なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から首を出していたら、同級生の一人が冗談に、いくら威張っても、そこから飛び降りる事は出来まい。 弱虫やーい。と囃したからである。小使に負ぶさって帰って来た時、おやじが大きな眼をして二階ぐらいから飛び降りて腰
+          .main__showMain__topContents__topContent__itemBox__table
+            %table
+              %tbody
+                %tr
+                  %th
+                    出品者
+                  %td
+                    hoge
+                %tr
+                  %th
+                    カテゴリー
+                  %td
+                    = link_to "レディース", "#"
+                    %br
+                    = link_to "トップス", "#"
+                    %br
+                    = link_to "Tシャツ/カットソー（半袖/袖なし）", "#"
+                %tr
+                  %th
+                    ブランド
+                  %td
+
+                %tr
+                  %th
+                    商品のサイズ
+                  %td
+
+                %tr
+                  %th
+                    商品の状態
+                  %td
+                    新品/未使用
+                %tr
+                  %th
+                    配送料の負担
+                  %td
+                    送料込み（出品者負担）
+                %tr
+                  %th
+                    発送元の地域
+                  %td
+                    = link_to "青森県", "#"
+                %tr
+                  %th
+                    発送日の目安
+                  %td
+                    1-2日で発送
+          .main__showMain__topContents__topContent__itemBox__optionalArea
+            %ul
+              %li.main__showMain__topContents__topContent__itemBox__optionalArea__likeBtn
+                = link_to "#" do
+                  %i.fas.fa-star
+                  お気に入り 1
+            %ul
+              %li.main__showMain__topContents__topContent__itemBox__optionalArea__optionalBtn
+                = link_to "#" do
+                  %i.fas.fa-flag
+                  不適切な商品の通報
+        .main__showMain__topContents__topContent__commentBox
+          %li.main__showMain__topContents__topContent__commentBox__contents
+          .main__showMain__topContents__topContent__commentBox__newComment
+            %textarea
+
+            %p.main__showMain__topContents__topContent__commentBox__newComment__noticeMsg
+              相手のことを考えて丁寧なコメントを心がけましょう。
+              %br
+              不快な言葉遣いなどは利用制限や退会処分となることがあります。
+            %br
+            %button.main__showMain__topContents__topContent__commentBox__newComment__commentBtn{type:"submit"}
+              %i.fas.fa-comment
+              コメントする
+      .main__showMain__topContents__links
+        %li
+          = link_to "#" do
+            %i.fas.fa-angle-left
+            %span 前の商品
+        %li
+          = link_to "#" do
+            %span 後ろの商品
+            %i.fas.fa-angle-right
+      .main__showMain__topContents__relatedItems
+        = link_to "レディースをもっと見る", "#"
