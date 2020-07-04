@@ -1,8 +1,13 @@
 .index__main-contents__side
   .index__main-contents__side__nav
-    %ul.index__main-contents__side__nav--list
+    %div.index__main-contents__side__nav--list
       %li.mypage
-        = link_to('マイページ', "#")
+        = link_to('マイページ', "/mypage/index")
+
+        -# %li
+        -#   = link_to "#" do
+        -#     %i.fad.fa-arrow-right
+        -#     %span マイページ
       %li.notification
         = link_to('お知らせ', "#")
       %li.toDo
@@ -29,8 +34,8 @@
         = link_to('評価一覧', "#")
     %h2.nav-head
       設定
-    %ul.mypage__main-contents__side__nav--setting
-      %li.mypage
+    .index__main-contents__side__nav--setting
+      %div.mypage
         %li.profile
           = link_to('プロフィール', "#")
         %li.deliverAddress
@@ -44,6 +49,6 @@
         %li.smsComfirmation
           = link_to('電話番号の確認', "#")
         %li.logOut
-          = link_to('ログアウト', "#")
+          = link_to('ログアウト', "/mypage/logout")
 
 
