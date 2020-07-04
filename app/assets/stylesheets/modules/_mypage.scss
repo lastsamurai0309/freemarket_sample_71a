@@ -90,7 +90,7 @@
   &__breadCrumbs {
     height: 50px;
     width: 100%;
-    padding: 0 200px;
+    padding: 0 180px;
     border-top: 1px solid #eee;
     box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
     background: #fff;
@@ -110,30 +110,33 @@
       width: 600px; 
       height: 100%;
       background-color: #fff;
-      &__nav {
-        
-        ul {
-          a {
-            border-style: solid;
-            border-color: #f5f5f5;
-            background-color: #fff;
-            position: relative;
-            display: block;
-            min-height: 48px;
-            padding: 16px;
-            font-size: 14px;   
-            color: #333333;
-            text-decoration: none;
-            touch-action: manipulation;
-            cursor: pointer;
+      &__nav {     
+        div {
+          li {
+            width: 100%;
             list-style: none;
-            hover:hover {
-              color: #969696;
+            a {
+              border-style: solid;
+              border-color: #f5f5f5;
+              background-color: #fff;
+              position: relative;
+              display: block;
+              min-height: 48px;
+              padding: 16px;
+              font-size: 14px;   
+              color: #333333;
+              text-decoration: none;
+              touch-action: manipulation;
+              cursor: pointer;       
+            }  
+            a:link {
+              background-color: #eeeeee;
             }
-            sample:hover {
-              background-color: #fafafa;
+            a:hover {
+              background-color: #eeeeee;
             }
-          }    
+            
+          }  
         }
         h2 {
           padding-top: 40px;
@@ -141,12 +144,10 @@
           font-weight: 600;
           background-color: #f5f5f5;
         }
-
       }
-
     } 
     &__user {
-      width: 1500px;
+      width: 1700px;
       height: 100%;
       margin-left: 20px; 
       cursor: auto;
@@ -156,7 +157,7 @@
         height: 200px;
         font-size: 14px;
         position: relative;
-        overflow: visible;
+        overflow: hidden;
         &__icon {
           position: absolute;
           width: 100%;
@@ -226,9 +227,11 @@
       
       section.mypage-contener {
         width: 800px;
-        height: 310px;
+        height: 400px;       
         background-color: #fff;
-        cursor: auto;      
+        flex-direction: column;
+        margin-bottom: 40px;
+        cursor: auto;   
         ul.mypage-tabs {
           background: #eee;
           list-style: none;
@@ -236,11 +239,12 @@
           margin: 0;
           font-size: 0;
           width: 100%;
-          height: 74px;
+          height: 76px;
           display: flex;
           li {
             display: inline-block;
-            text-align: center;
+            text-align: center;   
+            
           }                    
             li.active {
               background:#fff;
@@ -255,8 +259,11 @@
                 line-height: 74px;
                 a {
                   text-decoration: none;
-                  color: #333;                
+                  color: #333;   
                 }
+                  a:hover {
+                    color: #717171;
+                  }             
               }
             }
             li.tab {
@@ -275,16 +282,19 @@
                   text-decoration: none;
                   color: #333;
                 }
+                a:hover {
+                  color: #717171;
+                }         
               }                       
             }  
         }
         div.mypage-contennts {
-          ul.tab-notification {
+          list-style: none;         
+          div.tab-notification {
             width: 100%;
             color: #333;
             font-size: 16px;
             display: block;
-            list-style: none;
             li.show {
               border-bottom: 1px solid #eee;
               a {
@@ -294,11 +304,13 @@
                 color: #333;
                 touch-action: manipulation;
                 cursor: pointer;
+                position: relative;
                 display: flex;
                 div.contennts-notification-image {
-                  width: 48px;
-                  height: 48px;
+                  width: 60px;
+                  height: 63px;
                   float: left;
+                  position: absolute;
                   image {
                     width: 48px;
                     height: 48px;
@@ -321,12 +333,12 @@
                     }
                     span {
                       font-size: 14px;
-                      
+                      vertical-align: top;
                     }
                 }                              
-              }           
+              }  
             }
-            ul.contennts-go {
+            div.contennts-go {
               width: 100%;
               height: 75px;
               background-color: #fafafa;
@@ -342,6 +354,9 @@
                 line-height: 56px;
                 text-align: center;
                 text-decoration: none;        
+              }
+              a:hover{
+                background-color: #fafafa;
               }
             }           
           }
@@ -375,7 +390,7 @@
           margin: 0;
           font-size: 0;
           width: 100%;
-          height: 74px;
+          height: 76px;
           display: flex;
           li {
             display: inline-block;
@@ -396,6 +411,9 @@
                   text-decoration: none;
                   color: #333;        
                 }
+                a:hover {
+                  color: #717171;
+                }         
               }
             }
             li.tab {
@@ -414,12 +432,17 @@
                   text-decoration: none;
                   color: #333;
                 }
+                a:hover {
+                  color: #717171;
+                }         
               }                       
             }  
         }
         div {
-          ul.contennts-transaction {
-            margin: 0 auto;   
+          list-style: none;   
+          div.contennts-transaction {
+            margin: 0 auto;  
+            
             figure.itemNotFind {
               width: 60px;
               height: 100px;
@@ -436,7 +459,7 @@
               font-weight: bold;
               color: #333333; 
               text-align: center;  
-                     
+              
             }
            
           }
@@ -588,3 +611,10 @@
   margin-bottom: 5px;
 }
 }
+
+
+
+
+
+
+
