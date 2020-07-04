@@ -1,0 +1,36 @@
+.index
+  = render "mypage.header"
+
+  .index__breadCrumbs
+    FURIMA > マイページ > ログアウト
+  .index__main-contents
+    = render "mypage.nav"
+
+    .index__main-contents__card
+      .index__main-contents__card__head
+        支払い方法
+      .index__main-contents__card__main
+        .listname
+          クレジットカード一覧
+        .addition
+          .addition__btn
+          = link_to "#", class: "addition__btn__card" do
+            = icon('fas', 'credit-card')
+            クレジットカードを追加する
+        .foot
+          .foot__information
+          = link_to "#", class: "foot__information__icon" do
+            支払い方法について
+            = icon('fas', 'angle-right')
+
+  .index__appBanner
+    .index__appBanner__inner
+      .index__appBanner__inner__title
+        だれでもかんたん、人生を変えるフリマアプリ
+      .index__appBanner__inner__text
+        今すぐ無料ダウンロード！
+      .index__appBanner__inner__icon
+        = link_to image_tag("Download_on_the_App_Store_Badge_US-UK_blk_092917.png", class: "APPstore-btn", alt: "サンプル画像"), root_path
+        = link_to image_tag("google-play-badge.png", class: "Googleplay-btn", alt: "サンプル画像"), root_path
+
+  = render "mypage.footer"

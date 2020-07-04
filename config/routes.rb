@@ -15,7 +15,8 @@ Rails.application.routes.draw do
   
   get 'mypage/index'
   # resources :mypage
-  root "mypage#index"
+  root to: "mypage#index"
+  get "mypage/card", to: 'mypage#card'
   get 'mypage/logout'
   root "mypage#logout"
 end
