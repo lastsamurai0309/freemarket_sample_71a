@@ -1,0 +1,22 @@
+.products__header
+  .products__header__inner
+    .products__header__inner__mainHeader
+      %h1.products__header__inner__mainHeader__icon
+        = link_to image_tag("logo.png"),"#"
+      .products__header__inner__mainHeader__searchBox
+        .products__header__inner__mainHeader__searchBox__inputform
+          %input{type: "text", placeholder: "キーワードから探す"}
+          %button{type: "submit"}
+            .products__header__inner__mainHeader__searchBox__inputform__icon
+              = image_tag "icon-search 1.png"
+    .products__header__inner__nav
+      %ul.listsLeft
+        %li.listsLeft__item.listsLeft__item--first
+          = link_to "カテゴリー", "#"
+        %li.listsLeft__item.listsLeft__item--second
+          = link_to "ブランド", "#"
+      %ul.listsRight
+        %li.listsRight__item.listsRight__item--login
+          = link_to "ログイン", "#"
+        %li.listsRight__item.lisetsRight__item--new
+          = link_to "新規会員登録", "#"

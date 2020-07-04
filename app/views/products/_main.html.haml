@@ -1,0 +1,146 @@
+.main
+  .main__content
+    .main__content__form
+      .main__content__form__inside
+        .item-image
+          .item-image__body
+            .item-image__body__title
+            %label{for: "", class: "heading"}
+              出品画像
+            %span.required_tag
+              必須
+            %p.discription
+              最大10枚までアップロードできます
+            .item-image__body__upload
+              .upload__area
+                .upload__area__inside
+                  .cameralogo
+                    =link_to "/" do
+                      = image_tag src="icon_camera.png", class: "camera-logo"
+                  .drop-text
+                    %br.drop 
+                    ドラッグアンドドロップ
+                    %br.drop
+                    またはクリックしてファイルをアップロード
+              
+        .item-name
+          .item-name__body
+            .item-name__body__title
+            %label{for: "", class: "heading"}
+              商品名
+            %span.required_tag
+              必須
+            .item-name__body__titlearea
+              %input{type: "text", class: "item_form", placeholder: " 40文字まで"}
+            .item-name__body__discription
+              %label{for: "", class: "heading"}
+                商品の説明
+              %span.required_tag
+                必須
+            .item-name__body__discription
+              %textarea{class: "form__discription", name:"description", rows:"7", cols:"70", placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"}
+            .item-name__body__option
+              0/1000
+        .item-category
+          .item-category__body
+            .item-category__body__title
+            %label{for: "", class: "titlename"}
+              商品の詳細
+            .item-category__body__category
+            %label{for: "", class: "heading"}
+              カテゴリー
+            %span.required_tag
+              必須
+            .item-category__body__categoryname
+            %input{type: "text", class: "form__sach", placeholder: "　選択してください"}
+            .item-category__body__brand
+            %label{for: "", class: "heading"}
+              ブランド
+            %span.required_tag
+              任意
+            .item-category__body__brandname
+            %input{type: "text", class: "form__sach", placeholder: "　例）シャネル"}
+            .item-category__body__condition
+            %label{for: "", class: "heading"}
+              商品の状態
+            %span.required_tag
+              必須
+            .item-category__body__conditionform
+            %input{type: "text", class: "form__sach", placeholder: "　選択してください"}
+        .item-shipping
+          .item-shipping__body
+            .item-shipping__body__discription
+              %label{for: "", class: "titlename"}
+                配送について
+            .item-shipping__body__title
+            %label{for: "", class: "heading"}
+              配送料の負担
+            %span.required_tag
+              必須
+            .item-shipping__body__titleform
+            %input{type: "text", class: "form__sach", placeholder: "　選択してください"}
+            .item-shipping__body__area
+            %label{for: "", class: "heading"}
+              発送元の地域
+            %span.required_tag
+              必須
+            .item-shipping__body__areaform
+            %input{type: "text", class: "form__sach", placeholder: "　選択してください"}
+            .item-shipping__body__days
+            %label{for: "", class: "heading"}
+              発送までの日数
+            %span.required_tag
+              必須
+            .item-shipping__body__daysform
+            %input{type: "text", class: "form__sach", placeholder: "　選択してください"}
+        .item-price
+          .item-price__body
+            .item-price__body__title
+              %label{for: "", class: "titlename"}
+                価格（¥300〜9,999,999）
+            .item-price__body__price
+              %label{for: "", class: "heading"}
+                販売価格
+                %span.required_tag
+                  必須
+              .item-price__body__price__form
+                %span.price_tag
+                  ¥
+                %input{type: "text", class: "form__price", placeholder: "　                                                   0"}
+            .item-price__body__tax
+              %label{for: "", class: "price-tax"}
+                販売手数料（10%）
+              %span.price_tag
+
+        .item-selling
+          %label{for: "", class: "price-tax"}
+            販売利益
+          .item-selling__body
+            .item-selling__body__title
+            .item-selling__body__btn-exhibition
+              %label{for: "", class: "ok-btn"}
+                出品する
+            .item-selling__body__btn-ave
+              %label{for: "", class: "ok-btn"}
+                下書きに保存
+            .item-selling__body__btn-back
+              もどる
+        .selling-rules
+          禁止されている
+          %span.font_test
+            行為
+          および
+          %span.font_test
+            出品物
+          を必ずご確認ください。
+          %span.font_test
+            偽ブランド品
+          や
+          %span.font_test
+            盗品物
+          などの販売は犯罪であり、法律により処罰される可能性があります。 また、出品をもちまして
+          %span.font_test
+            加盟店規約
+          に同意したことになります。
+          .selling-rules__body
+            .selling-rules__body__discription
