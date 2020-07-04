@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   end
 
   
-  root to: 'homes#index'  
+  # root to: 'homes#index'  
   resources :purchase, only: [:index]
   # root 'users#index'  
   
@@ -19,6 +19,6 @@ Rails.application.routes.draw do
   root to: "mypage#index"
   get "mypage/card", to: 'mypage#card'
   get 'mypage/logout'
-  root "mypage#logout"
+  # root "mypage#logout"
 
 end
