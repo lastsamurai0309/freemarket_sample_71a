@@ -3,24 +3,21 @@
     .header-icon
       = link_to root_path do
         = image_tag "logo.png"
-  .sign-main
-    = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-      = render "devise/shared/error_messages", resource: resource
-      .sign-main-box
-        %h1.sign-main-box__title ログイン
-        .field
-          = f.label :メールアドレス, class: "field__text"
-          = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレス", class: "field__input"
-        .field
-          = f.label :パスワード, class: "field__text"
-          = f.password_field :password, autocomplete: "current-password", placeholder:"パスワード", class: "field__input"
-        - if devise_mapping.rememberable?
-          .field
-            = f.check_box :remember_me
-            = f.label :ログイン状態を保存する
-        = f.submit "ログイン", class: "actions"
-    .shared-links
-      = render "devise/shared/links"
+  %h2 ログイン
+  = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+    .field
+      = f.label :email
+      %br/
+      = f.email_field :email, autofocus: true, autocomplete: "email"
+    .field
+      = f.label :password
+      %br/
+      = f.password_field :password, autocomplete: "current-password"
+    - if devise_mapping.rememberable?
+      .field
+
+    .button_panel
+      %input.button{:title => "Log in", :type => "submit", :value => "Log in"}/
   .signup__footer
     .inner
       %ul
