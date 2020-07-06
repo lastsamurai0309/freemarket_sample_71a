@@ -1,4 +1,17 @@
-.purchase-footer
-  .purchase-footer__logo
-    = image_tag "logo.png", size: "100x50"
-    %p &copy;FURIMA
+.signup__footer
+  .inner
+    %ul
+      %li
+        = link_to "#" do
+          プライバシーポリシー
+      %li
+        = link_to "#" do
+          FURIMA利用規約
+      %li
+        = link_to "#" do
+          特定商取引に関する表記
+    .footer-icon
+      = link_to "#" do
+        = image_tag "logo.png", class: "hurima-icon"
+      %p
+        © Furima, Inc.

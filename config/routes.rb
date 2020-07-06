@@ -13,6 +13,11 @@ Rails.application.routes.draw do
   resources :products do
   end
   # resources :purchase, only: [:index]
+  
+  get "purchase/index"
+  root "purchase#index"
+  get "purchase/done"
+  root "purchase#done"
   # root 'users#index'
 end
 
