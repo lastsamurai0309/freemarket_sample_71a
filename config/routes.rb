@@ -16,8 +16,8 @@ Rails.application.routes.draw do
   # resources :mypage
   root to: "mypage#index"
   get "mypage/card", to: 'mypage#card'
-  get 'mypage/logout'
-  root "mypage#logout"
+  get 'mypage/logout', to: "mypage#logout"
+  # root "mypage#logout"
   root to: 'products#index'
 
   resources :products do
