@@ -1,0 +1,54 @@
+.index__main-contents__side
+  .index__main-contents__side__nav
+    %div.index__main-contents__side__nav--list
+      %li.mypage
+        = link_to('マイページ', "/mypage/index")
+
+        -# %li
+        -#   = link_to "#" do
+        -#     %i.fad.fa-arrow-right
+        -#     %span マイページ
+      %li.notification
+        = link_to('お知らせ', "#")
+      %li.toDo
+        = link_to('やることリスト', "#")
+      %li.likeHistory
+        = link_to('いいね！一覧', "#")
+      %li.sell
+        = link_to('出品する', "#")
+      %li.drafts
+        = link_to('下書き一覧', "#")
+      %li.listings
+        = link_to('出品した商品-出品中', "#")
+      %li.listingsProgress
+        = link_to('出品した商品-取引中', "#")
+      %li.listingsCompleted
+        = link_to('出品した商品-売却済み', "#")
+      %li.purchasing
+        = link_to('購入した商品-取引中', "#")
+      %li.purchased
+        = link_to('購入した商品-過去の取引', "#")
+      %li.news
+        = link_to('ニュース', "#")
+      %li.review
+        = link_to('評価一覧', "#")
+    %h2.nav-head
+      設定
+    .index__main-contents__side__nav--setting
+      %div.mypage
+        %li.profile
+          = link_to('プロフィール', "#")
+        %li.deliverAddress
+          = link_to('発送元・お届け先住所変更', "#")
+        %li.card
+          = link_to('支払い方法', "/mypage/card")
+        %li.emailPassword
+          = link_to('メール/パスワード', "#")
+        %li.identification
+          = link_to('本人情報', "#")
+        %li.smsComfirmation
+          = link_to('電話番号の確認', "#")
+        %li.logOut
+          = link_to('ログアウト', "/mypage/logout")
+
+
