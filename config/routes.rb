@@ -7,22 +7,21 @@ Rails.application.routes.draw do
     get '/users/sign_out' => 'devise/sessions#destroy'
     get 'addresses', to: 'users/registrations#new_address'
     post 'addresses', to: 'users/registrations#create_address'
+    get "users/index",to: "users#index"
+    get "users/card", to: 'users#card'
+    get 'users/logout', to: "users#logout"
   end
   # get 'homes/index'
-  
   # root to: 'homes#index'  
-
-  # get 'mypage/index'
-  # resources :mypage
-  root to: "mypage#index"
-  get "mypage/card", to: 'mypage#card'
-  get 'mypage/logout', to: "mypage#logout"
-  # root "mypage#logout"
   root to: 'products#index'
-
   resources :products do
   end
-  # resources :purchase, only: [:index]
+
+  
   # root 'users#index'
+  # root to: "users#index"
+  # get "users/card", to: 'users#card'
+  # get 'users/logout', to: "users#logout"
+  # resources :purchase, only: [:index]
 end
 
