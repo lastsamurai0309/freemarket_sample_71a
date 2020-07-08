@@ -17,5 +17,9 @@ Rails.application.routes.draw do
   resources :products do
   end
   # resources :purchase, only: [:index]
+  get 'purchase/index'
+  root to: 'purchase#index'  
+  get "/purchase", to: 'purchase#done'
+  root to: 'purchase#done'  
 end
 
