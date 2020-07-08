@@ -33,6 +33,9 @@
     .purchased__content__credites
       %h3 支払い方法   
       .purchased__content__credites__card
+        -# - if @credit_information.blank?
+        -# %br /
+        -# - else
         %p クレジットカード
         %p.credit_num
           ************1234

@@ -62,8 +62,8 @@
       .submit-btn
         = link_to('購入する', "/purchase/done")
         
-        -# = form_tag ('/purchase', method: :post) do
-        -#   %button.submit-btn {type: "submit"} 購入する 
+        -# = form_tag(action: :pay, method: :post) do
+        -#   %button.buy-button{type:"submit"} 購入する
        
       
   = render "purchase.footer"

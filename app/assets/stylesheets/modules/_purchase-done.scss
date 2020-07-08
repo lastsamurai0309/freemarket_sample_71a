@@ -33,12 +33,12 @@
         margin: 0 auto;
         i {
           font-size: 30px;
-          color: red;
+          color: #3CCACE;
           display: block;
         }
         span {
           @include font(18px);
-          color: red; 
+          color: #3CCACE; 
           display: block;
           margin-left: 10px;
         }  
