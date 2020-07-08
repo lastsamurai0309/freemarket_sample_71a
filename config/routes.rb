@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
   resources :products do
   # resources :purchase, only: [:index]
-end
+  end
   # get "purchase/index"
   # root "purchase#index"
   # get "purchase/done"
