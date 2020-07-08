@@ -16,12 +16,6 @@ Rails.application.routes.draw do
   root to: 'products#index'
   resources :products do
   end
-
-  
-  # root 'users#index'
-  # root to: "users#index"
-  # get "users/card", to: 'users#card'
-  # get 'users/logout', to: "users#logout"
   # resources :purchase, only: [:index]
 end
 

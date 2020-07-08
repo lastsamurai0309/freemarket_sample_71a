@@ -1,5 +1,5 @@
 .index
-  = link_to "#" do
+  = link_to "/products/new" do
     .index__camera
       %span.index__camera__text
         = "出品する"
@@ -11,7 +11,6 @@
     FURIMA > マイページ
   .index__main-contents
     = render "mypage.nav"
-
     .index__main-contents__user
       .index__main-contents__user--info
         = image_tag "mypageBackground.jpeg", size: "800x200"
@@ -20,7 +19,7 @@
             %image
               = image_tag "member_photo_noimage_thumb.png", size: "60x60"
           %h1.userNickname
-            ニックネーム
+            #{current_user.nickname}
           .index__main-contents__user--info__icon--number
             .index__main-contents__user--info__icon--number__evaluation
               評価

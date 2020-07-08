@@ -22,6 +22,6 @@
           = link_to "#", class: "index__header__inner__nav__listsRight__left-btn" do
             = "お知らせ"
         %li.item-signup
-          = link_to "#", class: "index__header__inner__nav__listsRight__left-btn" do
-            = "マイページ "
+          = link_to "/users/index", class: "index__header__inner__nav__listsRight__left-btn" do
+            #{current_user.nickname}のページ
 
