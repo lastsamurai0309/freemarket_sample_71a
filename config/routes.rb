@@ -11,17 +11,10 @@ Rails.application.routes.draw do
   root to: 'products#index'
 
   resources :products do
-    resources :purchase, only: [:index, :done] 
-      # collection do
-      #   get 'done', to: 'purchase#done'
-        # post 'pay', to: 'purchase#pay'  
-  end
   # resources :purchase, only: [:index]
-  
+end
   # get "purchase/index"
   # root "purchase#index"
   # get "purchase/done"
   # root "purchase#done"
   # root 'users#index'
-end
-
