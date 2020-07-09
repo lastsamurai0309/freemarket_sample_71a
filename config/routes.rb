@@ -12,6 +12,9 @@ Rails.application.routes.draw do
 
   resources :products do
   end
+
+  resources :cards, only: [:new, :create] do
+  end
   # resources :purchase, only: [:index]
   # root 'users#index'
 end

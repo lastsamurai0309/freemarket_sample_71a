@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200627033152) do
+ActiveRecord::Schema.define(version: 20200705110652) do
 
   create_table "addresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "address_name", null: false
@@ -25,6 +25,15 @@ ActiveRecord::Schema.define(version: 20200627033152) do
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.index ["user_id"], name: "index_addresses_on_user_id", using: :btree
+  end
+
+  create_table "cards", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "user_id"
+    t.string   "customer_id", null: false
+    t.string   "card_id",     null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["user_id"], name: "index_cards_on_user_id", using: :btree
   end
 
   create_table "items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -56,18 +65,19 @@ ActiveRecord::Schema.define(version: 20200627033152) do
     t.datetime "remember_created_at"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
-    t.index ["birth_day"], name: "index_users_on_birth_day", using: :btree
-    t.index ["birth_month"], name: "index_users_on_birth_month", using: :btree
-    t.index ["birth_year"], name: "index_users_on_birth_year", using: :btree
+    t.index ["birth_day"], name: "index_users_on_birth_day", unique: true, using: :btree
+    t.index ["birth_month"], name: "index_users_on_birth_month", unique: true, using: :btree
+    t.index ["birth_year"], name: "index_users_on_birth_year", unique: true, using: :btree
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
-    t.index ["first_name"], name: "index_users_on_first_name", using: :btree
-    t.index ["first_name_fri"], name: "index_users_on_first_name_fri", using: :btree
-    t.index ["last_name"], name: "index_users_on_last_name", using: :btree
-    t.index ["last_name_fri"], name: "index_users_on_last_name_fri", using: :btree
+    t.index ["first_name"], name: "index_users_on_first_name", unique: true, using: :btree
+    t.index ["first_name_fri"], name: "index_users_on_first_name_fri", unique: true, using: :btree
+    t.index ["last_name"], name: "index_users_on_last_name", unique: true, using: :btree
+    t.index ["last_name_fri"], name: "index_users_on_last_name_fri", unique: true, using: :btree
     t.index ["nickname"], name: "index_users_on_nickname", unique: true, using: :btree
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", using: :btree
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
   add_foreign_key "addresses", "users"
+  add_foreign_key "cards", "users"
   add_foreign_key "purchase_histories", "users"
 end
