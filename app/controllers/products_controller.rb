@@ -13,10 +13,12 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(set_params)
-    if @product.valid?
-      @product.save
+    if @product.save
+      flash[:alert] = '出品が完了しました。'
+      redirect_to controller: :products, action: :index, notice: "出品できました。"
     else
-      redirect_to new_product_path
+      flash[:alert] = '必須事項を入力してください。'
+      redirect_to controller: :products, action: :new
     end
   end
 

@@ -1,4 +1,5 @@
 @import "reset";
+@import "config/colors";
 @import "modules/homes";
 @import "font-awesome-sprockets";
 @import "font-awesome";
@@ -11,3 +12,4 @@
 @import "modules/login";
 @import "modules/show-products";
 @import "modules/sell_item";
+@import "modules/flash";
