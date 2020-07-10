@@ -8,14 +8,19 @@ Rails.application.routes.draw do
     get 'addresses', to: 'users/registrations#new_address'
     post 'addresses', to: 'users/registrations#create_address'
     get "users/index",to: "users#index"
-    get "users/card", to: 'users#card'
-    get 'users/logout', to: "users#logout"
+    get "users/card", to: "users#card"
+    get "users/logout", to: "users#logout"
   end
-  # get 'homes/index'
-  # root to: 'homes#index'  
+
   root to: 'products#index'
   resources :products do
+    resources :purchase, only: [:index] do
+      collection do        
+        # post "card", to: "purchase#card"
+        get "done", to: "purchase#done"
+      end
+    end
   end
-  # resources :purchase, only: [:index]
 end
+
 
