@@ -11,21 +11,19 @@
               必須
             %p.discription
               最大10枚までアップロードできます
-            .item-image__body__upload
-              .upload__area
-                .upload__area__inside
-                  .cameralogo
-                    =link_to "/" do
-                      = image_tag src="icon_camera.png", class: "camera-logo"
-                  .drop-text
-                    %br.drop 
-                    ドラッグアンドドロップ
-                    %br.drop
-                    またはクリックしてファイルをアップロード
-              = f.fields_for :photos do |i|
-                = i.file_field :name, {class: "file-field"}
+              .post__drop__box__container
+                .prev-content
+                .label-content
+                  %label{for: "product_photos_attributes_0_name", class: "abel-box", id: "label-box--0"}
+                    %pre.label-box__text-visible クリックしてファイルをアップロード
+                .hidden-content
+                  = f.fields_for :photos do |i|
+                    = i.file_field :name, class: "hidden-field"
+                    %input{class:"hidden-field", type: "file", name: "product[photos_attributes][1][name]", id: "product_photos_attributes_1_name" }
+                    %input{class:"hidden-field", type: "file", name: "product[photos_attributes][2][name]", id: "product_photos_attributes_2_name" }
+                    %input{class:"hidden-field", type: "file", name: "product[photos_attributes][3][name]", id: "product_photos_attributes_3_name" }
+                    %input{class:"hidden-field", type: "file", name: "product[photos_attributes][4][name]", id: "product_photos_attributes_4_name" }
 
-              
         .item-name
           .item-name__body
             .item-name__body__title
