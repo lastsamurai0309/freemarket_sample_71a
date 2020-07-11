@@ -1,33 +1,41 @@
-.purchase
-  
+.purchased
+
   = render "purchase.header"
 
-  .purchase__contents
-    .purchase__contents__message
-      %h1 購入内容の確認
-    .purchase__contents__items
-      .purchase__contents__items__detail
-        .purchase__contents__items__detail--image
+  .purchased__content
+    .purchased__content__announce 
+      %div.announce
+        %i.far.fa-clock
+        %span 発送をお待ちください  
+    .purchased__content__messages  
+      %h1 購入が完了しました
+    .purchased__content__item
+      .purchased__content__item__detail
+        .purchased__content__item__detail--image
           = image_tag "icon-01.png", size: "100x100"
           -# = image_tag "#{@product.images[0].url}", size: "100x100"
-        .purchase__contents__items__detail--description
-          %p.purchase__contents__items__detail--description__name
+        .purchased__content__item__detail--descriptions
+          .purchased__content__item__detail--descriptions__names
             ひらめき大辞典
             -# = @product.name
-          %p.purchase__contents__items__detail--description__price
-            %span.item-price
+          .purchased__content__item__detail--descriptions__prices
+            %span.item-prices
               ¥920
               -# = "¥#{@product.price.to_s}"
-            %span.item-shippi-fee 税込 (送料込み) 
-    .purchase__contents__buy-price
+            %span.item-shippi-fee 税込 (送料込み)
+          
+    .purchased__content__buy-prices
       %h2 支払い金額
-      .purchase__contents__buy-price__pay-box
+      .purchased__content__buy-prices__pay
         %span.pay-price
         ¥920
         -# = "¥#{@product.price.to_s}"
-    .purchase__contents__credit
+    .purchased__content__credites
       %h3 支払い方法   
-      .purchase__contents__credit__card-box
+      .purchased__content__credites__card
+        -# - if @credit_information.blank?
+        -# %br /
+        -# - else
         %p クレジットカード
         %p.credit_num
           ************1234
@@ -37,9 +45,9 @@
           -# - limit_month = @credit.limit_month.to_s
           -# - limit_year = @credit.limit_year.to_s.slice(2,3)
           -# = "有効期限" + limit_month + " / " + limit_year
-    .purchase__contents__address
+    .purchased__content__addre
       %h4 配送先
-      .purchase__contents__address__add-box
+      .purchased__content__addre__add
         %p.post_num
           -# = @shopping-address.post_num
           〒000-0000
@@ -54,15 +62,12 @@
             神南１丁目１８−２ 
           %span.billding
             -# = @shopping-address.billding
-            フレーム神南坂 4階  
+            フレーム神南坂 4階
         %p.address_name
           -# = @shopping-address.address_name
-          山田太郎     
-    .purchase__contents__form
-      .submit-btn
-        購入する
-        -# = form_tag(action: :card, method: :post) do
-        -#   %button.buy-button{type:"submit"} 購入する
-    
+          山田太郎
+    .purchased__content__form
+      .purchased__content__form--btn
+        = link_to("トップページに戻る", "/products")
+        
   = render "purchase.footer"
-
