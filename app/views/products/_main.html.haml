@@ -1,6 +1,6 @@
 .main
   .main__content
-    .main__content__form
+    = form_for @product do |f|
       .main__content__form__inside
         .item-image
           .item-image__body
@@ -11,18 +11,19 @@
               必須
             %p.discription
               最大10枚までアップロードできます
-            .item-image__body__upload
-              .upload__area
-                .upload__area__inside
-                  .cameralogo
-                    =link_to "/" do
-                      = image_tag src="icon_camera.png", class: "camera-logo"
-                  .drop-text
-                    %br.drop 
-                    ドラッグアンドドロップ
-                    %br.drop
-                    またはクリックしてファイルをアップロード
-              
+              .post__drop__box__container
+                .prev-content
+                .label-content
+                  %label{for: "product_photos_attributes_0_name", class: "abel-box", id: "label-box--0"}
+                    %pre.label-box__text-visible クリックしてファイルをアップロード
+                .hidden-content
+                  = f.fields_for :photos do |i|
+                    = i.file_field :name, class: "hidden-field"
+                    %input{class:"hidden-field", type: "file", name: "product[photos_attributes][1][name]", id: "product_photos_attributes_1_name" }
+                    %input{class:"hidden-field", type: "file", name: "product[photos_attributes][2][name]", id: "product_photos_attributes_2_name" }
+                    %input{class:"hidden-field", type: "file", name: "product[photos_attributes][3][name]", id: "product_photos_attributes_3_name" }
+                    %input{class:"hidden-field", type: "file", name: "product[photos_attributes][4][name]", id: "product_photos_attributes_4_name" }
+
         .item-name
           .item-name__body
             .item-name__body__title
@@ -31,14 +32,14 @@
             %span.required_tag
               必須
             .item-name__body__titlearea
-              %input{type: "text", class: "item_form", placeholder: " 40文字まで"}
+              = f.text_field :name, {class: "item_form", placeholder: " 40文字まで" }
             .item-name__body__discription
               %label{for: "", class: "heading"}
                 商品の説明
               %span.required_tag
                 必須
             .item-name__body__discription
-              %textarea{class: "form__discription", name:"description", rows:"7", cols:"70", placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"}
+              =  f.text_area :content, {class: "form__discription", placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"}
             .item-name__body__option
               0/1000
         .item-category
@@ -52,21 +53,21 @@
             %span.required_tag
               必須
             .item-category__body__categoryname
-            %input{type: "text", class: "form__sach", placeholder: "　選択してください"}
+            = f.select :category_id, [["選択してください",""],["レディース",1],["メンズ",2],["その他",3]],{ class: "form__sach", placeholder: "　選択してください" }
             .item-category__body__brand
             %label{for: "", class: "heading"}
               ブランド
             %span.required_tag
               任意
             .item-category__body__brandname
-            %input{type: "text", class: "form__sach", placeholder: "　例）シャネル"}
+            = f.text_field :brand, {class: "form__sach", placeholder: "　例）シャネル"}
             .item-category__body__condition
             %label{for: "", class: "heading"}
               商品の状態
             %span.required_tag
               必須
             .item-category__body__conditionform
-            %input{type: "text", class: "form__sach", placeholder: "　選択してください"}
+            = f.collection_select :condition_id, Condition.all, :id, :name, {}, { class: "form__sach", placeholder: "　選択してください" }
         .item-shipping
           .item-shipping__body
             .item-shipping__body__discription
@@ -78,21 +79,20 @@
             %span.required_tag
               必須
             .item-shipping__body__titleform
-            %input{type: "text", class: "form__sach", placeholder: "　選択してください"}
+            = f.collection_select :fee_id, Fee.all, :id, :name, {}, {class: "form__sach", placeholder: "　選択してください" }
             .item-shipping__body__area
             %label{for: "", class: "heading"}
               発送元の地域
             %span.required_tag
               必須
             .item-shipping__body__areaform
-            %input{type: "text", class: "form__sach", placeholder: "　選択してください"}
-            .item-shipping__body__days
+            = f.collection_select :area_id, Area.all, :id, :name, {}, {class: "form__sach", placeholder: "　選択してください"  }
             %label{for: "", class: "heading"}
               発送までの日数
             %span.required_tag
               必須
             .item-shipping__body__daysform
-            %input{type: "text", class: "form__sach", placeholder: "　選択してください"}
+            = f.collection_select :shippingday_id, Shippingday.all, :id, :name, {},{class: "form__sach", placeholder: "　選択してください" }
         .item-price
           .item-price__body
             .item-price__body__title
@@ -106,7 +106,7 @@
               .item-price__body__price__form
                 %span.price_tag
                   ¥
-                %input{type: "text", class: "form__price", placeholder: "　                                                   0"}
+                = f.text_field :price, {class: "form__price", placeholder: "　                                                   0"}
             .item-price__body__tax
               %label{for: "", class: "price-tax"}
                 販売手数料（10%）
@@ -117,14 +117,8 @@
             販売利益
           .item-selling__body
             .item-selling__body__title
-            .item-selling__body__btn-exhibition
-              %label{for: "", class: "ok-btn"}
-                出品する
-            .item-selling__body__btn-ave
-              %label{for: "", class: "ok-btn"}
-                下書きに保存
-            .item-selling__body__btn-back
-              もどる
+            = f.submit "出品する", {class:"item-selling__body__btn-exhibition"}
+            = link_to "戻る", root_path, {class:"item-selling__body__btn-back"}
         .selling-rules
           禁止されている
           %span.font_test

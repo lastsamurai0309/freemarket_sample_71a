@@ -52,8 +52,7 @@
           border-bottom:  1px solid #F5F5F5;
 
           &__body{
-            &__title{
-            }
+            
             &__titlearea{
               margin-top: 16px;
               width: 620px;
@@ -133,25 +132,19 @@
           height: 270px;
           border-bottom:  1px solid #F5F5F5;
           &__body{
-            &__title{
-
-            }
+            
             &__price{
               margin-top: 24px;
               text-align: center;
               display: flex;
               justify-content: space-between;
-              &__form{
-
-              }
+              
             }
             &__tax{
               margin-top: 24px;
 
             }
-            &__title{
-
-            }
+            
 
 
           }
