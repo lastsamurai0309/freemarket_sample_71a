@@ -47,47 +47,44 @@
 ### Association
 - belongs_to :user
 
-## itemsテーブル
+## productsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
 |content|text|null: false|
-|categories|references|null: false, foreign_key: true|
-|size|references|foreign_key: true|
-|brand|references|foreign_key: true|
-|condition|references|null: false, foreign_key: true|
-|fee|references|null: false, foreign_key: true|
-|area|references|null: false, foreign_key: true|
-|shipping_day|references|null: false, foreign_key: true|
+|category|references|null: false, foreign_key: true|
+|brand|text|null: false|
+|condition_id|integer|null: false|
+|fee_id|integer|null: false|
+|area_id|integer|null: false|
+|shippingday_id|integer|null: false|
 |price|integer|null: false|
-|user_seller|references|null: false, foreign_key: true|
+|user|references|null: false, foreign_key: true|
 ### Association
-- has_many: images
-- has_many: comments
+- has_many: photos 
 - belongs_to: user
 - belongs_to: category
-- belongs_to: brand
-- belongs_to: size
-- belongs_to: condition
-- belongs_to: fee
-- belongs_to: sipping_day
+- belongs_to_active_hash: condition
+- belongs_to_active_hash: fee
+- belongs_to_active_hash: area
+- belongs_to_active_hash: shippingday
 
 ## photosテーブル
 |Column|Type|Options|
 |------|----|-------|
-|image|string|null: false|
-|item|references|null: false, foreign_key: true|
+|name|string|null: false|
+|product|references|null: false, foreign_key: true|
 ### Association
-- belongs_to: item
+- belongs_to: product
 
 ## categoriesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|string|
-|item|references|null: false, foreign_key: true|
+|name|string|null: false|
 |ancestry|string|null: false|
+
 ### Association
-- has_many :items
+- has_many :products
 - has_ancestry
 
 ## brandsテーブル
@@ -99,38 +96,6 @@
 ### Association
 - has_many :items
 - has_ancestry
-
-## sizeテーブル
-|Column|Type|Options|
-|------|----|-------|
-|size|string|
-|item|references|null: false, foreign_key: true|
-### Association
-- belongs_to: item
-
-## areasテーブル
-|Column|Type|Options|
-|------|----|-------|
-|area|string|
-|item|references|null: false, foreign_key: true|
-### Association
-- belongs_to: item
-
-## sipping_daysテーブル
-|Column|Type|Options|
-|------|----|-------|
-|sipping_day|string|
-|item|references|null: false, foreign_key: true|
-### Association
-- belongs_to: item
-
-## feesテーブル
-|Column|Type|Options|
-|------|----|-------|
-|fee|string|
-|item|references|null: false, foreign_key: true|
-### Association
-- belongs_to: item
 
 ## Purchase_historysテーブル
 |Column|Type|Options|

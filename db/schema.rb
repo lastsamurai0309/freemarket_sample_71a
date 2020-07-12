@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200705110652) do
+ActiveRecord::Schema.define(version: 20200711142633) do
 
   create_table "addresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "address_name", null: false
@@ -34,6 +34,12 @@ ActiveRecord::Schema.define(version: 20200705110652) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.index ["user_id"], name: "index_cards_on_user_id", using: :btree
+  create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name",       null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "ancestry"
+    t.index ["ancestry"], name: "index_categories_on_ancestry", using: :btree
   end
 
   create_table "items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -42,10 +48,38 @@ ActiveRecord::Schema.define(version: 20200705110652) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "purchase_histories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "user_id"
+  create_table "photos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name",       null: false
+    t.integer  "product_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_photos_on_product_id", using: :btree
+  end
+
+  create_table "products", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name",                                     null: false
+    t.text     "content",        limit: 65535,             null: false
+    t.integer  "category_id",                              null: false
+    t.text     "brand",          limit: 65535,             null: false
+    t.integer  "condition_id",                             null: false
+    t.integer  "fee_id",                                   null: false
+    t.integer  "area_id",                                  null: false
+    t.integer  "shippingday_id",                           null: false
+    t.integer  "price",                                    null: false
+    t.integer  "status",                       default: 0, null: false
+    t.integer  "user_id",                                  null: false
+    t.datetime "created_at",                               null: false
+    t.datetime "updated_at",                               null: false
+    t.index ["category_id"], name: "index_products_on_category_id", using: :btree
+    t.index ["user_id"], name: "index_products_on_user_id", using: :btree
+  end
+
+  create_table "purchase_histories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "user_id"
+    t.integer  "item_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_purchase_histories_on_item_id", using: :btree
     t.index ["user_id"], name: "index_purchase_histories_on_user_id", using: :btree
   end
 
@@ -79,5 +113,9 @@ ActiveRecord::Schema.define(version: 20200705110652) do
 
   add_foreign_key "addresses", "users"
   add_foreign_key "cards", "users"
+  add_foreign_key "photos", "products"
+  add_foreign_key "products", "categories"
+  add_foreign_key "products", "users"
+  add_foreign_key "purchase_histories", "items"
   add_foreign_key "purchase_histories", "users"
 end

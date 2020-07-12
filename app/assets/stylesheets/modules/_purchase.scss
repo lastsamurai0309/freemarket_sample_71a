@@ -21,8 +21,11 @@
     margin: 0 auto;
     &__logo {
       margin: 0 auto;
-      @include content(170px, 100px);
+      @include content(120px, 55px);
       padding-top: 30px;
+      image {
+        @include content(120px, 55px);
+      }
     }
   }
   &__contents {

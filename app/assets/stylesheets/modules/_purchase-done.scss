@@ -1,0 +1,145 @@
+@mixin block {
+  width: 100%;
+  height: 150px;
+  color: #000000;
+}
+@mixin content ($width, $height) {
+  width: $width;
+  height: $height;
+}
+@mixin font($size: 14px) {
+  font-size: $size;
+  font-weight: bold;
+}
+
+.purchased {
+  height: 130vh;
+  width: 100vw;
+  background-color: #F5F5F5;
+  &__content {
+    height: calc(145vh - 100px);
+    width: 600px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    &__announce {
+      @include content(100%, 70px);
+      background-color: lemonchiffon;
+      position: relative;
+      div.announce {
+        position: absolute;
+        top: 22px;
+        left: 188px;
+        display: flex;
+        margin: 0 auto;
+        i {
+          font-size: 30px;
+          color: #3CCACE;
+          display: block;
+        }
+        span {
+          @include font(18px);
+          color: #3CCACE; 
+          display: block;
+          margin-left: 10px;
+        }  
+      }     
+    }
+    &__messages {
+      @include block(); 
+      h1 {
+        @include font(22px);
+        text-align: center; 
+        line-height: 150px;
+      }
+    }
+    &__item {
+      @include block();
+      padding: 0px 100px;
+      &__detail {
+        @include content(100%, 100%);
+        display: flex;
+        &--image {
+          @include content(100px, 100%);  
+        }
+        &--descriptions {
+          @include content(290px, 100%);
+          padding-left: 10px;
+          font-size: 14px;
+          &__names {
+            @include content(100%, 100px); 
+          }
+          &__prices {
+            @include content(100%, 50px);
+            span {
+              @include font();
+            }
+          }
+        }
+      }
+    }
+    &__buy-prices {
+      padding: 0px 100px;
+      @include content(100%, auto);
+      display: flex;
+      justify-content: space-between;
+      padding: 20px 0px;
+      h2 { 
+        padding: 0px 100px;
+        @include font(18px);
+        line-height: 80px;
+      }
+      &__pay {
+        @include content(200px, 100px);
+        @include font(22px);
+        line-height: 100px;
+        text-align: center;
+      }
+    }
+    &__credites {
+      padding: 0px 100px;
+      @include block();
+      h3 {
+        @include font(); 
+      }
+      &__card {
+        @include content(300px, 120px);
+        padding-top: 10px;
+        p {
+          font-size: 14px;
+        }
+      }
+    }
+    &__addre {
+      padding: 0px 100px;
+      @include block();
+      h4 {
+        @include font(); 
+      }
+      &__add {
+        @include content(350px, 120px);
+        padding-top: 10px;
+        p {
+          font-size: 14px;
+        }
+      }
+    }
+    &__form {
+      padding: 0px 100px;
+      @include content(100%, 100px);
+      @include font();
+      text-align: center;
+      list-style: none;
+      cursor: pointer;
+      &--btn {
+        @include content(100%, 50px);
+        @include font(); 
+        background-color: #3CCACE;         
+        a {
+          line-height: 50px;
+          text-decoration: none;
+          color: #ffffff; 
+        }
+      }     
+    }
+  }
+}

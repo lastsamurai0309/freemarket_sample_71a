@@ -23,7 +23,7 @@
             = link_to destroy_user_session_path, class: "index__header__inner__nav__listsRight__left-btn" do
               ログアウト
           %li.item-signup
-            = link_to new_user_registration_path , class: "index__header__inner__nav__listsRight__left-btn" do
+            = link_to users_index_path , class: "index__header__inner__nav__listsRight__left-btn" do
               #{current_user.nickname}のページ
         - else
           %li.item-login
