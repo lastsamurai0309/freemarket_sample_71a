@@ -10,7 +10,7 @@
             %span.required_tag
               必須
             %p.discription
-              最大10枚までアップロードできます
+              最大5枚までアップロードできます
               .post__drop__box__container
                 .prev-content
                 .label-content
@@ -47,13 +47,21 @@
             .item-category__body__title
             %label{for: "", class: "titlename"}
               商品の詳細
-            .item-category__body__category
-            %label{for: "", class: "heading"}
-              カテゴリー
-            %span.required_tag
-              必須
-            .item-category__body__categoryname
-            = f.select :category_id, [["選択してください",""],["レディース",1],["メンズ",2],["その他",3]],{ class: "form__sach", placeholder: "　選択してください" }
+              .item-category__body__category
+                = f.label :category_id, "カテゴリー" ,class: "heading"
+                %span.required_tag
+                  必須
+                .sell__about__right__wrap-box.parent
+                  %select#parent
+                    %option{value: 0} ---
+                    - @parent.each do |parent|
+                      %option{value: "#{parent.id}"} #{parent.name}
+                .child
+                  %select#child
+                .grand_child
+                  = f.collection_select(:category_id, [], :id, :name, {prompt: "---"}, {id: "grand_child"})
+                .new-listing__no-product
+                  選択してください
             .item-category__body__brand
             %label{for: "", class: "heading"}
               ブランド
