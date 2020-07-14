@@ -75,7 +75,7 @@
             %span.required_tag
               必須
             .item-category__body__conditionform
-            = f.collection_select :condition_id, Condition.all, :id, :name, {}, { class: "form__sach", placeholder: "　選択してください" }
+            = f.collection_select :condition_id, Condition.all, :id, :name, {prompt: "---"}, { class: "form__sach", placeholder: "　選択してください" }
         .item-shipping
           .item-shipping__body
             .item-shipping__body__discription
@@ -87,20 +87,20 @@
             %span.required_tag
               必須
             .item-shipping__body__titleform
-            = f.collection_select :fee_id, Fee.all, :id, :name, {}, {class: "form__sach", placeholder: "　選択してください" }
+            = f.collection_select :fee_id, Fee.all, :id, :name, {prompt: "---"}, {class: "form__sach", placeholder: "　選択してください" }
             .item-shipping__body__area
             %label{for: "", class: "heading"}
               発送元の地域
             %span.required_tag
               必須
             .item-shipping__body__areaform
-            = f.collection_select :area_id, Area.all, :id, :name, {}, {class: "form__sach", placeholder: "　選択してください"  }
+            = f.collection_select :area_id, Area.all, :id, :name, {prompt: "---"}, {class: "form__sach", placeholder: "　選択してください"  }
             %label{for: "", class: "heading"}
               発送までの日数
             %span.required_tag
               必須
             .item-shipping__body__daysform
-            = f.collection_select :shippingday_id, Shippingday.all, :id, :name, {},{class: "form__sach", placeholder: "　選択してください" }
+            = f.collection_select :shippingday_id, Shippingday.all, :id, :name, {prompt: "---"},{class: "form__sach", placeholder: "　選択してください" }
         .item-price
           .item-price__body
             .item-price__body__title
@@ -115,18 +115,22 @@
                 %span.price_tag
                   ¥
                 = f.text_field :price, {class: "form__price", placeholder: "　                                                   0"}
-            .item-price__body__tax
+            .item-price__body__price
               %label{for: "", class: "price-tax"}
                 販売手数料（10%）
               %span.price_tag
+            .item-price__body__price
+              %label{for: "", class: "price-tax"}
+                販売利益
+              %span.price_tag
 
         .item-selling
-          %label{for: "", class: "price-tax"}
-            販売利益
           .item-selling__body
             .item-selling__body__title
-            = f.submit "出品する", {class:"item-selling__body__btn-exhibition"}
-            = link_to "戻る", root_path, {class:"item-selling__body__btn-back"}
+              = f.submit "出品する", {class:"item-selling__body__btn-exhibition"}
+            .item-selling__body__back
+              .item-selling__body__back__bottom
+                = link_to "戻る", root_path
         .selling-rules
           禁止されている
           %span.font_test

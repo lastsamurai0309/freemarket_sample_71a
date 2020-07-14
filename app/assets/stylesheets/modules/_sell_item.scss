@@ -31,7 +31,7 @@
         .item-image{
           padding: 40px;
           width: 700px;
-          height: 300px;
+          height: 400px;
           border-bottom:  1px solid #F5F5F5;
           &__body{
             &__title {
@@ -39,126 +39,7 @@
               font-weight: 600;
               line-height: 1.4em;
             }
-            &__discription {
-              margin-top: 16px;
-              font-size: 14px;
-              line-height: 1.4em;
-            }
           }
-        }
-        #image-box-1{
-          flex-wrap: wrap;
-        }
-      
-        .item-box{
-          display: block;
-          height: 100px;
-          background-color: #C0C0C0;
-          margin: 16px 0 0 0  ;
-          border: 2px dotted #888888;
-          word-wrap: break-all;
-          text-align: center;
-          font-size: 30px;
-      
-        }
-        .item-num-0{
-          width: 620px;
-        }
-        .item-num-1{
-          width: 491px;
-        }
-        .item-num-2{
-          width: 363px;
-        }
-        .item-num-3{
-          width: 234px;
-        }
-        .item-num-4{
-          width: 106px;
-        }
-        //下段のfile_field
-        .item-num-5{
-          width: 100%;
-        }
-        .item-num-6{
-          width: 491px;
-        }
-        .item-num-7{
-          width: 363px;
-        }
-        .item-num-8{
-          width: 234px;
-        }
-        .item-num-9{
-          width: 106px;
-        }
-        .item-image{
-          margin-top: 16px;
-        }
-        .item-image__operetion--delete:hover{
-          cursor : pointer;
-        }
-        @mixin add_image_size {
-          height: 50px;
-          width: 100px;
-        }
-        .edit_img_0 {
-          @include add_image_size
-        }
-        .edit_img_1 {
-          @include add_image_size
-        }
-        .edit_img_2 {
-          @include add_image_size
-        }
-        .edit_img_3 {
-          @include add_image_size
-        }
-        .edit_img_4 {
-          @include add_image_size
-        }
-        .edit_img_5 {
-          @include add_image_size
-        }
-        .edit_img_6 {
-          @include add_image_size
-        }
-        .edit_img_7 {
-          @include add_image_size
-        }
-        .edit_img_8 {
-          @include add_image_size
-        }
-        .edit_img_9 {
-          @include add_image_size
-        }
-        &__sell-upload-items-container{
-          width: 100%;
-          height: 100%;
-        }
-        &__sell-upload-drop-box{
-          height: 100%;
-          width: 100%;
-          margin-left: 0;
-          float: right;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          input{
-            touch-action: manipulation;
-            font-family: inherit;
-            font-size: inherit;
-            font-weight: inherit;
-            display: none;
-          }
-          pre{
-            text-align: center;
-            font-size: 14px;
-          }
-        }
-        &__no-image{
-          margin-top: 16px;
-          color: red;
         }
         .item-name{
           @include cotent_box();
@@ -174,7 +55,10 @@
             }
             &__discription{
               margin-top: 16px;
-
+              .form__discription {
+                width: 100%;
+                height: 191px;
+              }
             }
             &__option{
               margin-top: 16px;
@@ -298,13 +182,13 @@
   width: 700px;
   height: 300px;
   padding: 40px;
-
   &__body{
-    padding: 40px;
-
-    width: 440px;
-    margin: 0px auto 32px;
-    &__btn-exhibition{
+    width: 100%;
+    margin-top: 25px;
+    &__title {
+      width: 100%;
+    }
+    &__btn-exhibition {
       background-color: #3CCACE;
       color: #fff;
       font-size: 17px;
@@ -314,30 +198,28 @@
       text-align: center;
       font-family:Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
       font-weight: 600;
-
     }
-    &__btn-ave{
-      margin-top: 24px;
-      background-color: #ccc;
-      border-color: transparent;
-      color: #222;
-      font-size: 17px;
-      min-height: 48px;
-      padding: 0 24px;
-      border-radius: 10px;
-      text-align: center;
-      font-family:Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
-      font-weight: 600;
-
-    }
-    &__btn-back{
-      margin-top: 24px;
-      font-size: 15px;
-      min-height: 48px;
-      padding: 0 24px;
-      text-align: center;
-      font-family:Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
-      color: #0095ee;
+    
+    &__back {
+      width: 100%;
+      margin-top: 25px;
+      &__bottom {
+        width: 100%;
+        padding: 24px 24px;
+        text-align: center;
+      a {
+        background-color: #888;
+        color: #fff;
+        font-size: 17px;
+        min-height: 48px;
+        padding: 18px 18px;
+        border-radius: 10px;
+        text-align: center;
+        font-family:Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+        font-weight: 600;
+        text-decoration: none;
+      }
+      }
     }
   }
 }
@@ -502,3 +384,42 @@ ul{
 .grand_child {
   display: none;
 }
+
+.post__drop__box__container{
+  display: block;
+  margin: 16px auto 0;
+  display: flex;
+  flex-wrap: wrap;
+
+  //プレビュー表示欄のCSS
+  .prev-content {
+    display: flex;
+    .preview-box {
+      height: 162px;
+      width: 112px;
+      margin: 0 15px 10px 0;
+      .upper-box {
+        height: 112px;
+        width: 100%;
+        img{
+          width: 112px;
+          height: 112px;
+        }
+      }
+      .lower-box {
+        display: flex;
+        text-align: center;
+        .delete-box {
+          color: #00b0ff;
+          width: 50%;
+          height: 50px;
+          line-height: 50px;
+          border: 1px solid #eee;
+          background: #f5f5f5;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+  
