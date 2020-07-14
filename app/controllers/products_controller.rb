@@ -1,9 +1,12 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit]
   before_action :set_params, only: :create
+  before_action :set_categories, only: [:edit, :update]
 
   def index
-
+    @Products = Product.includes(:photos).where(status: 0).order("RAND()")
+    @brandProducts = Product.includes(:photos).where(status: 0).order("id DESC")
+    @parent = Category.where(ancestry: nil)
   end
 
   def new
@@ -31,11 +34,21 @@ class ProductsController < ApplicationController
   end
 
   def show 
-    @item = Item.find(params[:id])
+    @product = Product.find(params[:id])
   end
 
   def destroy
 
+  end
+
+  def mid_category
+    @mid_categories = Category.where(ancestry: params[:big_category_id])
+    render json: @mid_categories
+  end
+
+  def small_category
+    @small_categories = Category.where(ancestry: "#{params[:big_category_id]}/#{params[:mid_category_id]}")
+    render json: @small_categories
   end
 
   private
@@ -46,4 +59,9 @@ class ProductsController < ApplicationController
   def set_params
     params.require(:product).permit(:name, :content, :category_id, :brand, :condition_id, :fee_id, :area_id, :shippingday_id, :price, photos_attributes: [:name, :_destroy, :id]).merge(user_id: current_user.id,status: 0)
   end
+
+  def set_categories
+    @categories = Category.where(ancestry: nil)
+  end
+
 end
