@@ -28,15 +28,15 @@
             = @product.name
           %ul.main__showMain__topContents__topContent__itemBox__body
             %li
-              = image_tag @product.photos[0].name.url
+              - @product.photos.each do |photo|
+                = image_tag photo.name.url, :width => "75", :height => "75"
               %ul
                 %li
-                  = image_tag @product.photos[0].name.url, width:"75px", height:"75px"
-                %li
-                  = image_tag @product.photos[1].name.url, width:"75px", height:"75px"
+                  = image_tag @product.photos[0].name.url
           .main__showMain__topContents__topContent__itemBox__price
             %span
               = @product.price 
+              円
             .main__showMain__topContents__topContent__itemBox__price__price-detail
               %span
                 (税込)
@@ -111,6 +111,14 @@
             %button.main__showMain__topContents__topContent__commentBox__newComment__commentBtn{type:"submit"}
               %i.fas.fa-comment
               コメントする
+        .main__showMain__topContents__topContent__commentBox__newComment__arrange
+          .main__showMain__topContents__topContent__commentBox__newComment__arrange__btn
+            - if current_user.id == @product.user_id
+              = link_to "商品を編集する", edit_product_path(@product), class: "edit-btn"
+              = link_to "商品を削除する", product_path(params[:id]), method: :delete, class: "delete-btn"
+            - else
+              = link_to new_product_contract_path(@product), class: "buy-btn" do
+                確定画面
       .main__showMain__topContents__links
         %li
           = link_to "#" do
