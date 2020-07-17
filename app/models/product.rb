@@ -4,6 +4,7 @@ class Product < ApplicationRecord
   belongs_to :user
   has_many :photos, dependent: :destroy
   accepts_nested_attributes_for :photos, allow_destroy: true
+  scope :recent, -> (count) { order(id: :desc).limit(count) }
 
   belongs_to_active_hash :shippingday
   belongs_to_active_hash :area
