@@ -47,7 +47,8 @@
                 %option{value: "10"} 10
                 %option{value: "11"} 11
                 %option{value: "12"} 12
-              .month-details 月
+              .month__details 
+                月
             .year
               %select#payment_card_year.card-default{name: "payment_card_year", type: "text"}
                 %option{value: "2020"} 20
@@ -61,19 +62,21 @@
                 %option{value: "2028"} 28
                 %option{value: "2029"} 29
                 %option{value: "2030"} 30
-              .year-details 年
+              .year__details 
+                年
 
         .securitycode
           .securitycode__details
-            .securitycode-details__title セキュリティコード
+            .securitycode__details__title 
+              セキュリティコード
             %span.must_check 
               必須
           .securitycode__cardsecurity
             = text_field_tag  "payment_card_cvc", "", type: 'text', class: 'securitycode__cardsecurity__form', id: "payment_card_cvc", maxlength: "4", placeholder: 'カード背面4桁もしくは3桁の番号'
           .card-question 
             カード裏面の番号とは？
-        .add 
-          = submit_tag "登録する", class: "add__btn", id: "payment_card_submit-button"
+        .details__add 
+          = submit_tag "登録する", class: "details__add__btn", id: "payment_card_submit-button"
 
   .index__appBanner
     .index__appBanner__inner

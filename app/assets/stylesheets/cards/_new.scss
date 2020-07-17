@@ -41,9 +41,136 @@
     }
   
     .details{
-      height: 350px;
+      height: 650px;
       background-color: white;
       padding: 64px;
+
+      .number-details{
+        .card-number{
+          size: 14px;
+          font-weight: bold;
+        }
+        .must_check{
+          margin: 0 0 0 8px;
+          padding: 2px 4px;
+          border-radius: 2px;
+          color: #fff;
+          font-size: 12px;
+          vertical-align: top;
+          background-color: #3CCACE;
+
+        }
+
+      }
+
+      .number{
+        .cardnumber{
+
+        }
+
+      }
+
+      .image{
+        .visa{
+          height: 20px;
+
+        }
+        .master{
+          height: 20px;
+        }
+        
+        .jcb{
+          height: 20px;
+        }
+
+        .amex{
+          height: 20px;
+        }
+        .diners{
+          height: 20px;
+        }
+        .discover{
+          height: 20px;
+        }
+      }
+
+      .expirationdate{
+        &__details{
+          .date{
+            size: 14px;
+            font-weight: bold;
+          }
+          .must_check{
+            margin: 0 0 0 8px;
+            padding: 2px 4px;
+            border-radius: 2px;
+            color: #fff;
+            font-size: 12px;
+            vertical-align: top;
+            background-color: #3CCACE;
+
+          }
+        }
+
+        &__choice{
+
+          .month{
+            .payment_card_month{
+            
+            }
+            &__details{
+
+            }
+          }
+          .year{
+            .payment_card_year{
+
+            }
+            &__details{
+
+            }
+          }
+        
+        }
+      }
+
+      .securitycode{
+        &__details{
+          &__title{
+            size: 14px;
+            font-weight: bold;
+
+          }
+          .must_check{
+            margin: 0 0 0 8px;
+            padding: 2px 4px;
+            border-radius: 2px;
+            color: #fff;
+            font-size: 12px;
+            vertical-align: top;
+            background-color: #3CCACE;
+
+          }
+        }
+        &__cardsecurity{
+          .payment_card_cvc{
+
+          }
+        }
+        .card-question {
+
+        }
+      }
+
+      &__add{
+        &__btn{
+          background-color: #3CCACE;
+          color: #fff;
+
+        }
+      }
+      
+      
     }
   }
 
