@@ -1,0 +1,153 @@
+.main
+  .main__content
+    = form_for @product do |f|
+      .main__content__form__inside
+        商品の情報を入力
+        .item-image
+          .item-image__body
+            .item-image__body__title
+            %label{for: "", class: "heading"}
+              出品画像
+            %span.required_tag
+              必須
+            %p.discription
+              最大5枚までアップロードできます
+              .post__drop__box__container
+                .prev-content
+                .label-content
+                  %label{for: "product_photos_attributes_0_name", class: "abel-box", id: "label-box--0"}
+                    %pre.label-box__text-visible クリックしてファイルをアップロード
+                .hidden-content
+                  = f.fields_for :photos do |i|
+                    = i.file_field :name, class: "hidden-field"
+                    %input{class:"hidden-field", type: "file", name: "product[photos_attributes][1][name]", id: "product_photos_attributes_1_name" }
+                    %input{class:"hidden-field", type: "file", name: "product[photos_attributes][2][name]", id: "product_photos_attributes_2_name" }
+                    %input{class:"hidden-field", type: "file", name: "product[photos_attributes][3][name]", id: "product_photos_attributes_3_name" }
+                    %input{class:"hidden-field", type: "file", name: "product[photos_attributes][4][name]", id: "product_photos_attributes_4_name" }
+
+        .item-name
+          .item-name__body
+            .item-name__body__title
+            %label{for: "", class: "heading"}
+              商品名
+            %span.required_tag
+              必須
+            .item-name__body__titlearea
+              = f.text_field :name, {class: "item_form", placeholder: " 40文字まで" }
+            .item-name__body__discription
+              %label{for: "", class: "heading"}
+                商品の説明
+              %span.required_tag
+                必須
+            .item-name__body__discription
+              =  f.text_area :content, {class: "form__discription", placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"}
+            .item-name__body__option
+              0/1000
+        .item-category
+          .item-category__body
+            .item-category__body__title
+            %label{for: "", class: "titlename"}
+              商品の詳細
+              .item-category__body__category
+                = f.label :category_id, "カテゴリー" ,class: "heading"
+                %span.required_tag
+                  必須
+                .sell__about__right__wrap-box.parent
+                  %select#parent
+                    %option{value: 0} ---
+                    - @parent.each do |parent|
+                      %option{value: "#{parent.id}"} #{parent.name}
+                .child
+                  %select#child
+                .grand_child
+                  = f.collection_select(:category_id, [], :id, :name, {prompt: "---"}, {id: "grand_child"})
+                .new-listing__no-product
+                  選択してください
+            .item-category__body__brand
+            %label{for: "", class: "heading"}
+              ブランド
+            %span.required_tag
+              任意
+            .item-category__body__brandname
+            = f.text_field :brand, {class: "form__sach", placeholder: "　例）シャネル"}
+            .item-category__body__condition
+            %label{for: "", class: "heading"}
+              商品の状態
+            %span.required_tag
+              必須
+            .item-category__body__conditionform
+            = f.collection_select :condition_id, Condition.all, :id, :name, {prompt: "---"}, { class: "form__sach", placeholder: "　選択してください" }
+        .item-shipping
+          .item-shipping__body
+            .item-shipping__body__discription
+              %label{for: "", class: "titlename"}
+                配送について
+            .item-shipping__body__title
+            %label{for: "", class: "heading"}
+              配送料の負担
+            %span.required_tag
+              必須
+            .item-shipping__body__titleform
+            = f.collection_select :fee_id, Fee.all, :id, :name, {prompt: "---"}, {class: "form__sach", placeholder: "　選択してください" }
+            .item-shipping__body__area
+            %label{for: "", class: "heading"}
+              発送元の地域
+            %span.required_tag
+              必須
+            .item-shipping__body__areaform
+            = f.collection_select :area_id, Area.all, :id, :name, {prompt: "---"}, {class: "form__sach", placeholder: "　選択してください"  }
+            %label{for: "", class: "heading"}
+              発送までの日数
+            %span.required_tag
+              必須
+            .item-shipping__body__daysform
+            = f.collection_select :shippingday_id, Shippingday.all, :id, :name, {prompt: "---"},{class: "form__sach", placeholder: "　選択してください" }
+        .item-price
+          .item-price__body
+            .item-price__body__title
+              %label{for: "", class: "titlename"}
+                価格（¥300〜9,999,999）
+            .item-price__body__price
+              %label{for: "", class: "heading"}
+                販売価格
+                %span.required_tag
+                  必須
+              .item-price__body__price__form
+                %span.price_tag
+                  ¥
+                = f.text_field :price, {class: "form__price", placeholder: "　                                                   0"}
+            .item-price__body__price
+              %label{for: "", class: "price-tax"}
+                販売手数料（10%）
+              %span.price_tag
+            .item-price__body__price
+              %label{for: "", class: "price-tax"}
+                販売利益
+              %span.price_tag
+
+        .item-selling
+          .item-selling__body
+            .item-selling__body__title
+              = f.submit "更新する", {class:"item-selling__body__btn-exhibition"}
+            .item-selling__body__back
+              .item-selling__body__back__bottom
+                = link_to "戻る", root_path
+        .selling-rules
+          禁止されている
+          %span.font_test
+            行為
+          および
+          %span.font_test
+            出品物
+          を必ずご確認ください。
+          %span.font_test
+            偽ブランド品
+          や
+          %span.font_test
+            盗品物
+          などの販売は犯罪であり、法律により処罰される可能性があります。 また、出品をもちまして
+          %span.font_test
+            加盟店規約
+          に同意したことになります。
+          .selling-rules__body
+            .selling-rules__body__discription
