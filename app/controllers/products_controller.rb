@@ -5,13 +5,6 @@ class ProductsController < ApplicationController
 
   def index
     @products = Product.all.where(status: 0).recent(3)
-   
-    # レディース、メンズ、キッズを表示させたい
-    # @ladies = Product.category(1..199).recent
-    # @mens = Product.category(200..345).includes(:photos).where(status: 0).recent(1)
-    # @kids = Product.category(346..480).includes(:photos).where(status: 0).recent(1)
-    # @brandProducts = Product.includes(:photos).where(status: 0).order("id DESC")
-    # @parent = Category.where(ancestry: nil)
   end
 
   def new
