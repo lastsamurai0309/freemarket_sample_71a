@@ -1,10 +1,6 @@
 .index
-  = link_to "/products/new" do
-    .index__camera
-      %span.index__camera__text
-        = "出品する"
-      = image_tag "/assets/icon_camera.png", alt: "サンプル画像", id: "pic1", class: "camera-btn"
-      
+  
+  = render "mypage.camera"  
   = render "mypage.header"
 
   .index__breadCrumbs
@@ -13,7 +9,8 @@
     = render "mypage.nav"
     .index__main-contents__user
       .index__main-contents__user--info
-        = image_tag "mypageBackground.jpeg", size: "800x200"
+        = image_tag asset_path('mypageBackground.jpeg'), size: "800x200"
+        -# = image_tag "mypageBackground.jpeg", size: "800x200"
         .index__main-contents__user--info__icon
           %figure
             %image
@@ -47,7 +44,7 @@
                   %image
                     = image_tag "icon_category.png", size: "48x48"           
                 %div.text-notification 
-                  aチーム頑張ってます！
+                  お知らせ
                   %div.time-notification
                     %i.far.fa-clock
                     %span 15時間前

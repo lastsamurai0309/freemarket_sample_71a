@@ -97,58 +97,9 @@
           .index__main__topIntroduction__items__item__detail
             スマホひとつで、いつでもどこでも簡単に出品・購入が可能！
     .index__main__pickupContainer
-      .index__main__pickupContainer__head
-        ピックアップカテゴリー
-      .index__main__pickupContainer__headbottom
-        = link_to "/", class: "link-btn" do
-          新規投稿商品
-      .index__main__pickupContainer__lists
-        .index__main__pickupContainer__lists__list
-          .index__main__pickupContainer__lists__list__link
-            = link_to "/", class:"product-link" do
-              .product-image-box
-                = image_tag src="product3.png", class: "product-image"
-              .product-link__description
-                .product-name
-                  product3
-                .product-cost
-                  %ul{class: "product-cost__list"}
-                    %li
-                      30000円
-                    %li{class: "like-icon"}
-                      ★0
-                .product-tax
-                  (税込)
-          .index__main__pickupContainer__lists__list__link
-            = link_to "/", class:"product-link" do
-              .product-image-box
-                = image_tag src="product2.png", class: "product-image"
-              .product-link__description
-                .product-name
-                  product2
-                .product-cost
-                  %ul{class: "product-cost__list"}
-                    %li
-                      20000円
-                    %li{class: "like-btn"}
-                      ★0
-                .product-tax
-                  (税込)
-          .index__main__pickupContainer__lists__list__link
-            = link_to "/", class:"product-link" do
-              .product-image-box
-                = image_tag src="product1.png", class: "product-image"
-              .product-link__description
-                .product-name
-                  product1
-                .product-cost
-                  %ul{class: "product-cost__list"}
-                    %li
-                      10000円
-                    %li{class: "like-btn"}
-                      ★0
-                .product-tax
-                  (税込)
+
+    = render "pickupContainer"  
+
     .index__main__pickupContainer
       .index__main__pickupContainer__head
         ピックアップブランド
@@ -160,7 +111,7 @@
           .index__main__pickupContainer__lists__list__link
             = link_to "/", class:"product-link" do
               .product-image-box
-                = image_tag src="product3.png", class: "product-image"
+                = image_tag asset_path("product1-3.png", class: "product-image")
             .product-link__description
               .product-name
                 product3
@@ -172,10 +123,11 @@
                     ★0
               .product-tax
                 (税込)
+          
           .index__main__pickupContainer__lists__list__link
             = link_to "/", class:"product-link" do
               .product-image-box
-                = image_tag src="product2.png", class: "product-image"
+                = image_tag asset_path("product1-2.png", class: "product-image")
               .product-link__description
                 .product-name
                   product2
@@ -190,7 +142,7 @@
           .index__main__pickupContainer__lists__list__link
             = link_to "/", class:"product-link" do
               .product-image-box
-                = image_tag src="product1.png", class: "product-image"
+                = image_tag asset_path("product1.png", class: "product-image")
               .product-link__description
                 .product-name
                   product1
@@ -212,3 +164,4 @@
         = link_to image_tag("Download_on_the_App_Store_Badge_US-UK_blk_092917.png", class: "APPstore-btn", alt: "サンプル画像"), root_path
         = link_to image_tag("google-play-badge.png", class: "Googleplay-btn", alt: "サンプル画像"), root_path
   = render "footer"
+
