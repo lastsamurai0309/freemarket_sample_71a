@@ -16,16 +16,18 @@ Rails.application.routes.draw do
   resources :products do
     resources :purchase, only: [:index] do
       collection do        
-        # post "card", to: "purchase#card"
+        post "card", to: "purchase#card"
         get "done", to: "purchase#done"
       end
     end
   end
 
+  
   resources :cards, only: [:new, :create] do
   end
+
+
   # resources :purchase, only: [:index]
-  # root 'users#index'
 end
 
 
