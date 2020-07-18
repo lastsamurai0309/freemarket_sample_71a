@@ -111,14 +111,14 @@
           .index__main__pickupContainer__lists__list__link
             = link_to "/", class:"product-link" do
               .product-image-box
-                = image_tag asset_path("product1-3.png", class: "product-image")
+                = image_tag asset_path("ring.jpg", class: "product-image")
             .product-link__description
               .product-name
-                product3
+                リング
               .product-cost
                 %ul{class: "product-cost__list"}
                   %li
-                    30000円
+                    10000円
                   %li{class: "like-icon"}
                     ★0
               .product-tax
@@ -127,10 +127,10 @@
           .index__main__pickupContainer__lists__list__link
             = link_to "/", class:"product-link" do
               .product-image-box
-                = image_tag asset_path("product1-2.png", class: "product-image")
+                = image_tag asset_path("pc1.jpg", class: "product-image")
               .product-link__description
                 .product-name
-                  product2
+                  パソコン
                 .product-cost
                   %ul{class: "product-cost__list"}
                     %li
@@ -142,14 +142,14 @@
           .index__main__pickupContainer__lists__list__link
             = link_to "/", class:"product-link" do
               .product-image-box
-                = image_tag asset_path("product1.png", class: "product-image")
+                = image_tag asset_path("camera.jpg", class: "product-image")
               .product-link__description
                 .product-name
-                  product1
+                  カメラ
                 .product-cost
                   %ul{class: "product-cost__list"}
                     %li
-                      10000円
+                      30000円
                     %li{class: "like-btn"}
                       ★0
                 .product-tax
@@ -164,3 +164,4 @@
         = link_to image_tag("Download_on_the_App_Store_Badge_US-UK_blk_092917.png", class: "APPstore-btn", alt: "サンプル画像"), root_path
         = link_to image_tag("google-play-badge.png", class: "Googleplay-btn", alt: "サンプル画像"), root_path
   = render "footer"
+
