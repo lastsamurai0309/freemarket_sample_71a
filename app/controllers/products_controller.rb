@@ -4,7 +4,7 @@ class ProductsController < ApplicationController
   before_action :set_categories, only: [:edit, :update]
 
   def index
-    @products = Product.all.where(status: 0).recent(3)
+    @products = Product.where(status: 0).recent(3)
   end
 
   def new
