@@ -250,19 +250,22 @@
       padding: 0;
       &__list {
         width: 780px;
-        margin: 26px auto;
+        margin: 0 auto;
+        padding-left: 73px;
         display: flex;
         justify-content: space-around;
         &__link {
-          width: 220px;
+          display: flex;
+          width: 100%;
           display: inline-block;
           .product-image-box {
             width: 220px;
-            height: 150px;
+            height: 166px;
             position: relative;
             overflow: hidden;
             margin: 0;
             z-index: auto;
+            bottom: 15px;
           }
           .product-link__description {
             background-color: white;
@@ -282,10 +285,7 @@
                 justify-content: space-between;
               }
             }
-          }
-
-
-          
+          }        
         }
       }
     }
