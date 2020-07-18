@@ -9,27 +9,11 @@
         %button{type: "submit", class: "follow-btn"} 
           .index__header__inner__main__search-box__icon
             = image_tag src="icon-search 1.png", class: "Search-btn"
-            -# = image_tag asset_path("icon-search 1.png", class: "Search-btn")
     .index__header__inner__nav
       %ul.listsLeft
         %li.item-category
           = link_to "#", class: "index__header__inner__nav__listsLeft__left-btn" do
             = "カテゴリー　　"
-          %ul.category__parent.category__list
-            - @parents.each do |parent|  
-              %li
-                = link_to "#", class: "category__parent--name" do
-                  = parent.name
-                %ul.category__child.category__list
-                  - parent.children.each do |child|
-                    %li
-                      = link_to "#", class: "category__child--name" do
-                        = child.name
-                      %ul.category__grandchild.category__list
-                        - child.children.each do |grandchild|
-                          %li
-                            = link_to "#", class: " category__child--name" do
-                              = grandchild.name 
         %li.item-bland 
           = link_to "#", class: "index__header__inner__nav__listsLeft__left-btn" do
             = "ブランド" 
