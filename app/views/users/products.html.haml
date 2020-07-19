@@ -79,16 +79,15 @@
         %ul.mypage-tabs
           %li.active
             %h3
-              %a(href="#" id="#" class="tab active")
-                出品中
+              = link_to "出品中", users_products_path,class: "tab active"
+
           %li.tab
             %h3
-              %a(href="#" id="#" class="tab")
-                取引中
+              = link_to "取引中", users_products_path,class: "tab active"
+                
           %li.tab
             %h3
-              %a(href="#" id="#" class="tab")
-                過去の取引
+              = link_to "過去の取引", users_products_path,class: "tab active"
         %div.mypage-contennts
           %div.contennts-transaction
           
@@ -98,12 +97,7 @@
                   = image_tag product.photos[0].name.url
                   .mypage-product_name
                     = product.name
-                  
-                  -# = product.content
-            -# %figure.itemNotFind
-            -#   %image
-            -#     = image_tag "icon_category.png", size: "60x60"
-            -# %li 取引中の商品がありません           
+                    
           %div.contennts-pastTransactions
             %li.content
               %a(href="#" id="#" class="contennts")
