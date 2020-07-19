@@ -1,0 +1,32 @@
+-# Card_path(current_user.id), class: "credit_cards_index_link__btn"
+
+.index
+  = render "/users/mypage.header"
+
+  .index__breadCrumbs
+    FURIMA > マイページ > 支払い方法
+  .index__main-contents
+    = render "/users/mypage.nav"
+
+    .create
+      .create__frame
+        .create__frame__message
+          登録が完了しました。
+        %ul.create__frame__btns
+          %li.my_page_link
+            = link_to "マイページに戻る", users_path(current_user.id), class: "my_page_link__btn"
+
+          %li.credit_cards_index_link
+            = link_to "登録カード一覧", credit_ca
+
+  .index__appBanner
+    .index__appBanner__inner
+      .index__appBanner__inner__title
+        だれでもかんたん、人生を変えるフリマアプリ
+      .index__appBanner__inner__text
+        今すぐ無料ダウンロード！
+      .index__appBanner__inner__icon
+        = link_to image_tag("Download_on_the_App_Store_Badge_US-UK_blk_092917.png", class: "APPstore-btn", alt: "サンプル画像"), root_path
+        = link_to image_tag("google-play-badge.png", class: "Googleplay-btn", alt: "サンプル画像"), root_path
+
+  = render "/users/mypage.footer"
