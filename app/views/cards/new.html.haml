@@ -10,7 +10,7 @@
       .title 
         クレジットカード情報入力
 
-      = form_tag('/cards', method: :post, id: "charge-form", class: "details", name: "inputForm") do
+      = form_tag("/cards", method: :post, id: "card_token", class: "details", name: "inputForm") do
         .card-form
           .number-details
             .card-number  
@@ -18,7 +18,7 @@
             %span.must_check 
               必須
           .number
-            = text_field_tag 'payment_card_no', "", class: 'cardnumber', id: "payment_card_no", placeholder: '半角数字のみ', type: "text", maxlength: "16"
+            = text_field_tag 'payment_card_no', "", class: 'cardnumber', id: "card_number", placeholder: '半角数字のみ', type: "text", maxlength: "16"
           .image
             = image_tag(image_path('cards/visa.gif'), class: 'visa')
             = image_tag(image_path('cards/master.gif'), class: 'master')
@@ -73,7 +73,7 @@
               %span.must_check 
                 必須
             .securitycode__cardsecurity
-              = text_field_tag  "payment_card_cvc", "", type: 'text', class: 'securitycode__cardsecurity__form', id: "payment_card_cvc", maxlength: "4", placeholder: 'カード背面4桁もしくは3桁の番号'
+              = text_field_tag  "payment_card_cvc", "", type: 'text', class: 'securitycode__cardsecurity__form', id: "card_cvc", maxlength: "4", placeholder: 'カード背面4桁もしくは3桁の番号'
             .card-question 
               = link_to "#", class: "card-question__icon" do
                 =icon('fas', 'question-circle')

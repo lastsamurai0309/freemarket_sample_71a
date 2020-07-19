@@ -2,29 +2,41 @@ class CardsController < ApplicationController
   require "payjp" 
 
   def new
+    # @card = Card.new
   end
 
   def create
     Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
-    if params['payjpToken'].blank?
-      render "new"
+    if params["payjp_token"].blank?
+      # binding.pry
+      redirect_to action: "new", alert: "クレジットカードを登録できませんでした。"
     else
       customer = Payjp::Customer.create(
-        description: 'test',
         email: current_user.email,
-        card: params['payjpToken'],
-        # metadata: {user_id: current_user.id}
+        card: params["payjp_token"],
+        metadata: {user_id: current_user.id}
       )
-      @card = Creditcard.new(user_id: current_user.id, payjp_id: customer.id)
+      
+      @card = Card.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
       if @card.save
+        redirect_to action: "show"
+        # flash[:notice] = 'クレジットカードの登録が完了しました'
       else
-        redirect_to action: "create"
+        redirect_to action: "new"
+        # flash[:alert] = 'クレジットカード登録に失敗しました'
       end
     end
   end
 
-  private
-  def set_card
-    @card = Creditcard.where(user_id: current_user.id).first if Creditcard.where(user_id: current_user.id).present?
+  def show
+    # @default_card_informateion = {number: "4242424242424242", cvc: "123", exp_month: "01", exp_year: "23"}
   end
+
+  def destroy
+  end
+
+  # private
+  # def set_card
+  #   @card = Creditcard.where(user_id: current_user.id).first if Creditcard.where(user_id: current_user.id).present?
+  # end
 end
