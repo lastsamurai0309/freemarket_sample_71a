@@ -2,6 +2,7 @@ class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit]
   before_action :set_params, only: :create
   before_action :set_categories, only: [:edit, :update]
+  before_action :only_current_user, only: [:edit, :update, :destroy]
 
   def index
     @products = Product.where(status: 0).recent(3)
@@ -60,6 +61,12 @@ class ProductsController < ApplicationController
 
   def set_categories
     @categories = Category.where(ancestry: nil)
+  end
+
+  def only_current_user
+    unless current_user.id == @product.user.id
+      redirect_to root_path
+    end
   end
 
 end
