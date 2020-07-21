@@ -80,7 +80,7 @@ class ProductsController < ApplicationController
       redirect_to controller: :products, action: :index, notice: "商品情報を編集しました"
     else
       flash[:alert] = '必須事項を入力してください。'
-      redirect_to edit_product_path
+      redirect_to edit_product_path, notice: "入力必須項目を確認してください"
     end
   end
 end
