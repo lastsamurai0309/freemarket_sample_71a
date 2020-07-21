@@ -47,9 +47,10 @@
           @include cotent_box();
           height: 416px;
           border-bottom:  1px solid #F5F5F5;
+          
 
           &__body{
-            
+            margin-top: 87px;           
             &__titlearea{
               margin-top: 16px;
               width: 620px;
@@ -80,7 +81,6 @@
           @include cotent_box();
           height: 444px;
           border-bottom:  1px solid #F5F5F5;
-
           &__body{
             &__brand{
               margin-top: 30px;
@@ -118,6 +118,7 @@
           height: 444px;
           border-bottom:  1px solid #F5F5F5;
           &__body{
+            margin-top: 30px;
             &__title{
               margin-top: 30px;
             }
