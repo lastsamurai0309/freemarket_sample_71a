@@ -1,7 +1,8 @@
 class CardsController < ApplicationController
+
   require "payjp" 
 
-  def index
+  def show
     if @card.present?
 
       Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
@@ -25,8 +26,7 @@ class CardsController < ApplicationController
       end
     
       @card_month = @card_customer.exp_month.to_s
-      @card_year = @card_customer.exp_year.to_s.slice(-2)
-      # ★上手く年が取り出せないときは、↑のsliceが原因 slice(2,3)に変更する（と多分上手くいくはず？）
+      @card_year = @card_customer.exp_year.to_s.slice(2,3)
       
     else
       redirect_to action: "new"
@@ -34,6 +34,8 @@ class CardsController < ApplicationController
   end
 
   def new
+    @card = Card.where(user_id: current_user.id)
+    redirect_to card_path(current_user.id) if @card.present?
   end
   
   def create
@@ -50,12 +52,13 @@ class CardsController < ApplicationController
       
       @card = Card.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
       if @card.save
-        redirect_to action: "index"
+      # = link_to 'カード一覧', "/cards"
+        redirect_to action: "show"
         flash[:alert] = 'クレジットカード登録が成功しました'
 
       else
         redirect_to action: "new"
-        flash[:alert] = 'クレジットカード登録に失敗しました'
+          flash[:alert] = 'クレジットカード登録に失敗しました'
       end
     end
   end
@@ -66,7 +69,7 @@ class CardsController < ApplicationController
     customer.delete
     @card.delete
     if @card.destroy
-      # フラッシュメッセージをいれる
+      flash[:alert] = 'クレジットカードを削除しました。'
     else
       redirect_to card_path(current_user.id), alert: "削除できませんでした。"
     end
