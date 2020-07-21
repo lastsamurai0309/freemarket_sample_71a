@@ -2,7 +2,7 @@ class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit]
   before_action :set_params, only: :create
   before_action :set_categories, only: [:edit, :update]
-  before_action :only_current_user, only: [:edit, :update, :destroy]
+  before_action :current_user, only: [:edit, :update]
 
   def index
     @products = Product.where(status: 0).recent(3)
@@ -25,10 +25,17 @@ class ProductsController < ApplicationController
   end
 
   def edit
-    
   end
 
   def update
+    @product = Product.find(params[:id])
+    if @product.update(set_params)
+      flash[:alert] = '商品情報を編集しました。'
+      redirect_to controller: :products, action: :index, notice: "商品情報を編集しました"
+    else
+      flash[:alert] = '必須事項を入力してください。'
+      redirect_to edit_product_path, notice: "編集できません。入力必須項目を確認してください"
+    end
 
   end
 
@@ -59,13 +66,17 @@ class ProductsController < ApplicationController
     params.require(:product).permit(:name, :content, :category_id, :brand, :condition_id, :fee_id, :area_id, :shippingday_id, :price, photos_attributes: [:name, :_destroy, :id]).merge(user_id: current_user.id,status: 0)
   end
 
+  def set_update_params
+    params.require(:product).permit(:name, :content, :category_id, :brand, :condition_id, :fee_id, :area_id, :shippingday_id, :price, photos_attributes: [:name, :_destroy, :id])
+  end
+
   def set_categories
     @categories = Category.where(ancestry: nil)
   end
 
-  def only_current_user
-    unless current_user.id == @product.user.id
-      redirect_to root_path
+  def correct_user
+    if @current_user.id !=  @product.user_id
+     redirect_to root_path
     end
   end
 
