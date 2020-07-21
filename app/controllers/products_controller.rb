@@ -76,8 +76,11 @@ class ProductsController < ApplicationController
 
   def correct_user
     if @current_user.id !=  @product.user_id
-     redirect_to root_path, notice: "編集機能ば出品者のみが可能です。"
+      flash[:alert] = '商品情報を編集しました。'
+      redirect_to controller: :products, action: :index, notice: "商品情報を編集しました"
+    else
+      flash[:alert] = '必須事項を入力してください。'
+      redirect_to edit_product_path
     end
   end
-
 end
