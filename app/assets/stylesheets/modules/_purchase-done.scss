@@ -13,12 +13,10 @@
 }
 
 .purchased {
-  height: 130vh;
   width: 100vw;
   background-color: #F5F5F5;
   &__content {
-    height: calc(145vh - 100px);
-    width: 600px;
+    width: 700px;
     margin: 0 auto;
     background-color: #ffffff;
     &__announce {

@@ -10,14 +10,13 @@
   &__logo{
     justify-content: center;
     text-align: center;
-    margin-top: 40px;
+    padding: 40px;
   }
   .FURIMA-btn{
     width: 15%;
   }
 }
 .main{
-  height:100vh;
   width: 100vw;
   background-color: #F5F5F5;
   font-family: Arial,游ゴシック体,YuGothic,メイリオ,Meiryo,sans-serif;
@@ -39,6 +38,9 @@
               font-weight: 600;
               line-height: 1.4em;
             }
+            input {
+              cursor: pointer;
+            }
           }
         }
         .item-name{
@@ -52,12 +54,16 @@
               margin-top: 16px;
               width: 620px;
               height: 48px;
+              .item_form {
+                cursor: pointer;
+              }
             }
             &__discription{
               margin-top: 16px;
               .form__discription {
                 width: 100%;
                 height: 191px;
+                cursor: pointer;
               }
             }
             &__option{
@@ -81,6 +87,9 @@
             }
             &__category{
               margin-top: 30px;
+              select {
+                cursor: pointer;
+              }
             }
             &__categoryname{
               margin-top: 16px;
@@ -88,8 +97,14 @@
             &__brandname{
               margin-top: 16px;
             }
+            input {
+              cursor: pointer;
+            }
             &__condition{
               margin-top: 30px;
+            }
+            select {
+              cursor: pointer;
             }
             &__conditionform{
               margin-top: 16px;
@@ -105,6 +120,9 @@
           &__body{
             &__title{
               margin-top: 30px;
+            }
+            select {
+              cursor: pointer;
             }
             &__area{
               margin-top: 16px;
@@ -135,18 +153,15 @@
               margin-top: 24px;
               text-align: center;
               display: flex;
-              justify-content: space-between;
-              
+              justify-content: space-between;             
+            }
+            input {
+              cursor: pointer;
             }
             &__tax{
               margin-top: 24px;
-
             }
-            
-
-
           }
-
         }
         
         .selling-rules{
@@ -155,9 +170,6 @@
           font-size: 12px;
         }
       }
-
-
-
     }
   }
 }
@@ -165,9 +177,7 @@
   height: 220px;
   width: 100%;
   background-color: #F5F5F5;
-
 }
-
 .heading{
   font-size: 14px;
   font-weight: 600;
@@ -199,7 +209,9 @@
       font-family:Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
       font-weight: 600;
     }
-    
+    input {
+      cursor: pointer;
+    }
     &__back {
       width: 100%;
       margin-top: 25px;
