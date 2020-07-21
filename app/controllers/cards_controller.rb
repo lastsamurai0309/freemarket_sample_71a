@@ -2,7 +2,10 @@ class CardsController < ApplicationController
 
   require "payjp" 
 
-  def show
+  def index
+    # @card = Creditcard.where(user_id: current_user.id).first if Creditcard.where(user_id: current_user.id).present?
+    
+    binding.pry
     if @card.present?
 
       Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
@@ -79,8 +82,8 @@ class CardsController < ApplicationController
 
   end
 
-  # private
-  # def set_card
-  #   @card = Creditcard.where(user_id: current_user.id).first if Creditcard.where(user_id: current_user.id).present?
-  # end
+  private
+  def set_card
+    @card = Creditcard.where(user_id: current_user.id).first if Creditcard.where(user_id: current_user.id).present?
+  end
 end
