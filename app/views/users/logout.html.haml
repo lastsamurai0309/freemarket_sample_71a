@@ -1,5 +1,5 @@
 .index
-  = render "mypage.header"
+  = render "products/header"
 
   .index__breadCrumbs
     FURIMA > マイページ > ログアウト
@@ -10,14 +10,5 @@
         %li.logOut
           = link_to("ログアウト", destroy_user_session_path, method: :delete)
 
-  .index__appBanner
-    .index__appBanner__inner
-      .index__appBanner__inner__title
-        だれでもかんたん、人生を変えるフリマアプリ
-      .index__appBanner__inner__text
-        今すぐ無料ダウンロード！
-      .index__appBanner__inner__icon
-        = link_to image_tag("Download_on_the_App_Store_Badge_US-UK_blk_092917.png", class: "APPstore-btn", alt: "サンプル画像"), root_path
-        = link_to image_tag("google-play-badge.png", class: "Googleplay-btn", alt: "サンプル画像"), root_path
-
-  = render "mypage.footer"
+  = render "products/appBanner"
+  = render "products/footer"

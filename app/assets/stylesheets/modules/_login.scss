@@ -16,6 +16,15 @@
 .login {
   height: 100vh;
   background-color: #f5f5f5;
+  &__logo{
+    justify-content: center;
+    text-align: center;
+    padding: 0px;
+  }
+  .FURIMA-btn{
+    width: 15%;
+  }
+
   &-main{
     width: 500px;
     background-color: #fff;

@@ -15,6 +15,14 @@
 .purchased {
   width: 100vw;
   background-color: #F5F5F5;
+  &__logo{
+    justify-content: center;
+    text-align: center;
+    padding: 0px;
+  }
+  .FURIMA-btn{
+    width: 15%;
+  }
   &__content {
     width: 700px;
     margin: 0 auto;

@@ -41,12 +41,12 @@
               = f.label :マンション名
               %span.require 任意
               %br/
-              = f.text_field :billding, autocomplete: "billding",class: "input-area", placeholder: "例）メゾンフリマ"
+              = f.text_field :billding, autocomplete: "billding",class: "input-area-require", placeholder: "例）メゾンフリマ"
             .deviseform__field
               = f.label :電話番号
               %span.require 任意
               %br/
-              = f.text_field :phone_number, autocomplete: "phone_number",class: "input-area", placeholder: "例）０３１２３４５６７８"
+              = f.text_field :phone_number, autocomplete: "phone_number",class: "input-area-require", placeholder: "例）０３１２３４５６７８"
             .devise__actions
               = f.submit "登録", class: "devisebtn"
   = render "devise/footer"
