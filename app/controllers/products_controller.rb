@@ -4,9 +4,7 @@ class ProductsController < ApplicationController
   before_action :set_categories, only: [:edit, :update]
 
   def index
-    @Products = Product.includes(:photos).where(status: 0).order("RAND()")
-    @brandProducts = Product.includes(:photos).where(status: 0).order("id DESC")
-    @parent = Category.where(ancestry: nil)
+    @products = Product.where(status: 0).recent(3)
   end
 
   def new

@@ -1,10 +1,6 @@
 .index
-  = link_to "/products/new" do
-    .index__camera
-      %span.index__camera__text
-        = "出品する"
-      = image_tag "/assets/icon_camera.png", alt: "サンプル画像", id: "pic1", class: "camera-btn"
-      
+  
+  = render "mypage.camera"  
   = render "mypage.header"
 
   .index__breadCrumbs
@@ -13,7 +9,7 @@
     = render "mypage.nav"
     .index__main-contents__user
       .index__main-contents__user--info
-        = image_tag "mypageBackground.jpeg", size: "800x200"
+        = image_tag asset_path('mypageBackground.jpg'), size: "800x200"
         .index__main-contents__user--info__icon
           %figure
             %image
@@ -29,58 +25,50 @@
               出品数            
               %span.bold
                 0
-      %section.mypage-contener
-        %ul.mypage-tabs
-          %li.active
+      .mypage-contener
+        .mypage-tabs
+          .active
             %h3
-              %a(href="#" id="#" class="tab active")
-                お知らせ
-          %li.tab
+              お知らせ              
+          .tab
             %h3
-              %a(href="#" id="#" class="tab")
-                やることリスト
-        %div.mypage-contennts
-          %div.tab-notification
-            %li.show
-              %a.contennts-notification
-                %div.contennts-notification-image
-                  %image
+              やることリスト               
+        .mypage-contents
+          .tab-notification
+            .show
+              %a.contents-notification
+                .contents-notification-image
+                  .image
                     = image_tag "icon_category.png", size: "48x48"           
-                %div.text-notification 
-                  aチーム頑張ってます！
-                  %div.time-notification
+                .text-notification 
+                  お知らせ
+                  .time-notification
                     %i.far.fa-clock
                     %span 15時間前
-              %a.contennts-notification
-                %div.contennts-notification-image
-                  %image
+              %a.contents-notification
+                .contents-notification-image
+                  .image
                     = image_tag "icon_category.png", size: "48x48"           
-                %div.text-notification 
+                .text-notification 
                   お知らせ
-                  %div.time-notification
+                  .time-notification
                     %i.far.fa-clock
                     %span 16時間前
-              %a.contennts-notification
-                %div.contennts-notification-image
-                  %image
+              %a.contents-notification
+                .contents-notification-image
+                  .image
                     = image_tag "icon_category.png", size: "48x48"           
-                %div.text-notification 
+                .text-notification 
                   お知らせ
-                  %div.time-notification
+                  .time-notification
                     %i.far.fa-clock
                     %span 16時間前
-            %div.contennts-go
+            .contents-go
               = link_to('一覧表を見る', "#")
-                
-          %div.tab-toDo
-            %li.content
-              %a(href="#" id="#" class="contennts")
-
-
-      %section.mypage-purchase
-        %h4.mypage-purchase-head 
+      .mypage-purchase
+        .mypage-purchase--head 
           購入した商品          
-        %ul.mypage-tabs
+        .mypage-tabs
           %li.active
             %h3
               %a(href="#" id="#" class="tab active")
@@ -89,16 +77,13 @@
             %h3
               %a(href="#" id="#" class="tab")
                 過去の取引
-        %div.mypage-contennts
-          %div.contennts-transaction
-            %figure.itemNotFind
-              %image
+        .mypage-content
+          .content-transaction
+            .itemNotFind
+              .image
                 = image_tag "icon_category.png", size: "60x60"
-            %li 取引中の商品がありません           
-          %div.contennts-pastTransactions
-            %li.content
-              %a(href="#" id="#" class="contennts")
-
+            %p 取引中の商品がありません           
+         
   .index__appBanner
     .index__appBanner__inner
       .index__appBanner__inner__title

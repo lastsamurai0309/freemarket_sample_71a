@@ -1,37 +1,20 @@
-.signup
-  .signup__header
-    .header-icon
-      = link_to root_path do
-        = image_tag "logo.png"
-  %h2 ログイン
-  = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-    .field
-      = f.label :email
-      %br/
-      = f.email_field :email, autofocus: true, autocomplete: "email"
-    .field
-      = f.label :password
-      %br/
-      = f.password_field :password, autocomplete: "current-password"
-    - if devise_mapping.rememberable?
+.login
+  = render "devise/header"
+  .login-main
+    %p ログイン
+    = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      .field      
+        = f.label :email, class: 'red'
+        %br/
+        = f.email_field :email, autofocus: true, autocomplete: "email"
       .field
+        = f.label :password
+        %br/
+        = f.password_field :password, autocomplete: "current-password"
+      - if devise_mapping.rememberable?
+        .field
 
-    .button_panel
-      %input.button{:title => "Log in", :type => "submit", :value => "Log in"}/
-  .signup__footer
-    .inner
-      %ul
-        %li
-          = link_to "#" do
-            プライバシーポリシー
-        %li
-          = link_to "#" do
-            FURIMA利用規約
-        %li
-          = link_to "#" do
-            特定商取引に関する表記
-      .footer-icon
-        = link_to "#" do
-          = image_tag "logo.png", class: "hurima-icon"
-        %p
-          © Furima, Inc.
+      .button_panel
+        %input.button{:title => "Log in", :type => "submit", :value => "Log in"}/
+  
+  = render "devise/footer"

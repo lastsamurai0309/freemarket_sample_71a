@@ -28,7 +28,8 @@
             = @product.name
           %ul.main__showMain__topContents__topContent__itemBox__body
             %li
-              = image_tag @product.photos[0].name.url
+              - @product.photos.each do |photo|
+                = image_tag photo.name.url, :width => "75", :height => "75"
               %ul
                 %li
                   = image_tag @product.photos[0].name.url, width:"75px", height:"75px"
@@ -137,7 +138,7 @@
             .main__showMain__topContents__topContent__productsManage
               %button.main__showMain__topContents__topContent__productsManage__buyBtn
                 %i.fas.fa-shopping-cart
-                = link_to "購入する", product_purchase_index_path(params[:id])
+                = link_to "購入する", new_product_contract_path(@product)
       .main__showMain__topContents__links
         %li
           = link_to "#" do
