@@ -95,6 +95,7 @@
           line-height: 38px;
           color: #333;
           margin-left: 16px;
+          list-style: none;
 
           a {
             color: #333;
@@ -107,13 +108,14 @@
 }
 
 .breadCrumbs {
-  
+  padding: 0 60px;
 
   ul {
     padding: 17px 0 16px;
     font-size: 14px;
     max-width: 1040px;
     margin: 0 auto;
+    justify-content: normal;
 
     li {
       float: left;
@@ -341,6 +343,63 @@
               i {
                 overflow: visible;
               }
+            }
+          }
+        }
+
+        &__productsManage {
+          margin: 10px 0;
+          padding: 24px;
+          background-color: #fff;
+          text-align: center;
+
+
+          &__editBtn {
+            background-color: #3CCACE;
+            border: 1px solid #3CCACE;
+            color: #fff;
+            font-size: 18px;
+            border-radius: 100px;
+            line-height: 48px;
+            text-decoration: none;
+            padding: 0px;
+            width: 60%;
+            a {
+              text-decoration: none;
+              color: #fff;
+            }
+          }
+
+          &__deleteBtn {
+            background-color: #3CCACE;
+            border: 1px solid #3CCACE;
+            color: #fff;
+            font-size: 18px;
+            border-radius: 100px;
+            line-height: 48px;
+            text-decoration: none;
+            margin-top: 24px;
+            padding: 0px;
+            width: 60%;
+            a {
+              text-decoration: none;
+              color: #fff;
+            }
+          }
+
+          &__buyBtn {
+            background-color: #3CCACE;
+            border: 1px solid #3CCACE;
+            color: #fff;
+            font-size: 18px;
+            border-radius: 100px;
+            line-height: 48px;
+            text-decoration: none;
+            padding: 0px;
+            width: 60%;
+            a {
+              text-decoration: none;
+              color: #fff;
             }
           }
         }

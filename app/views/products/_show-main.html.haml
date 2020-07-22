@@ -32,11 +32,26 @@
               %ul
                 %li
                   = image_tag @product.photos[0].name.url, width:"75px", height:"75px"
-                %li
-                  = image_tag @product.photos[1].name.url, width:"75px", height:"75px"
+                - if @product.photos[1].nil?
+                - else
+                  %li
+                    = image_tag @product.photos[1].name.url, width:"75px", height:"75px"
+                - if @product.photos[2].nil?
+                - else
+                  %li
+                    = image_tag @product.photos[2].name.url, width:"75px", height:"75px"
+                - if @product.photos[3].nil?
+                - else
+                  %li
+                    = image_tag @product.photos[3].name.url, width:"75px", height:"75px"
+                - if @product.photos[4].nil?
+                - else
+                  %li
+                    = image_tag @product.photos[4].name.url, width:"75px", height:"75px"      
           .main__showMain__topContents__topContent__itemBox__price
-            %span
-              = @product.price 
+            %span<>
+              ¥
+              = @product.price
             .main__showMain__topContents__topContent__itemBox__price__price-detail
               %span
                 (税込)
@@ -57,11 +72,10 @@
                     カテゴリー
                   %td
                     = @product.category.parent.parent.name
-                    >>
+                    %br
                     = @product.category.parent.name
-                    >>
+                    %br
                     = @product.category.name
-
                 %tr
                   %th
                     ブランド
@@ -111,6 +125,19 @@
             %button.main__showMain__topContents__topContent__commentBox__newComment__commentBtn{type:"submit"}
               %i.fas.fa-comment
               コメントする
+          - if user_signed_in? && current_user.id == @product.user_id
+            .main__showMain__topContents__topContent__productsManage
+              %button.main__showMain__topContents__topContent__productsManage__editBtn
+                %i.far.fa-edit
+                = link_to "編集する", edit_product_path
+              %button.main__showMain__topContents__topContent__productsManage__deleteBtn
+                %i.fas.fa-trash
+                = link_to "削除する", product_path, method: :delete, data: { confirm: "本当に削除しますか？"}
+          - if user_signed_in? && current_user.id != @product.user_id
+            .main__showMain__topContents__topContent__productsManage
+              %button.main__showMain__topContents__topContent__productsManage__buyBtn
+                %i.fas.fa-shopping-cart
+                = link_to "購入する", product_purchase_index_path(params[:id])
       .main__showMain__topContents__links
         %li
           = link_to "#" do
