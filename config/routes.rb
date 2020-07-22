@@ -15,7 +15,8 @@ Rails.application.routes.draw do
 
   resources :products do
     resources :purchase, only: [:index] do
-      collection do        
+      collection do
+        get "set_images"    
         # post "card", to: "purchase#card"
         get "done", to: "purchase#done"
       end
