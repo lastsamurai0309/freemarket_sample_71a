@@ -5,7 +5,7 @@ class CardsController < ApplicationController
   def index
     # @card = Creditcard.where(user_id: current_user.id).first if Creditcard.where(user_id: current_user.id).present?
     
-    binding.pry
+    # binding.pry
     if @card.present?
 
       Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
@@ -37,8 +37,8 @@ class CardsController < ApplicationController
   end
 
   def new
-    @card = Card.where(user_id: current_user.id)
-    redirect_to card_path(current_user.id) if @card.present?
+    # @card = Card.where(user_id: current_user.id)
+    # redirect_to card_path(current_user.id) if @card.present?
   end
   
   def create
@@ -55,8 +55,7 @@ class CardsController < ApplicationController
       
       @card = Card.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
       if @card.save
-      # = link_to 'カード一覧', "/cards"
-        redirect_to action: "show"
+        # redirect_to action: "index"
         flash[:alert] = 'クレジットカード登録が成功しました'
 
       else
@@ -76,14 +75,11 @@ class CardsController < ApplicationController
     else
       redirect_to card_path(current_user.id), alert: "削除できませんでした。"
     end
-
-
-
-
   end
 
   private
-  def set_card
-    @card = Card.where(user_id: current_user.id).first if Card.where(user_id: current_user.id).present?
+  def card
+    @card = Card.where(user_id: current_user.id).first if Card.where(user_id: current_user.id)
+  # .present? (上の記載にくっつける)
   end
 end
