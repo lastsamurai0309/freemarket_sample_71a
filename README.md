@@ -16,7 +16,7 @@
 |birth_day|integer|null: false|
 
 ### Association
-- has_many:items, dependent: :destroy
+- has_many:products, dependent: :destroy
 - has_many:messages, dependent:destroy
 - has_many:rates, dependent: :destroy
 - has_many:cards, dependent: :destroy
