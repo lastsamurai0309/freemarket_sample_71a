@@ -7,7 +7,7 @@
   width: $width;
   height: $height;
 }
-@mixin font($size: 14px) {
+@mixin font($size: 16px) {
   font-size: $size;
   font-weight: bold;
 }
@@ -25,7 +25,7 @@
 
   &__contents {
     width: 700px;
-    padding: 0px 100px;
+    padding: 0px 165px;
     background-color: #ffffff; 
     margin: 0 auto;
     &__message {
@@ -46,7 +46,7 @@
         }
         &--description {
           @include content(290px, 100%);
-          padding-left: 10px;
+          padding-left: 40px;
           font-size: 14px;
           &__name {
             @include content(100%, 100px);  
@@ -83,22 +83,19 @@
       &__card-box {
         @include content(300px, 120px);
         padding-top: 10px;
-        p {
-          font-size: 14px;
-        }
+        font-size: 14px;
       }
     }
     &__address {
-      @include block();
+      @include block();  
       h4 {
         @include font(); 
-      }
-      &__add-box {
+      }    
+      &__add-box {        
         @include content(350px, 120px);
         padding-top: 10px;
-        p {
-          font-size: 14px;
-        }
+        margin-bottom: 50px;
+        font-size: 14px;
       }
     }
     &__form {

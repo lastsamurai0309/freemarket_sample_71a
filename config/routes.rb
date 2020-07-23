@@ -14,10 +14,10 @@ Rails.application.routes.draw do
   end
 
   resources :products do
-    resources :purchase, only: [:index] do
+    resources :purchases, only: [:index] do
       collection do        
-        # post "card", to: "purchase#card"
-        get "done", to: "purchase#done"
+        # post "card", to: "purchases#card"
+        get "done", to: "purchases#done"
       end
     end
   end
