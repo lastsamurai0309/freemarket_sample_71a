@@ -2,6 +2,7 @@
   .main__content
     = form_for @product do |f|
       .main__content__form__inside
+        商品の情報を入力
         .item-image
           .item-image__body
             .item-image__body__title
@@ -13,17 +14,26 @@
               最大5枚までアップロードできます
               .post__drop__box__container
                 .prev-content
+                  - @product.photos.each do |image, i|
+                    .preview-box
+                      .upper-box
+                        = image_tag image.name, width: "112", height: "112", alt: "preview"
+                      .lower-box
+                        .update-box{"data-image-index": i }
+                          %label.edit-btn 編集
+                        .delete-box
+                          .delete-btn
+                            %span 削除
                 .label-content
-                  %label{for: "product_photos_attributes_0_name", class: "abel-box", id: "label-box--0"}
+                  %label{for: "photos_attributes_#{@product.photos.length}_image", class: "label-box", id:  "label-box--#{@product.photos.length}"}
                     %pre.label-box__text-visible クリックしてファイルをアップロード
                 .hidden-content
                   = f.fields_for :photos do |i|
-                    = i.file_field :name, class: "hidden-field"
-                    %input{class:"hidden-field", type: "file", name: "product[photos_attributes][1][name]", id: "product_photos_attributes_1_name" }
-                    %input{class:"hidden-field", type: "file", name: "product[photos_attributes][2][name]", id: "product_photos_attributes_2_name" }
-                    %input{class:"hidden-field", type: "file", name: "product[photos_attributes][3][name]", id: "product_photos_attributes_3_name" }
-                    %input{class:"hidden-field", type: "file", name: "product[photos_attributes][4][name]", id: "product_photos_attributes_4_name" }
-
+                    = i.file_field :image, class: "hidden-field"
+                    = i.check_box :_destroy, class: "hidden-checkbox"
+                  - @product.photos.length.upto(4) do |i|
+                    %input{name: "product[photos_attributes][#{i}][image]", id: "photos_attributes_#{i}_image", class:"hidden-field", type:"file"}
+ 
         .item-name
           .item-name__body
             .item-name__body__title
@@ -52,14 +62,11 @@
                 %span.required_tag
                   必須
                 .sell__about__right__wrap-box.parent
-                  %select#parent
-                    %option{value: 0} ---
-                    - @parent.each do |parent|
-                      %option{value: "#{parent.id}"} #{parent.name}
-                .child
-                  %select#child
-                .grand_child
-                  = f.collection_select(:category_id, [], :id, :name, {prompt: "---"}, {id: "grand_child"})
+                  = f.collection_select(:category_id, Category.where(ancestry: nil), :id, :name, {prompt: "---", selected: @product.category.parent.parent_id}, {id: "parent"})
+                .children
+                  = f.collection_select(:category_id, @product.category.parent.parent.children, :id, :name, {prompt: "---", selected: @product.category.parent_id}, {id: "child"})
+                .grand_children
+                  = f.collection_select(:category_id, @product.category.parent.children, :id, :name, {prompt: "---", selected: @product.category.id}, {id: "grand_child"})
                 .new-listing__no-product
                   選択してください
             .item-category__body__brand
@@ -127,7 +134,7 @@
         .item-selling
           .item-selling__body
             .item-selling__body__title
-              = f.submit "出品する", {class:"item-selling__body__btn-exhibition"}
+              = f.submit "更新する", {class:"item-selling__body__btn-exhibition"}
             .item-selling__body__back
               .item-selling__body__back__bottom
                 = link_to "戻る", root_path
@@ -150,5 +157,5 @@
           に同意したことになります。
           .selling-rules__body
             .selling-rules__body__discription
-
+  
   = render "devise/footer"

@@ -1,0 +1,24 @@
+.index__main__pickupContainer__head
+  ピックアップ3
+.index__main__pickupContainer__headbottom
+  = link_to "/", class: "link-btn" do
+    新規投稿商品
+.index__main__pickupContainer__lists
+  .index__main__pickupContainer__lists__list        
+    .index__main__pickupContainer__lists__list__link
+      - @products.each do |product|
+        = link_to "/", class:"product-link" do
+          .product-image-box             
+            = image_tag product.photos[0].name.url,size: "200x150"             
+          .product-link__description
+            .product-name
+              = product.name
+            .product-cost
+              %ul{class: "product-cost__list"}
+                %li
+                  = "#{product.price.to_s}"+ "円"
+                %li{class: "like-icon"}
+                  ★0
+            .product-tax
+              (税込) 
+        

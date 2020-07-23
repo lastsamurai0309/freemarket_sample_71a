@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200711142633) do
+ActiveRecord::Schema.define(version: 20200711163511) do
 
   create_table "addresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "address_name", null: false
@@ -44,12 +44,6 @@ ActiveRecord::Schema.define(version: 20200711142633) do
     t.index ["ancestry"], name: "index_categories_on_ancestry", using: :btree
   end
 
-  create_table "items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "name",       null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "photos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",       null: false
     t.integer  "product_id"
@@ -78,10 +72,10 @@ ActiveRecord::Schema.define(version: 20200711142633) do
 
   create_table "purchase_histories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id"
-    t.integer  "item_id"
+    t.integer  "product_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["item_id"], name: "index_purchase_histories_on_item_id", using: :btree
+    t.index ["product_id"], name: "index_purchase_histories_on_product_id", using: :btree
     t.index ["user_id"], name: "index_purchase_histories_on_user_id", using: :btree
   end
 
@@ -118,6 +112,6 @@ ActiveRecord::Schema.define(version: 20200711142633) do
   add_foreign_key "photos", "products"
   add_foreign_key "products", "categories"
   add_foreign_key "products", "users"
-  add_foreign_key "purchase_histories", "items"
+  add_foreign_key "purchase_histories", "products"
   add_foreign_key "purchase_histories", "users"
 end

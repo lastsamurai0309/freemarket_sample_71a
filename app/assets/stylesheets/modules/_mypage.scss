@@ -1,35 +1,24 @@
 .index {
-  height: 100vh;
-  width: 100vw;
-  background-color: #F5F5F5;
-  font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic", "メイリオ", "Meiryo", sans-serif;
   &__breadCrumbs {
-    height: 50px;
-    width: 100%;
     padding: 0 180px;
     border-top: 1px solid #eee;
     box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
     background: #fff;
-    z-index: 1;
     display: block;
     font-size: 14px;
     line-height: 50px;
   }
   &__main-contents {
-    width: 100%;
-    height: 1285px;
     margin: 24px auto 0;
-    padding: 0 150px 40px 150px;
+    padding: 0 180px 40px 180px;
     background-color: #F5F5F5;
     display: flex;
     &__side {
-      width: 600px; 
-      height: 100%;
+      min-width: 300px; 
       background-color: #fff;
       &__nav {     
         div {
           li {
-            width: 100%;
             list-style: none;
             a {
               border-style: solid;
@@ -45,9 +34,7 @@
               touch-action: manipulation;
               cursor: pointer;       
             }  
-            a:link {
-              background-color: #eeeeee;
-            }
+            
             a:hover {
               background-color: #eeeeee;
             }       
@@ -62,21 +49,17 @@
       }
     } 
     &__user {
-      width: 1700px;
-      height: 100%;
       margin-left: 20px; 
       cursor: auto;
       color: #333;
-      &--info {
-        width: 100%;
-        height: 200px;
+      &--info { 
         font-size: 14px;
         position: relative;
-        overflow: hidden;
+        img {
+          background-image: image-url("mypageBackground.jpg");
+        }
         &__icon {
           position: absolute;
-          width: 100%;
-          height: 100%;
           top: 50px;
           left: 0;
           right: 0;
@@ -95,8 +78,6 @@
             }        
           }
           h1 {
-            width: 100%;
-            height: 19px;
             margin: 8px 0 0;
             font-size: 14px;
             font-weight: 600;
@@ -105,32 +86,22 @@
             text-align: center;         
           }
           &--number {
-            width: 100%;
-            height: 16px;
             margin: 8px 0 0;
             display: flex;
             justify-content:center;
             cursor: pointer;           
             &__evaluation {
-              width: 50px;
-              height: 16px;
               font-size: 14px;
               span.bold {          
-                width: 8px;
-                height: 20px;
                 margin: 0 0 0 8px;
                 font-size: 16px;
                 font-weight: 600;
               }          
             }
             &__countItem {            
-              width: 70px;
-              height: 16px;
               font-size: 14px;
               margin: 0 0 0 16px;
               span.bold {          
-                width: 8px;
-                height: 20px;
                 margin: 0 0 0 8px;
                 font-size: 16px;
                 font-weight: 600;
@@ -140,106 +111,57 @@
         }      
       }
       
-      section.mypage-contener {
-        width: 800px;
-        height: 400px;       
+      .mypage-contener {     
         background-color: #fff;
         flex-direction: column;
-        margin-bottom: 40px;
-        cursor: auto;   
-        ul.mypage-tabs {
+        margin-bottom: 40px; 
+        .mypage-tabs {
           background: #eee;
           list-style: none;
           padding: 0;
           margin: 0;
           font-size: 0;
-          width: 100%;
-          height: 76px;
           display: flex;
-          li {
-            display: inline-block;
-            text-align: center;   
-            
-          }                    
-            li.active {
+            .active {
               background:#fff;
-              color: #333;
-              text-decoration: none;
-              border-top: 2px solid #3CCACE;          
+              text-align: center;
+              border-top: 2px solid #3CCACE; 
+              cursor: pointer; 
+            }   
+            .tab {
+              display: inline-block;
+              text-align: center;  
+              cursor: pointer;       
+            }        
               h3 {
                 width: 400px;
-                height: 74px;
                 font-size: 16px;
                 font-weight: bold;
                 line-height: 74px;
-                a {
-                  text-decoration: none;
-                  color: #333;   
-                }
-                  a:hover {
-                    color: #717171;
-                  }             
-              }
-            }
-            li.tab {
-              display: inline-block;
-              font-size: 22px;
-              width: 400px;
-              height: 72px;
-              line-height: 72px;         
-              h3 {
-                width: 400px;
-                height: 72px;
-                font-size: 16px;
-                font-weight: bold;
-                line-height: 72px; 
-                a {
-                  text-decoration: none;
-                  color: #333;
-                }
-                a:hover {
-                  color: #717171;
-                }         
-              }                       
-            }  
+              }  
         }
-        div.mypage-contennts {
+        .mypage-contents {
           list-style: none;         
-          div.tab-notification {
-            width: 100%;
-            color: #333;
+          .tab-notification {
             font-size: 16px;
             display: block;
-            li.show {
+            .show {
               border-bottom: 1px solid #eee;
-              a {
-                width: 100%;
-                height: 80px;    
+              a {   
                 padding: 16px;
-                color: #333;
                 touch-action: manipulation;
                 cursor: pointer;
                 position: relative;
                 display: flex;
-                div.contennts-notification-image {
-                  width: 60px;
-                  height: 63px;
+                .contents-notification-image {
                   float: left;
                   position: absolute;
-                  image {
-                    width: 48px;
-                    height: 48px;
-                  } 
                 }                        
-                div.text-notification {
-                  width: 100%;
-                  height: 100%;
+                .text-notification {
                   line-height: 1.5;
                   margin: 0 40px 0 68px;
                 }
-                  div.time-notification {
-                    width: 83px;
-                    height: 18px;
+                  .time-notification {
                     color: #888;
                     i {
                       font-size: 14px;
@@ -253,16 +175,12 @@
                 }                              
               }  
             }
-            div.contennts-go {
-              width: 100%;
-              height: 75px;
+            .contents-go {
               background-color: #fafafa;
               padding: 16px;
-              overflow: visible;
               text-decoration: none;
               a {
                 display: block;
-                height: 56px;
                 margin: 0 auto;
                 background: #eee;
                 color: #333;
@@ -275,50 +193,35 @@
               }
             }           
           }
-          ul.tab-toDo {
-            li.content {
-              a {
-
-              }
-            }
-          }      
         }       
       } 
-      section.mypage-purchase {
-        width: 800px;
+      .mypage-purchase {
         height: 382px;
         background-color: #fff;
         cursor: auto;
-        h4 {
-          width: 100%;
-          height: 72px;
+        &--head {
           background-color: #fafafa;
           font-size: 16px;
           font-weight: bold;
           line-height: 72px;
           padding: 0 16px;
         }
-        ul.mypage-tabs {
+        .mypage-tabs {
           background: #eee;
           list-style: none;
-          padding: 0;
-          margin: 0;
-          font-size: 0;
-          width: 100%;
-          height: 76px;
           display: flex;
-          li {
-            display: inline-block;
-            text-align: center;
-          }                    
             li.active {
+              text-align: center;
+              display: inline-block;
               background:#fff;
-              color: #333;
-              text-decoration: none;
-              border-top: 2px solid #3CCACE;          
+              border-top: 2px solid #3CCACE;   
+            }  
+            li.tab {
+              display: inline-block;
+              text-align: center;               
+            }      
               h3 {
                 width: 400px;
-                height: 74px;
                 font-size: 16px;
                 font-weight: bold;
                 line-height: 74px; 
@@ -329,110 +232,29 @@
                 a:hover {
                   color: #717171;
                 }         
-              }
-            }
-            li.tab {
-              display: inline-block;
-              font-size: 22px;
-              width: 400px;
-              height: 72px;
-              line-height: 72px;         
-              h3 {
-                width: 400px;
-                height: 72px;
-                font-size: 16px;
-                font-weight: bold;
-                line-height: 72px; 
-                a {
-                  text-decoration: none;
-                  color: #333;
-                }
-                a:hover {
-                  color: #717171;
-                }         
-              }                       
-            }  
+              }                   
         }
-        div {
+        .mypage-content {
           list-style: none;   
-          div.contennts-transaction {
-            margin: 0 auto;  
-            
-            figure.itemNotFind {
+          .content-transaction {
+            margin: 0 auto;             
+            .itemNotFind {
               width: 60px;
-              height: 100px;
+              height: 90px;
               margin: 40px auto 0;
-              image {
-                width: 60px;
-                height: 60px;  
-                align-items: center;                                               
-              }
             }
-            li {
+            p {
               display: block;        
               font-size: 16px;
               font-weight: bold;
               color: #333333; 
-              text-align: center;  
-              
-            }
-           
-          }
-          li.content {
-            border-bottom: 1px solid #eee;
-          }      
-
-        }
-        
+              text-align: center;              
+            }         
+          }        
+        }    
       }         
     }
   }
-
-  
-
-
-
-
-  
-  &__appBanner {
-    background-image: url(/assets/bg-appBanner-pict.jpg);
-    padding: 100px 40px;
-    background-size: cover;
-    background-position: center;
-    &__inner {
-      color: #fff;
-      text-align: center;
-      &__title {
-        text-shadow: 0 0 5px rgba(0,0,0,0.4);
-        font-size: 24px;
-        font-weight: bold;
-        line-height: 1.4;
-      }
-      &__text {
-        font-size: 35px;
-        text-shadow: 0 0 5px rgba(0,0,0,0.4);
-      }
-    }
-  }
-.index__camera {
-  width: 120px;
-  background-color: #3CCACE;
-  text-align: center;
-  border-radius: 4%;
-  bottom: 32px;
-  right: 32px;
-  position: fixed;
-  padding: 15px;
-  z-index: 1;
-}
-
-.index__camera__text {
-  color: #fff;
-  display: block;
-  font-size: 18px;
-  text-decoration: none;
-  margin-bottom: 5px;
-}
 }
 
 

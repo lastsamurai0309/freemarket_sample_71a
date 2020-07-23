@@ -1,23 +1,23 @@
 %nav.breadCrumbs
   %ul
     %li
-      = link_to "FURIMA", "#"
+      = link_to "FURIMA"
     %li
       %i.fas.fa-angle-right
     %li
-      = link_to "レディース", "#"
+      = @product.category.parent.parent.name
     %li
       %i.fas.fa-angle-right
     %li
-      = link_to "トップス", "#"
+      = @product.category.parent.name
     %li
       %i.fas.fa-angle-right
     %li
-      = link_to "Tシャツ/カットソー(半袖/袖なし)", "#"
+      = @product.category.name
     %li
       %i.fas.fa-angle-right
     %li
-      %p product1
+      = @product.name
 
 .main
   .main__showMain
@@ -25,28 +25,25 @@
       .main__showMain__topContents__topContent
         .main__showMain__topContents__topContent__itemBox
           %h2.main__showMain__topContents__topContent__itemBox__name
-            product1
-          .main__showMain__topContents__topContent__itemBox__body
-            %ul
-              %li
-                = image_tag "product1.png"
-                %ul
-                  %li
-                    = image_tag "product1.png", width:"75px", height:"75px"
-                  %li
-                    = image_tag "product1-2.png", width:"75px", height:"75px"
-                  %li
-                    = image_tag "product1-3.png", width:"75px", height:"75px"
+            = @product.name
+          %ul.main__showMain__topContents__topContent__itemBox__body
+            %li
+              - @product.photos.each do |photo|
+                = image_tag photo.name.url, :width => "75", :height => "75"
+              %ul
+                %li
+                  = image_tag @product.photos[0].name.url
           .main__showMain__topContents__topContent__itemBox__price
             %span
-              ¥10000
+              = @product.price 
+              円
             .main__showMain__topContents__topContent__itemBox__price__price-detail
               %span
                 (税込)
               %span
                 送料込み
           .main__showMain__topContents__topContent__itemBox__detail
-            親譲りの無鉄砲で小供の時から損ばかりしている。 小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。 なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から首を出していたら、同級生の一人が冗談に、いくら威張っても、そこから飛び降りる事は出来まい。 弱虫やーい。と囃したからである。小使に負ぶさって帰って来た時、おやじが大きな眼をして二階ぐらいから飛び降りて腰
+            = simple_format(@product.content)
           .main__showMain__topContents__topContent__itemBox__table
             %table
               %tbody
@@ -54,46 +51,42 @@
                   %th
                     出品者
                   %td
-                    hoge
+                    = @product.user.nickname
                 %tr
                   %th
                     カテゴリー
                   %td
-                    = link_to "レディース", "#"
-                    %br
-                    = link_to "トップス", "#"
-                    %br
-                    = link_to "Tシャツ/カットソー（半袖/袖なし）", "#"
+                    = @product.category.parent.parent.name
+                    >>
+                    = @product.category.parent.name
+                    >>
+                    = @product.category.name
+
                 %tr
                   %th
                     ブランド
                   %td
-
-                %tr
-                  %th
-                    商品のサイズ
-                  %td
-
+                    = @product.brand
                 %tr
                   %th
                     商品の状態
                   %td
-                    新品/未使用
+                    = @product.condition.name
                 %tr
                   %th
                     配送料の負担
                   %td
-                    送料込み（出品者負担）
+                    = @product.fee.name
                 %tr
                   %th
                     発送元の地域
                   %td
-                    = link_to "青森県", "#"
+                    = @product.area.name
                 %tr
                   %th
                     発送日の目安
                   %td
-                    1-2日で発送
+                    = @product.shippingday.name
           .main__showMain__topContents__topContent__itemBox__optionalArea
             %ul
               %li.main__showMain__topContents__topContent__itemBox__optionalArea__likeBtn
@@ -118,6 +111,14 @@
             %button.main__showMain__topContents__topContent__commentBox__newComment__commentBtn{type:"submit"}
               %i.fas.fa-comment
               コメントする
+        .main__showMain__topContents__topContent__commentBox__newComment__arrange
+          .main__showMain__topContents__topContent__commentBox__newComment__arrange__btn
+            - if current_user.id == @product.user_id
+              = link_to "商品を編集する", edit_product_path(@product), class: "edit-btn"
+              = link_to "商品を削除する", product_path(params[:id]), method: :delete, class: "delete-btn"
+            - else
+              = link_to new_product_contract_path(@product), class: "buy-btn" do
+                確定画面
       .main__showMain__topContents__links
         %li
           = link_to "#" do

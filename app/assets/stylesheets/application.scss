@@ -1,5 +1,6 @@
 @import "reset";
 @import "config/colors";
+@import "modules/furima";
 @import "modules/homes";
 @import "font-awesome-sprockets";
 @import "font-awesome";
@@ -14,6 +15,7 @@
 @import "modules/show-products";
 @import "modules/sell_item";
 @import "modules/flash";
+@import "modules/edit";
 @import "cards/new";
 @import "cards/index";
 @import "cards/destroy";

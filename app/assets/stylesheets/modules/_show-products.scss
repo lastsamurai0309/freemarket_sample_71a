@@ -342,6 +342,67 @@
                 overflow: visible;
               }
             }
+            &__arrange {
+              padding: 24px;
+              text-align: center;
+              height: 200px;
+              background-color: #fff;
+              &__btn {
+                justify-content: space-between;
+                .edit-btn {
+                  display: inline-block;
+                  display: flex;
+                  flex-direction: column;
+                  text-align: center;
+                  font-weight: bold;
+                  padding: 0.25em 0.5em;
+                  text-decoration: none;
+                  color: #00BCD4;
+                   background: #ECECEC;
+                  transition: .4s;
+                  font-size: 25px;
+                  &:hover {
+                    background: red;
+                    color: white;
+                  }
+                }
+                .delete-btn {
+                  display: inline-block;
+                  display: flex;
+                  flex-direction: column;
+                  text-align: center;
+                  font-weight: bold;
+                  padding: 0.25em 0.5em;
+                  text-decoration: none;
+                  color: #00BCD4;
+                   background: #ECECEC;
+                  transition: .4s;
+                  font-size: 25px;
+                  margin-top: 10px;
+                  &:hover {
+                    background: red;
+                    color: white;
+                  }
+                }
+                .buy-btn {
+                  display: inline-block;
+                  display: flex;
+                  flex-direction: column;
+                  text-align: center;
+                  font-weight: bold;
+                  padding: 0.25em 0.5em;
+                  text-decoration: none;
+                  color: #00BCD4;
+                  background: #ECECEC;
+                  transition: .4s;
+                  font-size: 25px;
+                  &:hover {
+                    background: #00bcd4;
+                    color: white;
+                  }
+                }
+              }
+            }
           }
         }
       }
@@ -387,7 +448,7 @@
 }
 
 .appBanner {
-  background-image: url(bg-appBanner-pict.jpg);
+  background-image: url('bg-appBanner-pict.jpg');
   background-size: cover;
   padding: 100px 40px;
 
