@@ -73,6 +73,7 @@ class CardsController < ApplicationController
       # ↑ユーザーマイページの支払い追加までいくように変更する。
   end
 
+
   private
   def card
     @card = Card.find_by(user_id: current_user.id)
