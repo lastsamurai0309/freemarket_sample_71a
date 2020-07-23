@@ -29,12 +29,10 @@
         %ul.mypage-tabs
           %li.active
             %h3
-              %a(href="#" id="#" class="tab active")
-                お知らせ
+              = link_to "お知らせ",class: "tab active"
           %li.tab
             %h3
-              %a(href="#" id="#" class="tab")
-                やることリスト
+              = link_to "やることリスト",class: "tab active"
         %div.mypage-contennts
           %div.tab-notification
             %li.show
@@ -70,7 +68,7 @@
                 
           %div.tab-toDo
             %li.content
-              %a(href="#" id="#" class="contennts")
+              = link_to "",class: "contennts"
 
 
       %section.mypage-purchase
@@ -100,7 +98,7 @@
                     
           %div.contennts-pastTransactions
             %li.content
-              %a(href="#" id="#" class="contennts")
+              = link_to "",class: "contennts"
 
   .index__appBanner
     .index__appBanner__inner

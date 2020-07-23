@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     #   collection do
         get  'addresses', to: 'users/registrations#new_address'
         post 'addresses', to: 'users/registrations#create_address'
-        # get "users/index",to: "users#index"
+        get "users/index",to: "users#index"
         get "users/card", to: "users#card"
         get "users/products",to:"users#products"
         # get "users/logout", to: "users#logout"
