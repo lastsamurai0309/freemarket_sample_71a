@@ -1,10 +1,10 @@
 .index
-  = render "/users/mypage.header"
+  = render "products/header"
 
   .index__breadCrumbs
     FURIMA > マイページ > 支払い方法
   .index__main-contents
-    = render "/users/mypage.nav"
+    = render  "users/mypage.nav"
 
     .head-title
       支払い方法
@@ -16,33 +16,21 @@
       .main__list
         .card__list
           .card__list__brand
-            = image_tag "cards/#{@card_src}", class:"card__list__brand__image",height:'20', alt: @card_brand_image,
+            = image_tag "cards/#{@card_src}", class:"card__list__brand__image",height:'20', alt: @card_brand_image
           .card__list__num
-            = "**** **** **** " + @customer_card.last4
+            = "**** **** **** " + @card_customer.last4
 
           .card__list__limit
-            = @exp_month + '/' +@exp_year
+            = @card_month + '/' + @card_year
 
         .card__destroy
-          =button_to  "削除する", card_path(@card) method: :delite, class: 'card__destroy__btn'
-    
+          = button_to "削除する", @card, method: :delete, class: "card__destroy__btn"
 
- 
       .main__information
       = link_to "#", class: "foot__information__icon" do
         支払い方法について
         = icon('fas', 'angle-right')
 
-
-  .index__appBanner
-    .index__appBanner__inner
-      .index__appBanner__inner__title
-        だれでもかんたん、人生を変えるフリマアプリ
-      .index__appBanner__inner__text
-        今すぐ無料ダウンロード！
-      .index__appBanner__inner__icon
-        = link_to image_tag("Download_on_the_App_Store_Badge_US-UK_blk_092917.png", class: "APPstore-btn", alt: "サンプル画像"), root_path
-        = link_to image_tag("google-play-badge.png", class: "Googleplay-btn", alt: "サンプル画像"), root_path
-
-  = render "/users/mypage.footer"
+  = render "products/appBanner"
+  = render "products/footer"
   

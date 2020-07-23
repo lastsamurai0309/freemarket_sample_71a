@@ -1,9 +1,11 @@
 document.addEventListener(
   "DOMContentLoaded", e => {
+    console.log(2)
     Payjp.setPublicKey("pk_test_8c2bb5e7e6422b6570dc93a0");
 
     let btn = document.getElementById('payment_card_submit-button');
     btn.addEventListener("click", (e) => {
+      console.timeLog(3)
       e.preventDefault();
       let card = {
         number: $("#card_number").val(),
@@ -25,9 +27,9 @@ document.addEventListener(
             $('<input type="hidden" name="payjp_token">').val(response.id)
           );
           document.inputForm.submit();
-          alert("登録が完了しました。"); 
+          // alert("登録が完了しました。"); 
         } else {
-          alert("カード情報が正しくありません。"); 
+          // alert("カード情報が正しくありません。"); 
         }
       });
     });
