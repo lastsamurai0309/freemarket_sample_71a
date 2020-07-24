@@ -122,20 +122,11 @@
             = link_to product_path,method: :delete, data: { confirm: "本当に削除しますか？"}, class:"deleteBtn" do
               %i.fas.fa-trash
                 削除する
-            -#   %button.main__showMain__topContents__topContent__productsManage__editBtn
-            -#     %i.far.fa-edit
-            -#     = link_to "編集する", edit_product_path
-            -# %button.main__showMain__topContents__topContent__productsManage__deleteBtn
-            -#   %i.fas.fa-trash
-            -#   = link_to "削除する", product_path, method: :delete, data: { confirm: "本当に削除しますか？"}
         - if user_signed_in? && current_user.id != @product.user_id
           .productsManage
             = link_to root_path, class:"buyBtn" do
               %i.fas.fa-shopping-cart
                 購入する
-            -# %button.main__showMain__topContents__topContent__productsManage__buyBtn
-            -#   %i.fas.fa-shopping-cart
-            -#   = link_to "購入する", root_path
       .main__showMain__topContents__links
         %li
           = link_to "#" do
