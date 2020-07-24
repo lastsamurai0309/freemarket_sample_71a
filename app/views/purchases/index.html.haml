@@ -26,13 +26,13 @@
       .purchase__contents__credit__card-box
         クレジットカード
         .credit_num
-          ************1234
-          -# = "************" + @credit.credit_num.last4
+          = "**** **** **** " + @card_customer.last4
         .expiration-date
-          有効期限 06 / 20
-          -# - limit_month = @credit.limit_month.to_s
-          -# - limit_year = @credit.limit_year.to_s.slice(2,3)
-          -# = "有効期限" + limit_month + " / " + limit_year
+          有効期限
+          = @card_month + '/' + @card_year
+
+        .brand
+        = image_tag "cards/#{@card_src}", class:"brand__image",height:'35', alt: @card_brand_image
 
     .purchase__contents__address 
       %h4 配送先    
@@ -52,8 +52,9 @@
     .purchase__contents__form
       .submit-btn
         購入する
+        =link_to "#"
         -# = form_tag(action: :card, method: :post) do
-          -# %button.buy-button{type:"submit"} 購入する
+        -#   %button.buy-button{type:"submit"} 購入する
     
   = render "devise/footer"
 

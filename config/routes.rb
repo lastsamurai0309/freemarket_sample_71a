@@ -32,6 +32,7 @@ Rails.application.routes.draw do
       collection do
         get "set_images"    
         # post "card", to: "purchases#card"
+        get "buy", to: "purchases#buy"
         get "done", to: "purchases#done"
       end
     end
