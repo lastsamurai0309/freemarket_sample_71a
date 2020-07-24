@@ -95,6 +95,7 @@
           line-height: 38px;
           color: #333;
           margin-left: 16px;
+          list-style: none;
 
           a {
             color: #333;
@@ -107,13 +108,15 @@
 }
 
 .breadCrumbs {
-  
+  padding: 0 60px;
+  border-top: 1px solid  #eee;
 
   ul {
     padding: 17px 0 16px;
     font-size: 14px;
     max-width: 1040px;
     margin: 0 auto;
+    justify-content: normal;
 
     li {
       float: left;
@@ -338,70 +341,67 @@
               border-radius: 100px;
               line-height: 48px;
 
-              i {
-                overflow: visible;
-              }
             }
-            &__arrange {
-              padding: 24px;
-              text-align: center;
-              height: 200px;
-              background-color: #fff;
-              &__btn {
-                justify-content: space-between;
-                .edit-btn {
-                  display: inline-block;
-                  display: flex;
-                  flex-direction: column;
-                  text-align: center;
-                  font-weight: bold;
-                  padding: 0.25em 0.5em;
-                  text-decoration: none;
-                  color: #00BCD4;
-                   background: #ECECEC;
-                  transition: .4s;
-                  font-size: 25px;
-                  &:hover {
-                    background: red;
-                    color: white;
-                  }
-                }
-                .delete-btn {
-                  display: inline-block;
-                  display: flex;
-                  flex-direction: column;
-                  text-align: center;
-                  font-weight: bold;
-                  padding: 0.25em 0.5em;
-                  text-decoration: none;
-                  color: #00BCD4;
-                   background: #ECECEC;
-                  transition: .4s;
-                  font-size: 25px;
-                  margin-top: 10px;
-                  &:hover {
-                    background: red;
-                    color: white;
-                  }
-                }
-                .buy-btn {
-                  display: inline-block;
-                  display: flex;
-                  flex-direction: column;
-                  text-align: center;
-                  font-weight: bold;
-                  padding: 0.25em 0.5em;
-                  text-decoration: none;
-                  color: #00BCD4;
-                  background: #ECECEC;
-                  transition: .4s;
-                  font-size: 25px;
-                  &:hover {
-                    background: #00bcd4;
-                    color: white;
-                  }
-                }
-              }
+          }
+        }
+
+        .productsManage {
+          margin: 10px 0;
+          padding: 24px;
+          background-color: #fff;
+          text-align: center;
+
+          .editBtn {
+            background-color: #3CCACE;
+            border: 1px solid #3CCACE;
+            color: #fff;
+            font-size: 18px;
+            border-radius: 100px;
+            width: 60%;
+            display: block;
+            text-decoration: none;
+            margin: 0 auto;
+            line-height: 48px;
+            &:hover {
+              background-color: #ffb340;
+              border: 1px solid #ffb340;
+              transition: 200ms;
+            }
+          }
+
+          .deleteBtn {
+            background-color: #3CCACE;
+            border: 1px solid #3CCACE;
+            color: #fff;
+            font-size: 18px;
+            border-radius: 100px;
+            width: 60%;
+            display: block;
+            text-decoration: none;
+            margin: 24px auto 0;
+            line-height: 48px;
+            &:hover {
+              background-color: #ffb340;
+              border: 1px solid #ffb340;
+              transition: 200ms;
+            }
+          }
+
+          .buyBtn {
+            background-color: #3CCACE;
+            border: 1px solid #3CCACE;
+            color: #fff;
+            font-size: 18px;
+            border-radius: 100px;
+            width: 60%;
+            display: block;
+            text-decoration: none;
+            margin: 0 auto;
+            line-height: 48px;
+            &:hover {
+              background-color: #ffb340;
+              border: 1px solid #ffb340;
+              transition: 200ms;
             }
           }
         }
@@ -447,10 +447,16 @@
   }
 }
 
+
+
 .appBanner {
   background-image: url('bg-appBanner-pict.jpg');
   background-size: cover;
   padding: 100px 40px;
+
+  img {
+    vertical-align: middle;
+  }
 
   &__inner {
     color: #fff;
@@ -486,11 +492,8 @@
   opacity: 0.5;
 }
 
-img {
-  vertical-align: middle;
-}
 
-.footer {
+.showFooter {
   padding: 60px 0;
   color: #fff;
   background-color: #272727;
@@ -512,6 +515,7 @@ img {
 
       ul {
         list-style: none;
+        display: list-item;
 
         li {
 
@@ -530,7 +534,7 @@ img {
     }
   }
 
-  .footer__logo {
+  &__logo {
     max-width: 160px;
     margin: auto;
 
