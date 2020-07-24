@@ -22,18 +22,13 @@
         %span.pay-price
         = "¥" + "#{@product.price.to_s}"
     .purchase__contents__credit
-      %h3 支払い方法   
-      .purchase__contents__credit__card-box
-        クレジットカード
-        .credit_num
-          ************1234
-          -# = "************" + @credit.credit_num.last4
-        .expiration-date
-          有効期限 06 / 20
-          -# - limit_month = @credit.limit_month.to_s
-          -# - limit_year = @credit.limit_year.to_s.slice(2,3)
-          -# = "有効期限" + limit_month + " / " + limit_year
-
+      %h3 支払い方法 
+      - if current_user.card.nil?
+        %li
+          = link_to "登録してください", user_path(current_user), class: "purchase__container__payment__box__register"
+      - else
+        %li.purchase__container__payment__box__register
+          クレジットカード  
     .purchase__contents__address 
       %h4 配送先    
       .purchase__contents__address__add-box        

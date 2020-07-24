@@ -81,10 +81,8 @@
       h3 {
         @include font(); 
       }
-      &__card-box {
-        @include content(300px, 120px);
-        padding-top: 10px;
-        font-size: 14px;
+      li {
+        list-style: none;
       }
     }
     &__address {
