@@ -1,1 +1,118 @@
+.index {
+  height: 100vh;
+  width: 100vw;
+  background-color: #F5F5F5;
+  font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic", "メイリオ", "Meiryo", sans-serif;
+  .index__main-contents{
+    width: 100%;
+    height: 1285px;
+    margin: 24px auto 0;
+    padding: 0 150px 40px 150px;
+    background-color: #F5F5F5;
+    display: flex;
 
+    &__card{
+      width: 700px;
+      height: 100%;
+      margin-left: 40px; 
+      color: #333;
+
+      .head__title{
+        height: 60px;
+        font-size: 24px;
+        background-color:white;
+        text-align: center;
+        padding: 8px 24px;
+        font-weight: bold;
+        border-bottom: 1px solid #f5f5f5;
+      }
+
+      .main{
+        width: 700px;
+        height: 350px;
+        background-color: white;
+        padding: 64px;
+
+        &__sub-title{
+          width: 100%;
+          display: flex;
+          &__text{
+            width: 100%;
+            font-size: 16px;
+            text-align: center;
+            font-weight: bold;
+          }
+        }
+
+        &__list{
+          padding: 24px 0px;
+          height: 120px;
+          border-bottom: 1px solid #f5f5f5;
+          display: block;
+          // text-align:center;
+          display: flex;
+        
+          .card__list{
+            margin-left: 125px;
+
+            &__brand{
+              
+          
+              &__image{
+
+              }
+            }  
+            &__num{
+              margin-top: 8px;
+
+            }
+
+            &__limit{
+              margin-top: 8px;
+
+            }
+          }
+
+          .card__destroy{
+            text-align: center;
+          
+            &__btn{
+              // list-style: height 1px;;
+              // display:inline-block;
+              border-radius:5px;
+              height: 30px;
+              width: 90px;
+              background-color: #3bc9ce;
+              text-decoration: none;
+              color: white;
+              text-align: center;
+              margin: 0;
+              margin-bottom: 8px;
+              border: 1px;
+              position: relative;
+              top: 25px;
+              left: 200px;
+              padding: 4px,6px;
+            }
+          }
+        }
+        &__information{
+          margin-top: 40px;
+          text-decoration: none;
+          display: flex;
+
+          .foot__information{
+            justify-content: flex-end;
+            &__icon{
+              margin: 0 0 0 auto;
+              text-align: right;
+              text-decoration: none;
+              font-size: 14px;
+              color: #0099E8;
+            }
+          }
+        }
+      }
+    }
+  }
+}

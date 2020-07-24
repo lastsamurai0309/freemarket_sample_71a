@@ -6,31 +6,35 @@
   .index__main-contents
     = render  "users/mypage.nav"
 
-    .head-title
-      支払い方法
+    .index__main-contents__card
+      .head__title
+        支払い方法
 
-    .main
-      .main__sub-title
-        クレジットカード一覧
-      
-      .main__list
-        .card__list
-          .card__list__brand
-            = image_tag "cards/#{@card_src}", class:"card__list__brand__image",height:'20', alt: @card_brand_image
-          .card__list__num
-            = "**** **** **** " + @card_customer.last4
+      .main
+        .main__sub-title
+          .main__sub-title__text
+            クレジットカード一覧
+        
+        .main__list
+          .card__list
+            .card__list__brand
+              = image_tag "cards/#{@card_src}", class:"card__list__brand__image",height:'20', alt: @card_brand_image
+            .card__list__num
+              = "**** **** **** " + @card_customer.last4
 
-          .card__list__limit
-            = @card_month + '/' + @card_year
+            .card__list__limit
+              = @card_month + '/' + @card_year
 
-        .card__destroy
-          = button_to "削除する", @card, method: :delete, class: "card__destroy__btn"
+          .card__destroy
+            = button_to "削除する", @card, method: :delete, class: "card__destroy__btn"
 
-      .main__information
-      = link_to "#", class: "foot__information__icon" do
-        支払い方法について
-        = icon('fas', 'angle-right')
+        .main__information
+          .foot-information
+          = link_to "#", class: "foot__information__icon" do
+            支払い方法について
+            = icon('fas', 'angle-right')
 
   = render "products/appBanner"
   = render "products/footer"
+
   
