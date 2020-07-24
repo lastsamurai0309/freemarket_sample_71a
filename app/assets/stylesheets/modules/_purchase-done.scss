@@ -7,7 +7,7 @@
   width: $width;
   height: $height;
 }
-@mixin font($size: 14px) {
+@mixin font($size: 16px) {
   font-size: $size;
   font-weight: bold;
 }
@@ -34,7 +34,7 @@
       div.announce {
         position: absolute;
         top: 22px;
-        left: 188px;
+        left: 235px;
         display: flex;
         margin: 0 auto;
         i {
@@ -52,6 +52,7 @@
     }
     &__messages {
       @include block(); 
+      padding: 0 165px;
       h1 {
         @include font(22px);
         text-align: center; 
@@ -60,7 +61,7 @@
     }
     &__item {
       @include block();
-      padding: 0px 100px;
+      padding: 0 165px;
       &__detail {
         @include content(100%, 100%);
         display: flex;
@@ -68,27 +69,27 @@
           @include content(100px, 100%);  
         }
         &--descriptions {
-          @include content(290px, 100%);
-          padding-left: 10px;
-          font-size: 14px;
+          @include content(307px, 100%);
+          padding-left: 40px;
           &__names {
-            @include content(100%, 100px); 
+            @include content(100%, 50px); 
           }
           &__prices {
             @include content(100%, 50px);
+            text-align: left;
             span {
-              @include font();
+              font-size: 14px;
+              font-weight: bold;
             }
           }
         }
       }
     }
     &__buy-prices {
-      padding: 0px 100px;
       @include content(100%, auto);
       display: flex;
       justify-content: space-between;
-      padding: 20px 0px;
+      padding: 20px 130px 20px 65px;
       h2 { 
         padding: 0px 100px;
         @include font(18px);
@@ -102,7 +103,7 @@
       }
     }
     &__credites {
-      padding: 0px 100px;
+      padding: 0px 165px;
       @include block();
       h3 {
         @include font(); 
@@ -110,13 +111,11 @@
       &__card {
         @include content(300px, 120px);
         padding-top: 10px;
-        p {
-          font-size: 14px;
-        }
+        font-size: 14px;
       }
     }
     &__addre {
-      padding: 0px 100px;
+      padding: 0px 165px;
       @include block();
       h4 {
         @include font(); 
@@ -124,13 +123,11 @@
       &__add {
         @include content(350px, 120px);
         padding-top: 10px;
-        p {
-          font-size: 14px;
-        }
+        font-size: 14px;
       }
     }
     &__form {
-      padding: 0px 100px;
+      padding: 0px 165px;
       @include content(100%, 100px);
       @include font();
       text-align: center;
