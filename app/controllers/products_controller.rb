@@ -5,7 +5,7 @@ class ProductsController < ApplicationController
   before_action :current_user, only: [:edit, :update]
 
   def index
-    @products = Product.where(status: 0).recent(3)
+    @products = Product.where(status:0).recent(3)
   end
 
   def new
