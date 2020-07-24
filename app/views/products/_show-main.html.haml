@@ -1,23 +1,24 @@
 %nav.breadCrumbs
   %ul
     %li
-      = link_to "FURIMA"
+      = link_to "FURIMA", root_path
     %li
       %i.fas.fa-angle-right
     %li
-      = @product.category.parent.parent.name
+      = link_to @product.category.parent.parent.name, "#"
     %li
       %i.fas.fa-angle-right
     %li
-      = @product.category.parent.name
+      = link_to @product.category.parent.name, "#"
     %li
       %i.fas.fa-angle-right
     %li
-      = @product.category.name
+      = link_to @product.category.name, "#"
     %li
       %i.fas.fa-angle-right
     %li
-      = @product.name
+      %p
+        = @product.name
 
 .main
   .main__showMain
@@ -26,29 +27,14 @@
         .main__showMain__topContents__topContent__itemBox
           %h2.main__showMain__topContents__topContent__itemBox__name
             = @product.name
-          %ul.main__showMain__topContents__topContent__itemBox__body
-            %li
-              - @product.photos.each do |photo|
-                = image_tag photo.name.url, :width => "75", :height => "75"
-              %ul
-                %li
-                  = image_tag @product.photos[0].name.url, width:"75px", height:"75px"
-                - if @product.photos[1].nil?
-                - else
-                  %li
-                    = image_tag @product.photos[1].name.url, width:"75px", height:"75px"
-                - if @product.photos[2].nil?
-                - else
-                  %li
-                    = image_tag @product.photos[2].name.url, width:"75px", height:"75px"
-                - if @product.photos[3].nil?
-                - else
-                  %li
-                    = image_tag @product.photos[3].name.url, width:"75px", height:"75px"
-                - if @product.photos[4].nil?
-                - else
-                  %li
-                    = image_tag @product.photos[4].name.url, width:"75px", height:"75px"      
+          .main__showMain__topContents__topContent__itemBox__body
+            %ul
+              %li
+                = image_tag @product.photos[0].name.url
+                %ul
+                  - @product.photos.each do |photo|
+                    %li
+                      = image_tag photo.name.url, :width => "75", :height => "75"
           .main__showMain__topContents__topContent__itemBox__price
             %span<>
               ¥
@@ -56,8 +42,10 @@
             .main__showMain__topContents__topContent__itemBox__price__price-detail
               %span
                 (税込)
-              %span
-                送料込み
+              - if @product.fee_id == 1
+                %span 送料込み
+              - else
+                %span 着払い
           .main__showMain__topContents__topContent__itemBox__detail
             = simple_format(@product.content)
           .main__showMain__topContents__topContent__itemBox__table
@@ -126,19 +114,28 @@
             %button.main__showMain__topContents__topContent__commentBox__newComment__commentBtn{type:"submit"}
               %i.fas.fa-comment
               コメントする
-          - if user_signed_in? && current_user.id == @product.user_id
-            .main__showMain__topContents__topContent__productsManage
-              %button.main__showMain__topContents__topContent__productsManage__editBtn
-                %i.far.fa-edit
-                = link_to "編集する", edit_product_path
-              %button.main__showMain__topContents__topContent__productsManage__deleteBtn
-                %i.fas.fa-trash
-                = link_to "削除する", product_path, method: :delete, data: { confirm: "本当に削除しますか？"}
-          - if user_signed_in? && current_user.id != @product.user_id
-            .main__showMain__topContents__topContent__productsManage
-              %button.main__showMain__topContents__topContent__productsManage__buyBtn
-                %i.fas.fa-shopping-cart
-                = link_to "購入する", new_product_contract_path(@product)
+        - if user_signed_in? && current_user.id == @product.user_id
+          .productsManage
+            = link_to edit_product_path , class:"editBtn" do
+              %i.far.fa-edit
+                編集する
+            = link_to product_path,method: :delete, data: { confirm: "本当に削除しますか？"}, class:"deleteBtn" do
+              %i.fas.fa-trash
+                削除する
+            -#   %button.main__showMain__topContents__topContent__productsManage__editBtn
+            -#     %i.far.fa-edit
+            -#     = link_to "編集する", edit_product_path
+            -# %button.main__showMain__topContents__topContent__productsManage__deleteBtn
+            -#   %i.fas.fa-trash
+            -#   = link_to "削除する", product_path, method: :delete, data: { confirm: "本当に削除しますか？"}
+        - if user_signed_in? && current_user.id != @product.user_id
+          .productsManage
+            = link_to root_path, class:"buyBtn" do
+              %i.fas.fa-shopping-cart
+                購入する
+            -# %button.main__showMain__topContents__topContent__productsManage__buyBtn
+            -#   %i.fas.fa-shopping-cart
+            -#   = link_to "購入する", root_path
       .main__showMain__topContents__links
         %li
           = link_to "#" do
@@ -148,5 +145,6 @@
           = link_to "#" do
             %span 後ろの商品
             %i.fas.fa-angle-right
+
       .main__showMain__topContents__relatedItems
-        = link_to "レディースをもっと見る", "#"
+        = link_to "#{@product.category.parent.parent.name}をもっと見る", "#"

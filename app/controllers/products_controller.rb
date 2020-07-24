@@ -32,11 +32,13 @@ class ProductsController < ApplicationController
   end
 
   def show 
-    @product = Product.find(params[:id])
+    
   end
 
   def destroy
-
+    Product.find(params[:id]).destroy
+    flash[:alert] = '出品を取り消しました。'
+    redirect_to root_path
   end
 
   def mid_category
