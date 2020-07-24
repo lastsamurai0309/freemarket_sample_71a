@@ -29,8 +29,11 @@ class CardsController < ApplicationController
       @card_year = @card_customer.exp_year.to_s.slice(2,3)
       
     else
-      redirect_to action: "new"
+      redirect_to action: :new
     end
+  end
+
+  def newcard
   end
 
   def new
@@ -69,8 +72,7 @@ class CardsController < ApplicationController
       customer.delete
       @card.delete
     end
-      redirect_to action: "index"
-      # ↑ユーザーマイページの支払い追加までいくように変更する。
+      redirect_to controller: :users, action: :card
   end
 
 
