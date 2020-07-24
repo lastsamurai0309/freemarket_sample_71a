@@ -25,7 +25,7 @@
       %h3 支払い方法 
       - if current_user.card.nil?
         %li
-          = link_to "登録してください", user_path(current_user), class: "purchase__container__payment__box__register"
+          = link_to "登録してください", users_card_path(current_user), class: "purchase__container__payment__box__register"
       - else
         %li.purchase__container__payment__box__register
           クレジットカード  
