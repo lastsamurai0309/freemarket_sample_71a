@@ -16,11 +16,10 @@
         .purchased__content__item__detail--descriptions
           .purchased__content__item__detail--descriptions__names
             = @product.name
-          .purchased__content__item__detail--descriptions__prices
+          .purchased__content__item__detail--descriptions__prices       
             %span.item-prices
               = "¥" + "#{@product.price.to_s}"
-            %span.item-shippi-fee 税込 (送料込み)
-          
+            %span (税込)送料込み         
     .purchased__content__buy-prices
       %h2 支払い金額
       .purchased__content__buy-prices__pay

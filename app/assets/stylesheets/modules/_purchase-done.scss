@@ -61,7 +61,7 @@
     }
     &__item {
       @include block();
-      padding: 0px 165px;
+      padding: 0 165px;
       &__detail {
         @include content(100%, 100%);
         display: flex;
@@ -69,16 +69,17 @@
           @include content(100px, 100%);  
         }
         &--descriptions {
-          @include content(290px, 100%);
+          @include content(307px, 100%);
           padding-left: 40px;
-          font-size: 14px;
           &__names {
-            @include content(100%, 100px); 
+            @include content(100%, 50px); 
           }
           &__prices {
             @include content(100%, 50px);
+            text-align: left;
             span {
-              @include font();
+              font-size: 14px;
+              font-weight: bold;
             }
           }
         }
@@ -88,7 +89,7 @@
       @include content(100%, auto);
       display: flex;
       justify-content: space-between;
-      padding: 20px 65px;
+      padding: 20px 130px 20px 65px;
       h2 { 
         padding: 0px 100px;
         @include font(18px);
