@@ -4,9 +4,12 @@ class PurchasesController < ApplicationController
   # 購入と商品の違い？
   before_action :cache_card, only: [:index, :buy]
 
+  require_relative './../commonclass/payjp.rb'
+  before_action :set_items,only:[:index]
   def index
     @product = Product.find(params[:product_id])
     @address = Address.find_by(user_id: current_user.id)
+  end
 
     if @card.present?
       Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
@@ -66,6 +69,22 @@ class PurchasesController < ApplicationController
     # @product = Product.find(1)
     @address = Address.find_by(user_id: current_user.id)
     @product.update(purchase_histories_id: current_user.id)
+  def new
+    @purchase = Purchase_history.new
+  end
+
+  def create
+    @purchase = Purchase_history.new(user_id:   current_user.id,
+                            product_id:  @product.id
+                           )
+    if @purchase.save
+      Payjp.create_charge_by_token(current_user.card.customer_id,
+                                    @product.price)
+      @product.update(status: 1)
+      redirect_to root_path, notice: "購入が完了しました"
+    else
+      render :new
+    end
   end
 end
 
@@ -78,6 +97,9 @@ private
   def cache_card
     @card = Card.find_by(user_id: current_user.id)
   end
+
+
+  private
 
   def set_items
     @product = Product.find(params[:product_id])
