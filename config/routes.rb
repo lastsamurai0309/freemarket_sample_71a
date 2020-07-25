@@ -13,7 +13,7 @@ Rails.application.routes.draw do
         get "users/index",to: "users#index"
         get "users/card", to: "users#card"
         get "users/products",to:"users#products"
-        # get "users/logout", to: "users#logout"
+        get "users/logout", to: "users#logout"
     #   end
     # end
   end
