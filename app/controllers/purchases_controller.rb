@@ -55,6 +55,7 @@ class PurchasesController < ApplicationController
     # @product = Product.find(1)
     @address = Address.find_by(user_id: current_user.id)
     @product.update(purchase_histories_id: current_user.id)
+  end
 
 private
 
@@ -62,11 +63,7 @@ private
     @card = Card.find_by(user_id: current_user.id)
   end
 
-
-  private
-
   def set_items
     @product = Product.find(params[:product_id])
   end
 
-end
