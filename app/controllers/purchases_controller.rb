@@ -5,7 +5,7 @@ class PurchasesController < ApplicationController
   before_action :cache_card, only: [:index, :buy]
 
   def index
-    # @product = Product.find(1)
+    @product = Product.find(params[:product_id])
     @address = Address.find_by(user_id: current_user.id)
 
     if @card.present?
@@ -70,6 +70,7 @@ class PurchasesController < ApplicationController
 end
 
 private
+
   def purchas
     @product = Product.find(1)
   end
@@ -77,3 +78,8 @@ private
   def cache_card
     @card = Card.find_by(user_id: current_user.id)
   end
+
+  def set_items
+    @product = Product.find(params[:product_id])
+  end
+end
