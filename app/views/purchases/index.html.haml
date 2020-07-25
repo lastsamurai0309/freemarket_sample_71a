@@ -48,7 +48,7 @@
       %button.purchase__container__submit__btn
         - if current_user.card.present?
           = form_tag(action: :pay, method: :post) do
-            %button.buy-button{type:"submit"} 購入する
+            %button.buy-button{type:"submit"} 購入を確定する
         - else
           = link_to users_card_path(current_user), class: "purchase__container__submit__btn--text" do
             クレジットカードを登録してください
