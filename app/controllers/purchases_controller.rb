@@ -41,11 +41,11 @@ class PurchasesController < ApplicationController
   end
 
   def buy
-# 　ここが、売り切れかどうか判断する記述です　ココから
+    # 　ここが、売り切れかどうか判断する記述です　ココから
     if @product.purchas.present? 
       bindng.pry
       redirect_to action: :index, alert:"この商品は売り切れています"
-#　ココまで  　以下コメントアウトは削除可能
+    #　ココまで  　以下コメントアウトは削除可能
     else
       #売り切れてないときのコード記述＝大谷さんの内容？
     end
@@ -68,3 +68,5 @@ private
   def set_items
     @product = Product.find(params[:product_id])
   end
+
+end
