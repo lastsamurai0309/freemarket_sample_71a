@@ -44,11 +44,14 @@
             = @address.billding
         .address_name
           = @address.address_name    
-    .purchase__contents__form
-      .submit-btn
-        購入する
-        -# = form_tag(action: :card, method: :post) do
-          -# %button.buy-button{type:"submit"} 購入する
+    %label.purchase__container__submit
+      %button.purchase__container__submit__btn
+        - if current_user.card.present?
+          = link_to done_product_purchases_path(@product,@purchase), method: "post", class: "purchase__container__submit__btn--text" do
+            購入する
+        - else
+          = link_to users_card_path(current_user), class: "purchase__container__submit__btn--text" do
+            クレジットカードを登録してください
     
   = render "devise/footer"
 

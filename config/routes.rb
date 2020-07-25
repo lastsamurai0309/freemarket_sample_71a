@@ -28,11 +28,11 @@ Rails.application.routes.draw do
   resources :users, only: [:index]
 
   resources :products do
-    resources :purchases, only: [:index] do
+    resources :purchases do
       collection do
         get "set_images"    
         # post "card", to: "purchases#card"
-        get "done", to: "purchases#done"
+        post "done", to: "purchases#done"
       end
     end
   end
