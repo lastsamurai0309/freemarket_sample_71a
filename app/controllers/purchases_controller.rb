@@ -18,13 +18,16 @@ class PurchasesController < ApplicationController
   end
 
   def pay
+    @product = Product.find(params[:product_id])
     Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
     Payjp::Charge.create(
       :amount => @product.price, #支払金額を引っ張ってくる
       :customer => @card.customer_id,  #顧客ID
       :currency => 'jpy',              #日本円
     )
-    redirect_to root_path #完了画面に移動
+    Purchase.create(product_id: params[:product_id],user_id: current_user.id)
+    flash[:notice] = '購入が完了しました。'
+    redirect_to product_path(@product) 
   end
 
   def done

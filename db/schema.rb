@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200711163511) do
+ActiveRecord::Schema.define(version: 20200725135502) do
 
   create_table "addresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "address_name", null: false
@@ -79,6 +79,15 @@ ActiveRecord::Schema.define(version: 20200711163511) do
     t.index ["user_id"], name: "index_purchase_histories_on_user_id", using: :btree
   end
 
+  create_table "purchases", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "user_id"
+    t.integer  "product_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_purchases_on_product_id", using: :btree
+    t.index ["user_id"], name: "index_purchases_on_user_id", using: :btree
+  end
+
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "nickname",                            null: false
     t.string   "email",                  default: "", null: false
@@ -114,4 +123,6 @@ ActiveRecord::Schema.define(version: 20200711163511) do
   add_foreign_key "products", "users"
   add_foreign_key "purchase_histories", "products"
   add_foreign_key "purchase_histories", "users"
+  add_foreign_key "purchases", "products"
+  add_foreign_key "purchases", "users"
 end
