@@ -33,9 +33,6 @@ class CardsController < ApplicationController
     end
   end
 
-  def newcard
-  end
-
   def new
     # redirect_to card_path(current_user.id) if @card.present?
   end
