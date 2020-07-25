@@ -33,11 +33,15 @@ Rails.application.routes.draw do
         get "set_images"    
         # post "card", to: "purchases#card"
         post "done", to: "purchases#done"
+        post 'pay', to: "purchases#pay"
       end
     end
   end
 
   resources :cards, only: [:index, :new, :create, :destroy] do
+    collection do
+      post 'pay', to: 'cards#pay'
+    end
   end
 
   get 'products/new/mid_category', to: 'products#mid_category'
