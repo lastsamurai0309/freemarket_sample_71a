@@ -5,7 +5,7 @@ class ProductsController < ApplicationController
   before_action :current_user, only: [:edit, :update]
 
   def index
-    @products = Product.where(status: 0).recent(3)
+    @products = Product.recent(3)
   end
 
   def new
@@ -65,7 +65,7 @@ class ProductsController < ApplicationController
   end
 
   def set_params
-    params.require(:product).permit(:name, :content, :category_id, :brand, :condition_id, :fee_id, :area_id, :shippingday_id, :price, photos_attributes: [:name, :_destroy, :id]).merge(user_id: current_user.id,status: 0)
+    params.require(:product).permit(:name, :content, :category_id, :brand, :condition_id, :fee_id, :area_id, :shippingday_id, :price, photos_attributes: [:name, :_destroy, :id]).merge(user_id: current_user.id)
   end
 
   def set_update_params

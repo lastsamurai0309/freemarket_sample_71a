@@ -21,4 +21,9 @@
                   ★0
             .product-tax
               (税込) 
-        
+          - if product.status.nil?
+          - else
+            .sold-out 売り切れ
+            .items-box_photo__sold
+              .items-box_photo__sold__inner
+                SOLD

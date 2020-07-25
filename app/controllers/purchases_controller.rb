@@ -26,6 +26,7 @@ class PurchasesController < ApplicationController
       :currency => 'jpy',              #日本円
     )
     Purchase.create(product_id: params[:product_id],user_id: current_user.id)
+    @product.update(status: 1)
     flash[:notice] = '購入が完了しました。'
     redirect_to product_path(@product) 
   end

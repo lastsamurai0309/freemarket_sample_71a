@@ -62,7 +62,7 @@ ActiveRecord::Schema.define(version: 20200725135502) do
     t.integer  "area_id",                                  null: false
     t.integer  "shippingday_id",                           null: false
     t.integer  "price",                                    null: false
-    t.integer  "status",                       default: 0, null: false
+    t.integer  "status"
     t.integer  "user_id",                                  null: false
     t.datetime "created_at",                               null: false
     t.datetime "updated_at",                               null: false
