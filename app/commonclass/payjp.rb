@@ -22,8 +22,8 @@ class MyPayjp
 
   def self.create_charge_by_token(customer, amount)
     Payjp::Charge.create(
-      amount:   amount,
-      customer: customer,
+      amount:   @product.price,
+      customer: @card.customer_id,
       currency: 'jpy'
     )
   end
