@@ -9,7 +9,7 @@
       - @products.each do |product|
         = link_to product_path(product.id), class:"product-link" do
           .product-image-box             
-            = image_tag product.photos[0].name.url,size: "200x150" if product.pictures.present?             
+            = image_tag product.photos[0].name.url,size: "200x150" if product.photos.present?             
           .product-link__description
             .product-name
               = product.name
