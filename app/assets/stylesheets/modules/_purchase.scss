@@ -101,9 +101,9 @@
         font-size: 14px;
       }
     }
-    &__form {
+    &__submit {
       @include content(100%, 100px);
-      .submit-btn {
+      .buy-button {
         @include content(100%, 50px);
         @include font(); 
         background-color: #3CCACE;
