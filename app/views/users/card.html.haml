@@ -2,7 +2,8 @@
   = render "products/header"
 
   .index__breadCrumbs
-    FURIMA > マイページ > 支払い方法
+    - breadcrumb :card
+    = render "layouts/breadcrumbs"
   .index__main-contents
     = render "mypage.nav"
 
