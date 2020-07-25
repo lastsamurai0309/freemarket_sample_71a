@@ -41,6 +41,7 @@
       - else
         %li.purchase__container__payment__box__register
           クレジットカード  
+
     .purchase__contents__address 
       %h4 配送先    
       .purchase__contents__address__add-box        
@@ -56,6 +57,7 @@
             = @address.billding
         .address_name
           = @address.address_name    
+          
     %label.purchase__container__submit
       %button.purchase__container__submit__btn
         - if current_user.card.present?
