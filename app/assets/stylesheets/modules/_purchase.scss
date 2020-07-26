@@ -12,6 +12,7 @@
   font-weight: bold;
 }
 .purchase {
+  font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic", "メイリオ", "Meiryo", sans-serif;
   width: 100vw;
   background-color: #F5F5F5;
   &__logo{
@@ -29,6 +30,7 @@
     background-color: #ffffff; 
     margin: 0 auto;
     &__message {
+      border-bottom: 2px solid #f5f5f5;
       @include block();   
       h1 {
         @include font(22px);
@@ -38,6 +40,8 @@
     }
     &__items {
       @include block();
+      border-bottom: 2px solid #f5f5f5;
+      padding-top: 10px;
       &__detail {
         @include content(100%, 100%);
         display: flex;
@@ -65,6 +69,7 @@
       display: flex;
       justify-content: space-between;
       padding: 20px 0px;
+      border-bottom: 2px solid #f5f5f5;
       h2 { 
         @include font(18px);
         line-height: 80px;
@@ -77,11 +82,15 @@
       }
     }
     &__credit {
+      border-bottom: 2px solid #f5f5f5;
+      padding: 10px 0px;
+      font-size: 14px;
       @include block();
       h3 {
         @include font(); 
       }
       li {
+        padding-top: 15px;
         list-style: none;
         a {
           text-decoration: none;
@@ -90,6 +99,8 @@
       }
     }
     &__address {
+      border-bottom: 2px solid #f5f5f5;
+      padding-top: 10px;
       @include block();  
       h4 {
         @include font(); 
@@ -111,6 +122,8 @@
         text-align: center;
         line-height: 50px;
         cursor: pointer;
+        border: 1px;
+        border-radius:5px;
       }
     }
   }

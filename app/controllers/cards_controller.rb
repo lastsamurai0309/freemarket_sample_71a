@@ -40,8 +40,8 @@ class CardsController < ApplicationController
   def create
     Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
     if params["payjp_token"].blank?
-
-      redirect_to action: "new", alert: "クレジットカードを登録できませんでした。"
+      redirect_to action: "new"
+      flash[:alert] = 'クレジットカードを登録できませんでした。'
     else
       customer = Payjp::Customer.create(
         email: current_user.email,
