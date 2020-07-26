@@ -22,9 +22,13 @@
         %span.pay-price
         = "¥" + "#{@product.price.to_s}"
     .purchase__contents__credit
-      %h3 支払い方法   
-      .purchase__contents__credit__card-box
-        クレジットカード
+      %h3 支払い方法 
+      - if current_user.card.nil?
+        %li
+          = link_to "登録してください", users_card_path(current_user), class: "purchase__container__payment__box__register"
+      - else
+        %li.purchase__container__payment__box__register
+          クレジットカード  
         .credit_num
           = "**** **** **** " + @card_customer.last4
         .expiration-date
@@ -34,13 +38,7 @@
         .brand
         = image_tag "cards/#{@card_src}", class:"brand__image",height:'35', alt: @card_brand_image
 
-      %h3 支払い方法 
-      - if current_user.card.nil?
-        %li
-          = link_to "登録してください", users_card_path(current_user), class: "purchase__container__payment__box__register"
-      - else
-        %li.purchase__container__payment__box__register
-          クレジットカード  
+
 
     .purchase__contents__address 
       %h4 配送先    
