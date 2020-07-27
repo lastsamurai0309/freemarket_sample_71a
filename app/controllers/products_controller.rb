@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :set_product, only: [:show, :edit]
+  before_action :set_product, only: [:show, :edit, :update]
   before_action :set_params, only: :create
   before_action :set_categories, only: [:edit, :update]
   before_action :current_user, only: [:edit, :update]
@@ -29,7 +29,6 @@ class ProductsController < ApplicationController
   end
 
   def update
-    @product = Product.find(params[:id])
     if @product.update(set_params)
       flash[:alert] = '商品情報を編集しました。'
       redirect_to controller: :products, action: :index, notice: "商品情報を編集しました"
@@ -41,7 +40,6 @@ class ProductsController < ApplicationController
   end
 
   def show 
-    
   end
 
   def destroy
@@ -67,10 +65,6 @@ class ProductsController < ApplicationController
 
   def set_params
     params.require(:product).permit(:name, :content, :category_id, :brand, :condition_id, :fee_id, :area_id, :shippingday_id, :price, photos_attributes: [:name, :_destroy, :id]).merge(user_id: current_user.id)
-  end
-
-  def set_update_params
-    params.require(:product).permit(:name, :content, :category_id, :brand, :condition_id, :fee_id, :area_id, :shippingday_id, :price, photos_attributes: [:name, :_destroy, :id])
   end
 
   def set_categories
