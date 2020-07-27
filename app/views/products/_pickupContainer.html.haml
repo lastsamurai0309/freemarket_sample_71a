@@ -21,7 +21,8 @@
                   ★0
             .product-tax
               (税込) 
-          - if product.status.nil?
+          -# - if product.status.nil?
+          - if item.status.present?
           - else
             .sold-out 売り切れ
             .items-box_photo__sold
