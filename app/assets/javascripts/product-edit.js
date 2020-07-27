@@ -40,45 +40,34 @@ $(function(){
   // プレビューの追加
   $(document).on('change', '.hidden-field', function() {
     setLabel();
-    //hidden-fieldのidの数値のみ取得
-    var id = $(this).attr('id').replace(/[^0-4]/g, '');
-    //labelボックスのidとforを更新
-    $('.label-box').attr({id: `label-box--${id}`,for: `photos_attributes_${id}_name`});
-    //選択したfileのオブジェクトを取得
+    
+    var id = $(this).attr('id').replace(/[^0-9]/g, '');
+    $('.label-box').attr({id: `label-box--${id}`,for: `product_photos_attributes_${id}_name`});
     var file = this.files[0];
     var reader = new FileReader();
-    //readAsDataURLで指定したFileオブジェクトを読み込む
     reader.readAsDataURL(file);
-    //読み込み時に発火するイベント
     reader.onload = function() {
-      var image = this.result;
-      //プレビューが元々なかった場合はhtmlを追加
+      var name = this.result;
       if ($(`#preview-box__${id}`).length == 0) {
         var count = $('.preview-box').length;
         var html = buildHTML(id);
-        //ラベルの直前のプレビュー群にプレビューを追加
         var prevContent = $('.label-content').prev();
         $(prevContent).append(html);
       }
-      //イメージを追加
-      $(`#preview-box__${id} img`).attr('src', `${image}`);
+
+      $(`#preview-box__${id} img`).attr('name', `${name}`);
       var count = $('.preview-box').length;
-      //プレビューが5個あったらラベルを隠す 
       if (count == 5) { 
         $('.label-content').hide();
       }
 
-      //プレビュー削除したフィールドにdestroy用のチェックボックスがあった場合、チェックを外す=============
-      if ($(`#photos_attributes_${id}__destroy`)){
-        $(`#photos_attributes_${id}__destroy`).prop('checked',false);
+      if ($(`#product_photos_attributes_${id}__destroy`)){
+        $(`#product_photos_attributes_${id}__destroy`).prop('checked',false);
       } 
-      //=============================================================================
 
-      //ラベルのwidth操作
       setLabel();
-      //ラベルのidとforの値を変更
       if(count < 5){
-        $('.label-box').attr({id: `label-box--${count}`,for: `photos_attributes_${count}_name`});
+        $('.label-box').attr({id: `label-box--${count}`,for: `product_photos_attributes_${count}_name`});
       }
     }
   });
@@ -87,8 +76,7 @@ $(function(){
   $(document).on('click', '.delete-box', function() {
     var count = $('.preview-box').length;
     setLabel(count);
-    var id = $(this).attr('id').replace(/[^0-4]/g, '');
-    console.log(id)
+    var id = $(this).attr('id').replace(/[^0-9]/g, '');
     $(`#preview-box__${id}`).remove();
     // var count2 = $(".hidden-field").length;
     // setLabel(count2);
@@ -104,12 +92,12 @@ $(function(){
 
     //新規投稿時
     //削除用チェックボックスの有無で判定
-    // if ($(`#item_images_attributes_${id}__destroy`).length == 0) {
-       if ($(`product[name="item[item_images_attributes][${id}][_destroy]"]`).length == 0) {
+    if ($(`#product_photos_attributes_${id}__destroy`).length == 0) {
+    // if ($(`product[name="item[item_images_attributes][${id}][_destroy]"]`).length == 0) {
       //フォームの中身を削除 
       // check
-      $(`input[name="item[item_images_attributes][${id}][_image]"]`).val("");
-      // $(`#item_images_attributes_${id}_image`).val("");
+      // $(`input[name="item[item_images_attributes][${id}][_image]"]`).val("");
+      $(`#product_photos_attributes_${id}_name`).val("");
       var count = $('.preview-box').length;
       //5個めが消されたらラベルを表示
       if (count == 4) {
@@ -117,26 +105,21 @@ $(function(){
       }
       setLabel(count);
       if(id < 5){
-        $('.label-box').attr({id: `label-box--${id}`,for: $(`input[name="item[item_images_attributes][${id}][_image]"]`)});
-        // $('.label-box').attr({id: `label-box--${id}`,for: `item_images_attributes_${id}_image`});
+        // $('.label-box').attr({id: `label-box--${id}`,for: $(`input[name="item[item_images_attributes][${id}][_image]"]`)});
+        $('.label-box').attr({id: `label-box--${id}`,for: `product_photos_attributes_${id}_name`});
 
       }
     } else {
       //投稿編集時
-      $(`input[name="item[item_images_attributes][${id}][_destroy]"]`).prop('checked',true);
-      // $(`#item_images_attributes_${id}__destroy`).prop('checked',true);
-      //5個めが消されたらラベルを表示
+      // $(`input[name="item[item_images_attributes][${id}][_destroy]"]`).prop('checked',true);
+      $(`#product_photos_attributes_${id}__destroy`).prop('checked',true);
       if (count == 4) {
         $('.label-content').show();
       }
-
-      //ラベルのwidth操作
       setLabel();
-      //ラベルのidとforの値を変更
-      //削除したプレビューのidによって、ラベルのidを変更する
       if(id < 5){
         // $('.label-box').attr({id: `label-box--${id}`,for: `input[name="item[item_images_attributes][${id}][_image]"]`});
-        $('.label-box').attr({id: `label-box--${id}`,for: `item_item_images_attributes_${id}_image`});
+        $('.label-box').attr({id: `label-box--${id}`,for: `product_photos_attributes_${id}_name`});
       }
     }
     //=============================================================================
@@ -145,6 +128,6 @@ $(function(){
   $(document).on('click', '.update-box', function() {
     var index_num = $(this).data("image-index");
     
-  $(`#item_item_images_attributes_${index_num}_image`).click();
+  $(`#product_photos_attributes_${index_num}_name`).click();
     });
 });
