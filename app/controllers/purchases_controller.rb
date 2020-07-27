@@ -37,7 +37,8 @@ class PurchasesController < ApplicationController
   end
 
   def pay
-    if @product.status.present?
+    # if @product.status.present?
+    if @product.status == 1
       redirect_to product_path(@product.id)
       flash[:notice] = 'こちらの商品は売り切れています。'
     else
