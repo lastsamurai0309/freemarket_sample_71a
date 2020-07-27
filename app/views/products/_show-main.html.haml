@@ -31,6 +31,11 @@
             %ul
               %li
                 = image_tag @product.photos[0].name.url
+                -if @product.status.nil?
+                -else
+                  .items-box_photo__sold2
+                    .items-box_photo__sold__inner
+                      SOLD
                 %ul
                   - @product.photos.each do |photo|
                     %li
