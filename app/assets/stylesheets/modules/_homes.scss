@@ -233,30 +233,93 @@
       line-height: 1.4;
       font-weight: bold;
     }
-    &__lists {
-      margin: 0;
-      padding: 0;
-      &__list {
+    &__list {
+      &__lis {
         width: 780px;
-        margin: 26px auto;
-        padding-left: 73px;
+        height: 270px;
+        padding-left: 210px;
         display: flex;
         justify-content: space-around;
-        &__link {
+        &__links {
           display: flex;
-          width: 100%;
+          width: 220px;
+          padding-top: 15px;
+          position: relative;
           .product-image-box {
+            image {
+              width: 220px;
+              height: 165px;
+              padding-right: 27px;
+            }
             width: 220px;
             height: 166px;
-            position: relative;
+            
             overflow: hidden;
             margin: 0;
             z-index: auto;
             bottom: 15px;
           }
           .product-link__description {
+            position: absolute;
+            width: 220px;
+            top: 182px;
             background-color: white;
             color: #333;
+            height: 104px;
+            padding-top: 32px;
+            padding: 16px;
+            .product-name {
+              overflow: hidden;
+              line-height: 1.5;
+              font-size: 16px;
+              text-align: left;
+            }
+            .product-cost {
+              font-size: 16px;
+              .product-cost__list {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+              }
+            }
+          }        
+        }
+      }    
+    }
+    &__lists {
+      &__list {
+        width: 780px;
+        height: 270px;
+        margin: 26px auto;
+        padding-left: 73px;
+        display: flex;
+        justify-content: space-around;
+        &__link {
+          display: flex;
+          width: 220px;
+          padding-top: 15px;
+          position: relative;
+          .product-image-box {
+            image {
+              width: 220px;
+              height: 165px;
+              padding-right: 27px;
+            }
+            width: 220px;
+            height: 166px;          
+            overflow: hidden;
+            margin: 0;
+            z-index: auto;
+            bottom: 15px;
+          }
+          .product-link__description {
+            position: absolute;
+            width: 220px;
+            top: 182px;
+            background-color: white;
+            color: #333;
+            height: 104px;
+            padding-top: 32px;
             padding: 16px;
             .product-name {
               overflow: hidden;

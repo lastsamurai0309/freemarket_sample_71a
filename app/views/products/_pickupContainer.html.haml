@@ -3,9 +3,9 @@
 .index__main__pickupContainer__headbottom
   = link_to "/", class: "link-btn" do
     新規投稿商品
-.index__main__pickupContainer__lists
-  .index__main__pickupContainer__lists__list        
-    .index__main__pickupContainer__lists__list__link
+.index__main__pickupContainer__list
+  .index__main__pickupContainer__list__lis        
+    .index__main__pickupContainer__list__lis__links
       - @products.each do |product|
         = link_to product_path(product.id), class:"product-link" do
           .product-image-box             
