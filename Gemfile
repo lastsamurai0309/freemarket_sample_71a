@@ -77,3 +77,9 @@ gem 'payjp'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'active_hash'
+
+gem 'omniauth-google-oauth2'
+gem 'omniauth-facebook'
+gem "omniauth-rails_csrf_protection"
+gem 'dotenv-rails'
+
