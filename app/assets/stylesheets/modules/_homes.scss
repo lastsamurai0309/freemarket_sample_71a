@@ -238,6 +238,7 @@
         width: 780px;
         height: 270px;
         padding-left: 210px;
+        margin-top: 26px;
         display: flex;
         justify-content: space-around;
         &__links {
@@ -287,10 +288,10 @@
     }
     &__lists {
       &__list {
-        width: 780px;
+        width: 730px;
         height: 270px;
         margin: 26px auto;
-        padding-left: 73px;
+        padding-left: 10px;
         display: flex;
         justify-content: space-around;
         &__link {
