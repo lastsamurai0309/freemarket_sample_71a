@@ -61,8 +61,6 @@ class PurchasesController < ApplicationController
   def done
     @product_purchase = Product.find(params[:id])
     @product_purchase.update(purchase_histories_id: current_user.id)
-    # @address = Address.find_by(user_id: current_user.id)
-    # @product.update(purchase_histories_id: current_user.id)
   end
 
 
