@@ -2,10 +2,12 @@ Rails.application.routes.draw do
   # devise_for :users
   root to: 'products#index'
 
-  devise_for :users, controllers: { 
+  devise_for :users,
+  controllers: {
+    sessions: 'users/sessions',
+    registrations: "users/registrations",
     omniauth_callbacks: 'users/omniauth_callbacks'
-    # registrations: 'users/registrations'
-   }
+  }
 
 
   # devise_for :users, controllers: {
